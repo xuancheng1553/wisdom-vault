@@ -3236,27 +3236,82 @@ function renderPathDetail(id) {
   if (!d) return;
   pathState = id;
   const colors = ['#3498db','#2ecc71','#f39c12','#e74c3c','#9b59b6'];
-  document.getElementById('app-content').innerHTML = '<div class="page">' +
+  var fig = null;
+  for (var i = 0; i < FIGS.length; i++) { if (FIGS[i].id === id) { fig = FIGS[i]; break; } }
+  
+  var html = '<div class="page">' +
     '<button class="back-btn" onclick="renderPath()"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg> 返回</button>' +
-    '<div class="section-title" style="color:'+d.color+'">'+d.name+'</div>' +
-    // 5级进阶体系 - 点击弹出级别内容
-    d.levels.map((lv, li) => {
-      const desc = d.levelDesc && d.levelDesc[li] ? d.levelDesc[li] : '';
-      const pages = (d.levelPages && d.levelPages[li]) || [];
-      const pageBtns = pages.map(pi => '<button class="path-pager-link" onclick="event.stopPropagation();viewOnePager(\''+id+'\','+pi+')">'+(d.onepagers[pi]||'')+'</button>').join('');
-      return '<div class="path-l2" onclick="showLevelContent(\''+id+'\','+li+',\''+lv+'\',\''+esc(desc)+'\')"><div class="path-l2-header"><div class="path-l2-num" style="background:'+colors[li]+'">'+(li+1)+'</div><div style="font-weight:600;font-size:14px;flex:1">'+lv+'</div></div>' +
-        (pageBtns ? '<div class="path-l2-pagers">'+pageBtns+'</div>' : '') +
-        '</div>';
-    }).join('') +
-    // 一页纸总结 - 单独区域
-    '<div class="section-title" style="margin-top:16px;padding-top:14px;border-top:1px solid #eee">一页纸总结 ('+d.onepagers.length+')</div>' +
-    '<p style="font-size:13px;color:var(--text-secondary);margin-bottom:8px">每章内容的浓缩速查表：一句话定义、核心概念、案例、常见错误、检查清单、自测题</p>' +
-    '<div class="path-pager-list">'+d.onepagers.map((p, i) => '<button class="path-pager-link" onclick="viewOnePager(\''+id+'\','+i+')">'+p+'</button>').join('')+'</div>' +
-  '</div>';
+    '<div class="section-title" style="color:'+d.color+'">'+d.name+'</div>';
+  
+  // Section 1: 核心文章
+  var arts = d.articles || [];
+  if (arts.length > 0) {
+    html += '<div style="margin-bottom:14px"><div style="font-size:15px;font-weight:600;margin-bottom:6px">📖 核心文章 ('+arts.length+')</div><div class="path-pager-list">'+
+      arts.map(function(a) { return '<button class="path-pager-link" onclick="showArticleContent(\''+id+'\',\''+esc(a)+'\')">'+esc(a)+'</button>'; }).join('') +
+      '</div></div>';
+  }
+  
+  // Section 2: 5级进阶体系
+  html += '<div style="margin-bottom:10px"><div style="font-size:15px;font-weight:600;margin-bottom:6px">📈 5级进阶体系</div>' +
+    d.levels.map(function(lv, li) {
+      return '<div class="path-l2" onclick="showLevelContent(\''+id+'\','+li+',\''+lv+'\',\'\')"><div class="path-l2-header"><div class="path-l2-num" style="background:'+colors[li]+'">'+(li+1)+'</div><div style="font-weight:600;font-size:14px;flex:1">'+lv+'</div></div></div>';
+    }).join('') + '</div>';
+  
+  // Section 3: 10次学习计划
+  var plan = d.plan || [];
+  if (plan.length > 0) {
+    html += '<div style="margin-bottom:10px"><div style="font-size:15px;font-weight:600;margin-bottom:6px">📋 10次学习计划</div><div style="background:var(--surface);border-radius:var(--radius);padding:10px 14px;box-shadow:var(--shadow)">'+
+      plan.map(function(s, i) { 
+        return '<div style="padding:4px 0;display:flex;gap:6px;align-items:baseline"><span style="font-size:12px;font-weight:700;color:'+d.color+';flex-shrink:0">'+(i+1)+'.</span><div><div style="font-size:13px;font-weight:600">'+esc(s[0])+'</div><div style="font-size:12px;color:var(--text-secondary)">📖 '+esc(s[1])+'</div></div></div>';
+      }).join('') +
+      '</div></div>';
+  }
+  
+  // Section 4: 一页纸总结
+  if (d.onepagers && d.onepagers.length > 0) {
+    html += '<div style="margin-bottom:8px"><div style="font-size:15px;font-weight:600;margin-bottom:6px">📄 一页纸总结 ('+d.onepagers.length+')</div><div class="path-pager-list">'+
+      d.onepagers.map(function(p, i) { return '<button class="path-pager-link" onclick="viewOnePager(\''+id+'\','+i+')">'+esc(p)+'</button>'; }).join('') +
+      '</div></div>';
+  }
+  
+  html += '</div>';
+  document.getElementById('app-content').innerHTML = html;
   document.getElementById('app-content').scrollTop = 0;
 }
 
-// ─── 显示级别学习内容 ───
+// Show article content by searching entries
+function showArticleContent(id, keyword) {
+  const d = PATH_DATA[id];
+  if (!d) return;
+  var matched = [];
+  ENTRIES.forEach(function(e) {
+    if (e.figure_id !== id) return;
+    var txt = (e.quote + ' ' + (e.interpretation||'') + ' ' + (e.source||'') + ' ' + (e.tags||'')).toLowerCase();
+    if (txt.indexOf(keyword.toLowerCase()) >= 0) matched.push(e);
+  });
+  if (matched.length === 0) {
+    closeModal();
+    return;
+  }
+  var fig = getFig(id);
+  var c = fig ? fig.color : '#666';
+  var bg = id === 'munger' ? '#eaf2f8' : id === 'mao' ? '#fce9e7' : '#f0f0f0';
+  var figName = fig ? (fig.short_name || fig.name) : id;
+  var html = '<div class="modal-handle"></div><h3 style="margin-bottom:8px;color:'+c+'">'+d.name+' · '+esc(keyword)+'</h3><div>';
+  matched.forEach(function(e) {
+    html += '<div style="margin:6px 0;padding:10px 12px;border-radius:8px;border-left:3px solid '+c+';background:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.06)">';
+    html += '<div style="font-size:11px;font-weight:600;color:'+c+'">'+esc(figName)+' · '+esc(e.source)+'</div>';
+    html += '<div style="font-size:14px;line-height:1.6;margin-top:4px;margin-bottom:4px">'+esc(e.quote)+'</div>';
+    if (e.interpretation) {
+      html += '<div style="font-size:13px;color:#4b5563;padding:6px;background:#f9fafb;border-radius:4px;margin-top:4px">💡 '+esc(e.interpretation)+'</div>';
+    }
+    html += '</div>';
+  });
+  html += '</div>';
+  document.getElementById('modal-inner').innerHTML = html;
+  document.getElementById('modal').classList.remove('hidden');
+  document.getElementById('modal-overlay').classList.remove('hidden');
+}
 function showLevelContent(id, li, title, desc) {
   const d = PATH_DATA[id];
   if (!d) return;
