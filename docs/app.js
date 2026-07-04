@@ -3107,24 +3107,34 @@ function smartSearch(q) {
 // ─── 学习路径数据 ───
 const PATH_DATA = {
   "mao": { name: "毛主席", color: "#922B21", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
-    onepagers: ["实践论","矛盾论","反对本本主义","论持久战","集中优势兵力","关于领导方法","党委会工作方法","为人民服务","愚公移山","改造我们的学习"] },
+    onepagers: ["实践论","矛盾论","反对本本主义","论持久战","集中优势兵力","关于领导方法","党委会工作方法","为人民服务","愚公移山","改造我们的学习"],
+    levelPages: [[2],[0,1],[3,4],[5,6],[7,8,9]] },
   "munger": { name: "芒格", color: "#1B4F72", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
-    onepagers: ["多元思维模型","误判心理学"] },
+    onepagers: ["多元思维模型","误判心理学"],
+    levelPages: [[0],[1],[],[],[]] },
   "franklin": { name: "富兰克林", color: "#2980B9", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
-    onepagers: ["十三条美德"] },
+    onepagers: ["十三条美德"],
+    levelPages: [[0],[],[],[],[]] },
   "laozi": { name: "老子", color: "#16A085", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
-    onepagers: ["上善若水"] },
+    onepagers: ["上善若水"],
+    levelPages: [[0],[],[],[],[]] },
   "kongzi": { name: "孔子", color: "#D35400", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
-    onepagers: ["仁与学"] },
+    onepagers: ["仁与学"],
+    levelPages: [[0],[],[],[],[]] },
   "wangming": { name: "王阳明", color: "#C0392B", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
-    onepagers: ["知行合一"] },
+    onepagers: ["知行合一"],
+    levelPages: [[0],[],[],[],[]] },
   "miller": { name: "米勒", color: "#2E86C1", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
-    onepagers: ["依恋理论","爱情三角","社会认知","关系维持","冲突"] },
+    onepagers: ["依恋理论","爱情三角","社会认知","关系维持","冲突"],
+    levelPages: [[0],[1,2],[3,4],[],[]] },
   "gottman": { name: "戈特曼", color: "#117A65", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
-    onepagers: ["末日骑士"] },
+    onepagers: ["末日骑士"],
+    levelPages: [[0],[],[],[],[]] },
   "huangdi": { name: "黄帝内经", color: "#27AE60", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
-    onepagers: ["四气调神"] }
+    onepagers: ["四气调神"],
+    levelPages: [[0],[],[],[],[]] }
 };
+
 
 let pathState = null;
 
@@ -3132,37 +3142,39 @@ let pathState = null;
 function renderPath() {
   pathState = 'list';
   const ids = Object.keys(PATH_DATA);
-  return `<div class="page">
-    <div class="section-title">学习路径</div>
-    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px">9位智者的5级进阶体系 + 一页纸总结，点击进入</p>
-    <div class="path-grid">${ids.map(id => {
-      const d = PATH_DATA[id];
-      return `<div class="path-card" onclick="renderPathDetail('${id}')">
-        <div class="path-card-name" style="color:${d.color}">${d.name}</div>
-        <div class="path-card-count">${d.levels.length}级 · ${d.onepagers.length}篇一页纸</div>
-      </div>`;
-    }).join('')}</div>
-  </div>`;
+  return '<div class="page"><div class="section-title">学习路径</div><p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px">点击智者进入5级进阶体系</p><div class="path-grid-vertical">' + ids.map(id => {
+    const d = PATH_DATA[id];
+    return '<div class="path-card" onclick="renderPathDetail(\''+id+'\')"><div class="path-card-color" style="background:'+d.color+'"></div><div class="path-card-info"><div class="path-card-name">'+d.name+'</div><div class="path-card-count">'+d.levels.length+'级学习 · '+d.onepagers.length+'篇一页纸</div></div></div>';
+  }).join('') + '</div></div>';
 }
 
-// ─── 智者详情页 ───
+
 function renderPathDetail(id) {
   const d = PATH_DATA[id];
   if (!d) return;
   pathState = id;
-  const el = document.getElementById('app-content');
-  el.innerHTML = `<div class="page">
-    <button class="back-btn" onclick="renderPath()"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg> 返回学习路径</button>
-    <div class="section-title" style="color:${d.color}">${d.name}</div>
-    <div style="margin-bottom:12px;font-size:13px;color:var(--text-secondary)">5级进阶体系</div>
-    ${d.levels.map((lv,i) => `<div class="path-level-card"><div class="path-level-title">${lv}</div><div class="path-level-desc">查看下方一页纸总结以获取该级别内容</div></div>`).join('')}
-    <div class="section-title">一页纸总结 (${d.onepagers.length})</div>
-    <div class="path-pager-list">${d.onepagers.map((p,i) => `<button class="path-pager-link" onclick="viewOnePager('${id}',${i})">${p}</button>`).join('')}</div>
-  </div>`;
-  el.scrollTop = 0;
+  const colors = ['#3498db','#2ecc71','#f39c12','#e74c3c','#9b59b6'];
+  document.getElementById('app-content').innerHTML = '<div class="page">' +
+    '<button class="back-btn" onclick="renderPath()"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg> 返回</button>' +
+    '<div class="section-title" style="color:'+d.color+'">'+d.name+'</div>' +
+    '<div style="margin-bottom:10px;font-size:13px;color:var(--text-secondary)">5级进阶体系 · 点击层级查看一页纸</div>' +
+    d.levels.map((lv, li) => {
+      const pages = (d.levelPages && d.levelPages[li]) || [];
+      const pageBtns = pages.map(pi => {
+        const title = d.onepagers[pi];
+        return '<button class="path-pager-link" onclick="viewOnePager(\''+id+'\','+pi+')">'+title+'</button>';
+      }).join('');
+      return '<div class="path-l2" onclick="'+(pages.length > 0 ? 'viewOnePager(\''+id+'\','+pages[0]+')' : '')+'"><div class="path-l2-header"><div class="path-l2-num" style="background:'+colors[li]+'">'+(li+1)+'</div><div style="font-weight:600;font-size:14px">'+lv+'</div></div>' +
+        (pageBtns ? '<div class="path-l2-pagers">'+pageBtns+'</div>' : '<div style="margin:4px 0 0 38px;font-size:12px;color:#9ca3af">(暂无独立一页纸)</div>') +
+        '</div>';
+    }).join('') +
+    '<div class="section-title" style="margin-top:10px">全部一页纸 ('+d.onepagers.length+')</div>' +
+    '<div class="path-pager-list" style="margin-bottom:8px">'+d.onepagers.map((p, i) => '<button class="path-pager-link" onclick="viewOnePager(\''+id+'\','+i+')">'+p+'</button>').join('')+'</div>' +
+  '</div>';
+  document.getElementById('app-content').scrollTop = 0;
 }
 
-// ─── 查看一页纸 ───
+
 function viewOnePager(id, idx) {
   const d = PATH_DATA[id];
   if (!d || !d.onepagers[idx]) return;
