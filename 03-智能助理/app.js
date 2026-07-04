@@ -3260,24 +3260,50 @@ function renderPathDetail(id) {
 function showLevelContent(id, li, title, desc) {
   const d = PATH_DATA[id];
   if (!d) return;
-  const lc = (d.levelContent && d.levelContent[li]) || [];
-  const labels = ['目标','核心内容','要读的文章','练习建议','常见错误','进阶标准'];
-  const icons = ['🎯','📖','📚','✏️','⚠️','📈'];
-  let html = '<div class="modal-handle"></div><h3 style="margin-bottom:8px;color:'+d.color+'">'+d.name+' · '+title+'</h3>';
-  if (lc.length > 0) {
-    lc.forEach(function(item, i) {
-      var text = item[1] || '';
-      if (text) {
-        html += '<div style="margin-bottom:10px"><div style="font-size:12px;font-weight:600;color:var(--text-secondary);margin-bottom:2px">'+icons[i]+' '+labels[i]+'</div><div style="font-size:14px;line-height:1.6">'+esc(text)+'</div></div>';
-      }
+  const filter = (d.levelContent && d.levelContent[li]) || [];
+  
+  // Search entries for this figure that match the filter keywords
+  let matched = [];
+  if (filter.length > 0) {
+    ENTRIES.forEach(function(e) {
+      if (e.figure_id !== id) return;
+      var txt = (e.quote + ' ' + (e.interpretation||'') + ' ' + (e.source||'') + ' ' + (e.tags||'')).toLowerCase();
+      var match = filter.some(function(kw) { return txt.indexOf(kw.toLowerCase()) >= 0; });
+      if (match) matched.push(e);
     });
   } else {
-    html += '<div style="font-size:14px;line-height:1.7;padding:4px 0">'+esc(desc)+'</div>';
+    // No filter: show all entries for this figure
+    ENTRIES.forEach(function(e) { if (e.figure_id === id) matched.push(e); });
   }
+  
+  var html = '<div class="modal-handle"></div><h3 style="margin-bottom:8px;color:'+d.color+'">'+d.name+' · '+title+'</h3><div>';
+  if (matched.length === 0) {
+    html += '<p style="color:var(--text-secondary);font-size:14px">暂无相关内容</p>';
+  } else {
+    matched.forEach(function(e) {
+      var fig = getFig(e.figure_id);
+      var dim = getDim(e.dimension_id);
+      var c = fig ? fig.color : '#666';
+      var bg = e.figure_id === 'munger' ? '#eaf2f8' : e.figure_id === 'mao' ? '#fce9e7' : '#f0f0f0';
+      var figName = fig ? (fig.short_name || fig.name) : (e.figure_name || e.figure_id);
+      html += '<div style="margin:8px 0;padding:12px;border-radius:8px;border-left:3px solid '+c+';background:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.06)">';
+      html += '<div style="font-size:11px;font-weight:600;color:'+c+';background:'+bg+';display:inline-block;padding:1px 6px;border-radius:3px;margin-bottom:4px">'+esc(figName)+'</div>';
+      html += '<div style="font-size:14px;line-height:1.6;margin-bottom:4px">'+esc(e.quote)+'</div>';
+      html += '<div style="font-size:12px;color:var(--text-secondary)">📖 '+esc(e.source)+'</div>';
+      if (e.interpretation) {
+        html += '<div style="font-size:13px;color:#4b5563;margin-top:4px;padding:6px;background:#f9fafb;border-radius:4px">💡 '+esc(e.interpretation)+'</div>';
+      }
+      html += '</div>';
+    });
+  }
+  html += '</div>';
+  
+  // Related one-pagers
   var pages = (d.levelPages && d.levelPages[li]) || [];
   if (pages.length > 0) {
-    html += '<div style="margin-top:8px;padding-top:8px;border-top:1px solid #eee"><div style="font-size:13px;font-weight:600;color:var(--text-secondary);margin-bottom:4px">相关一页纸：</div><div class="path-pager-list">'+pages.map(function(pi) { return '<button class="path-pager-link" onclick="closeModal();viewOnePager(\''+id+'\','+pi+')">'+(d.onepagers[pi]||'')+'</button>'; }).join('')+'</div></div>';
+    html += '<div style="margin-top:8px;padding-top:8px;border-top:1px solid #eee"><div style="font-size:13px;font-weight:600;color:var(--text-secondary);margin-bottom:4px">一页纸总结：</div><div class="path-pager-list">'+pages.map(function(pi) { return '<button class="path-pager-link" onclick="closeModal();viewOnePager(\''+id+'\','+pi+')">'+(d.onepagers[pi]||'')+'</button>'; }).join('')+'</div></div>';
   }
+  
   document.getElementById('modal-inner').innerHTML = html;
   document.getElementById('modal').classList.remove('hidden');
   document.getElementById('modal-overlay').classList.remove('hidden');
