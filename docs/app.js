@@ -3106,34 +3106,107 @@ function smartSearch(q) {
 
 // ─── 学习路径数据 ───
 const PATH_DATA = {
-  "mao": { name: "毛主席", color: "#922B21", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+  "mao": { name: "毛主席", color: "#922B21",
+    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    levelDesc: [
+      "了解毛选四卷的核心思想地图，明确为什么要学、学什么。认识实践论、矛盾论、实事求是、群众路线五大核心。",
+      "掌握实践论的认识三阶段、矛盾论的主要矛盾分析法、实事求是的调查研究方法。做到能用这些方法分析实际问题。",
+      "把毛选方法论应用到创业调研、投资决策、团队管理、日常工作等具体场景。形成自己的应用案例库。",
+      "打通各篇之间的联系，建立实践-认识-再实践的循环思维。理解矛盾转化、量变到质变、战略藐视战术重视。",
+      "将毛选智慧与芒格、孔子、王阳明等其他思想体系交叉印证，形成自己的智慧体系。"
+    ],
     onepagers: ["实践论","矛盾论","反对本本主义","论持久战","集中优势兵力","关于领导方法","党委会工作方法","为人民服务","愚公移山","改造我们的学习"],
     levelPages: [[2],[0,1],[3,4],[5,6],[7,8,9]] },
-  "munger": { name: "芒格", color: "#1B4F72", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+  "munger": { name: "芒格", color: "#1B4F72",
+    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    levelDesc: [
+      "了解芒格是谁、为什么他不仅是投资者更是思想家。认识多元思维模型、误判心理学、能力圈三大核心概念。",
+      "掌握多元思维模型的搭建方法、25个误判心理学的识别和规避、能力圈的划定和拓展。",
+      "把芒格方法用到投资检查清单、护城河分析、创业决策、激励机制设计等场景。",
+      "建立格栅理论的跨学科思维体系，学会用多个模型交叉分析同一个问题。",
+      "将芒格智慧与毛主席、富兰克林、老子的方法论对比印证。"
+    ],
     onepagers: ["多元思维模型","误判心理学"],
     levelPages: [[0],[1],[],[],[]] },
-  "franklin": { name: "富兰克林", color: "#2980B9", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+  "franklin": { name: "富兰克林", color: "#2980B9",
+    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    levelDesc: [
+      "了解富兰克林从一个印刷工学徒到开国元勋的人生轨迹。认识十三条美德体系和他的实用主义哲学。",
+      "掌握十三条美德的系统化修炼方法——每周聚焦一项、十三周循环、每日自省记录。",
+      "把富兰克林的方法用到时间管理、节俭理财、社交信誉、个人品牌建设等日常场景。",
+      "理解美德体系的内在逻辑——从节制到谦逊的递进关系，修身与成事的关系。",
+      "将富兰克林十三条美德与曾国藩日课十二条、芒格误判心理学交叉对比。"
+    ],
     onepagers: ["十三条美德"],
     levelPages: [[0],[],[],[],[]] },
-  "laozi": { name: "老子", color: "#16A085", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+  "laozi": { name: "老子", color: "#16A085",
+    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    levelDesc: [
+      "了解老子和《道德经》的核心思想：道法自然、无为而治。认识这本书仅5000余字却影响了世界两千多年。",
+      "掌握道的概念、无为的含义、上善若水的哲学、有无相生的辩证思维。",
+      "把老子思想用到领导力（上善若水）、投资（大器晚成）、决策（无为而无不为）等场景。",
+      "理解道德经81章的内在逻辑链，建立阴阳辩证的思维体系。",
+      "将老子与芒格（反过来想×反向思维）、毛主席（矛盾论×阴阳辩证）交叉对比。"
+    ],
     onepagers: ["上善若水"],
     levelPages: [[0],[],[],[],[]] },
-  "kongzi": { name: "孔子", color: "#D35400", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+  "kongzi": { name: "孔子", color: "#D35400",
+    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    levelDesc: [
+      "了解孔子和儒家思想的核心：仁与礼。认识《论语》中最重要的实践智慧。",
+      "掌握仁（己所不欲勿施于人）、学思并重、三省吾身、中庸之道、正名等核心方法论。",
+      "把孔子的方法用到学习（学而时习之）、管理（其身正不令而行）、社交（三人行必有我师）等场景。",
+      "理解仁义礼智信的内在体系，以及修身齐家治国平天下的层次逻辑。",
+      "将孔子与芒格（学思并重×多元思维）、毛主席（实事求是×知之为知之）交叉对比。"
+    ],
     onepagers: ["仁与学"],
     levelPages: [[0],[],[],[],[]] },
-  "wangming": { name: "王阳明", color: "#C0392B", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+  "wangming": { name: "王阳明", color: "#C0392B",
+    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    levelDesc: [
+      "了解王阳明「立功立德立言」三不朽的人生。心学的核心三词：心即理、知行合一、致良知。",
+      "掌握心即理（求理不必外求）、知行合一（知道不做等于不知道）、致良知（听从内心）三大核心。",
+      "把心学用到修身（事上练）、管理（破心中贼难）、学习（知行合一——学以致用）等场景。",
+      "理解心学与程朱理学的对比，以及知行关系的思想史演变。",
+      "将王阳明与毛主席（知行合一×实践论）、芒格（致良知×理性道德）交叉对比。"
+    ],
     onepagers: ["知行合一"],
     levelPages: [[0],[],[],[],[]] },
-  "miller": { name: "米勒", color: "#2E86C1", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+  "miller": { name: "米勒", color: "#2E86C1",
+    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    levelDesc: [
+      "了解《亲密关系》的科学框架——亲密关系不是直觉的，而是可以科学研究的。认识14章的内容地图。",
+      "掌握吸引力法则、依恋理论、社会认知、相互依赖、爱情三角等核心理论。",
+      "把理论用到择偶（识别安全型依恋）、沟通（第一人称表达）、冲突（四步法）等日常场景。",
+      "理解各章之间的内在逻辑链——从吸引力到解体的完整生命周期。",
+      "将米勒与戈特曼（学术研究×临床实证）、孔子（己所不欲×沟通艺术）交叉对比。"
+    ],
     onepagers: ["依恋理论","爱情三角","社会认知","关系维持","冲突"],
     levelPages: [[0],[1,2],[3,4],[],[]] },
-  "gottman": { name: "戈特曼", color: "#117A65", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+  "gottman": { name: "戈特曼", color: "#117A65",
+    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    levelDesc: [
+      "了解戈特曼通过观察上千对夫妻得出的婚姻科学。认识爱情地图、末日骑士、5:1比率等核心发现。",
+      "掌握末日骑士（批评、鄙视、辩护、冷战）的识别和应对、5:1积极比率、温和开局等沟通技巧。",
+      "把戈特曼方法用到日常情感连接、冲突时的温和沟通、长期共同意义创造等场景。",
+      "理解从观察到诊断到干预的完整婚姻评估体系。",
+      "将戈特曼与米勒（临床实证×学术研究）、孔子（己所不欲×温和沟通）交叉对比。"
+    ],
     onepagers: ["末日骑士"],
     levelPages: [[0],[],[],[],[]] },
-  "huangdi": { name: "黄帝内经", color: "#27AE60", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+  "huangdi": { name: "黄帝内经", color: "#27AE60",
+    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    levelDesc: [
+      "了解《黄帝内经》不是一本医书，而是一套关于「人如何与自然和谐相处」的生命哲学体系。",
+      "掌握阴阳五行、四气调神、正气存内邪不可干、上工治未病等核心理论。",
+      "把中医智慧用到饮食（食饮有节）、作息（跟着太阳走）、运动（常欲小劳）、情志（情绪管理）等日常。",
+      "理解藏象学说、经络学说、辨证论治的系统医学体系。",
+      "将黄帝内经与老子（道法自然×顺应四时）、芒格（系统思维×多元模型）交叉对比。"
+    ],
     onepagers: ["四气调神"],
     levelPages: [[0],[],[],[],[]] }
 };
+
 
 
 let pathState = null;
@@ -3157,21 +3230,40 @@ function renderPathDetail(id) {
   document.getElementById('app-content').innerHTML = '<div class="page">' +
     '<button class="back-btn" onclick="renderPath()"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg> 返回</button>' +
     '<div class="section-title" style="color:'+d.color+'">'+d.name+'</div>' +
-    '<div style="margin-bottom:10px;font-size:13px;color:var(--text-secondary)">5级进阶体系 · 点击层级查看一页纸</div>' +
+    // 5级进阶体系 - 点击弹出级别内容
     d.levels.map((lv, li) => {
+      const desc = d.levelDesc && d.levelDesc[li] ? d.levelDesc[li] : '';
       const pages = (d.levelPages && d.levelPages[li]) || [];
-      const pageBtns = pages.map(pi => {
-        const title = d.onepagers[pi];
-        return '<button class="path-pager-link" onclick="viewOnePager(\''+id+'\','+pi+')">'+title+'</button>';
-      }).join('');
-      return '<div class="path-l2" onclick="'+(pages.length > 0 ? 'viewOnePager(\''+id+'\','+pages[0]+')' : '')+'"><div class="path-l2-header"><div class="path-l2-num" style="background:'+colors[li]+'">'+(li+1)+'</div><div style="font-weight:600;font-size:14px">'+lv+'</div></div>' +
-        (pageBtns ? '<div class="path-l2-pagers">'+pageBtns+'</div>' : '<div style="margin:4px 0 0 38px;font-size:12px;color:#9ca3af">(暂无独立一页纸)</div>') +
+      const pageBtns = pages.map(pi => '<button class="path-pager-link" onclick="event.stopPropagation();viewOnePager(\''+id+'\','+pi+')">'+(d.onepagers[pi]||'')+'</button>').join('');
+      return '<div class="path-l2" onclick="showLevelContent(\''+id+'\','+li+',\''+lv+'\',\''+esc(desc)+'\')"><div class="path-l2-header"><div class="path-l2-num" style="background:'+colors[li]+'">'+(li+1)+'</div><div style="font-weight:600;font-size:14px;flex:1">'+lv+'</div></div>' +
+        (pageBtns ? '<div class="path-l2-pagers">'+pageBtns+'</div>' : '') +
         '</div>';
     }).join('') +
-    '<div class="section-title" style="margin-top:10px">全部一页纸 ('+d.onepagers.length+')</div>' +
-    '<div class="path-pager-list" style="margin-bottom:8px">'+d.onepagers.map((p, i) => '<button class="path-pager-link" onclick="viewOnePager(\''+id+'\','+i+')">'+p+'</button>').join('')+'</div>' +
+    // 一页纸总结 - 单独区域
+    '<div class="section-title" style="margin-top:16px;padding-top:14px;border-top:1px solid #eee">一页纸总结 ('+d.onepagers.length+')</div>' +
+    '<p style="font-size:13px;color:var(--text-secondary);margin-bottom:8px">每章内容的浓缩速查表：一句话定义、核心概念、案例、常见错误、检查清单、自测题</p>' +
+    '<div class="path-pager-list">'+d.onepagers.map((p, i) => '<button class="path-pager-link" onclick="viewOnePager(\''+id+'\','+i+')">'+p+'</button>').join('')+'</div>' +
   '</div>';
   document.getElementById('app-content').scrollTop = 0;
+}
+
+// ─── 显示级别学习内容 ───
+function showLevelContent(id, li, title, desc) {
+  const d = PATH_DATA[id];
+  if (!d) return;
+  document.getElementById('modal-inner').innerHTML =
+    '<div class="modal-handle"></div>' +
+    '<h3 style="margin-bottom:6px;color:'+d.color+'">'+d.name+' · '+title+'</h3>' +
+    '<div style="font-size:14px;line-height:1.7;padding:4px 0">'+esc(desc)+'</div>';
+  // Add one-pager buttons if available
+  const pages = (d.levelPages && d.levelPages[li]) || [];
+  if (pages.length > 0) {
+    document.getElementById('modal-inner').innerHTML +=
+      '<div style="margin-top:12px;padding-top:10px;border-top:1px solid #eee"><div style="font-size:13px;font-weight:600;color:var(--text-secondary);margin-bottom:6px">相关一页纸：</div>'+
+      '<div class="path-pager-list">'+pages.map(pi => '<button class="path-pager-link" onclick="closeModal();viewOnePager(\''+id+'\','+pi+')">'+(d.onepagers[pi]||'')+'</button>').join('')+'</div></div>';
+  }
+  document.getElementById('modal').classList.remove('hidden');
+  document.getElementById('modal-overlay').classList.remove('hidden');
 }
 
 
