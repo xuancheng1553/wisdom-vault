@@ -1,0 +1,668 @@
+{
+  "dimensions": [
+    {
+      "id": "xiu-shen",
+      "name": "修身与学习",
+      "icon": "books",
+      "order": 1,
+      "desc": "如何持续学习、提升认知、自我修养"
+    },
+    {
+      "id": "chuang-ye",
+      "name": "创业与事业",
+      "icon": "rocket",
+      "order": 2,
+      "desc": "从零到一、建立事业的核心方法论"
+    },
+    {
+      "id": "tou-zi",
+      "name": "投资与理财",
+      "icon": "money",
+      "order": 3,
+      "desc": "价值投资、资产配置、风险管理"
+    },
+    {
+      "id": "hun-yin",
+      "name": "婚姻与亲密关系",
+      "icon": "heart",
+      "order": 4,
+      "desc": "选择伴侣、经营关系的智慧与教训"
+    },
+    {
+      "id": "she-jiao",
+      "name": "社交与人脉",
+      "icon": "handshake",
+      "order": 5,
+      "desc": "建立信任、发展人脉、团结力量"
+    },
+    {
+      "id": "shen-ti",
+      "name": "身体健康",
+      "icon": "strong",
+      "order": 6,
+      "desc": "身体是一切的本钱，长寿与健康的哲学"
+    },
+    {
+      "id": "gong-zuo",
+      "name": "工作方法",
+      "icon": "bolt",
+      "order": 7,
+      "desc": "高效工作、科学决策的方法与工具"
+    },
+    {
+      "id": "ling-dao",
+      "name": "领导力与管理",
+      "icon": "target",
+      "order": 8,
+      "desc": "带团队、做决策、建组织的根本智慧"
+    },
+    {
+      "id": "qi-jia",
+      "name": "齐家与教育",
+      "icon": "home",
+      "order": 9,
+      "desc": "经营家庭、教育子女的智慧"
+    },
+    {
+      "id": "li-xiang",
+      "name": "理想与境界",
+      "icon": "star",
+      "order": 10,
+      "desc": "人生的终极追求、价值观与精神境界"
+    }
+  ],
+  "figures": [
+    {
+      "id": "munger",
+      "name": "查理·芒格",
+      "short": "芒格",
+      "title": "投资家 · 思想家 · 伯克希尔副董事长",
+      "desc": "查理·芒格（1924-2023）是沃伦·巴菲特的长期搭档，伯克希尔·哈撒韦的副董事长。以多元思维模型、误判心理学、能力圈等思想著称。",
+      "color": "#1B4F72"
+    },
+    {
+      "id": "mao",
+      "name": "毛泽东",
+      "short": "毛主席",
+      "title": "革命家 · 战略家 · 诗人",
+      "desc": "毛泽东（1893-1976）是中国共产党、中国人民解放军和中华人民共和国的主要创立者。他的哲学思想、军事思想和诗词创作对世界影响深远。",
+      "color": "#922B21"
+    }
+  ],
+  "wisdom": [
+    {
+      "id": 1,
+      "figureId": "munger",
+      "dimensionId": "xiu-shen",
+      "category": "核心思想",
+      "quote": "每天起床的时候，争取变得比你从前更聪明一点。慢慢地，你会有所进步。每天慢慢往前挪一点。到最后——如果你足够长寿的话——大多数人得到了他们应得的东西。",
+      "source": "《穷查理宝典》",
+      "interpretation": "复利不仅适用于财富，也适用于知识。每天进步一点点，长期积累的效果惊人。",
+      "tags": [
+        "学习",
+        "复利",
+        "终身学习",
+        "积累"
+      ]
+    },
+    {
+      "id": 2,
+      "figureId": "munger",
+      "dimensionId": "xiu-shen",
+      "category": "方法",
+      "quote": "我见过的所有聪明人，没有一个不大量阅读的——没有，一个都没有。",
+      "source": "伯克希尔股东大会",
+      "interpretation": "阅读是构建多元思维模型的基础。芒格被称为长着两条腿的书架，阅读量之大令人咋舌。",
+      "tags": [
+        "阅读",
+        "学习",
+        "方法"
+      ]
+    },
+    {
+      "id": 3,
+      "figureId": "munger",
+      "dimensionId": "xiu-shen",
+      "category": "核心思想",
+      "quote": "手里拿着锤子的人，看什么都像钉子。",
+      "source": "《穷查理宝典》",
+      "interpretation": "单一学科视角是认知的最大局限。必须建立多学科的思维模型格栅，才能看清世界真实的样子。",
+      "tags": [
+        "多元思维",
+        "认知",
+        "方法"
+      ]
+    },
+    {
+      "id": 4,
+      "figureId": "mao",
+      "dimensionId": "xiu-shen",
+      "category": "经典语录",
+      "quote": "好好学习，天天向上。",
+      "source": "1949年给少年儿童的题词",
+      "interpretation": "最简单也最深刻的劝学箴言。学的方向、学的方法、学的态度，都在八个字里。",
+      "tags": [
+        "学习",
+        "成长"
+      ]
+    },
+    {
+      "id": 5,
+      "figureId": "mao",
+      "dimensionId": "xiu-shen",
+      "category": "核心思想",
+      "quote": "读书是学习，使用也是学习，而且是更重要的学习。",
+      "source": "《中国革命战争的战略问题》1936",
+      "interpretation": "理论必须联系实际。从实践中学习、在干中学，才是真正有效的学习方式。",
+      "tags": [
+        "学习",
+        "实践",
+        "方法"
+      ]
+    },
+    {
+      "id": 6,
+      "figureId": "mao",
+      "dimensionId": "xiu-shen",
+      "category": "方法",
+      "quote": "没有调查就没有发言权。",
+      "source": "《反对本本主义》1930",
+      "interpretation": "不了解情况就不要轻易下结论。这既是学习方法，也是决策原则。芒格的能力圈与之完全呼应。",
+      "tags": [
+        "调查",
+        "学习",
+        "决策"
+      ]
+    },
+    {
+      "id": 7,
+      "figureId": "munger",
+      "dimensionId": "chuang-ye",
+      "category": "核心思想",
+      "quote": "找到一个你感兴趣并且有天赋的领域，然后全身心投入。",
+      "source": "南加州大学法学院毕业演讲",
+      "interpretation": "事业成功的起点是兴趣与能力的交叉点。不要为了钱去做自己不喜欢的事。",
+      "tags": [
+        "创业",
+        "事业",
+        "热情"
+      ]
+    },
+    {
+      "id": 8,
+      "figureId": "munger",
+      "dimensionId": "chuang-ye",
+      "category": "投资哲学",
+      "quote": "最好的生意是拥有护城河的生意。护城河可以是品牌、专利、规模优势、网络效应或者特许经营权。",
+      "source": "《穷查理宝典》",
+      "interpretation": "建立持续的竞争优势是事业长青的关键。能护住自己的阵地不被攻破才是真本事。",
+      "tags": [
+        "护城河",
+        "竞争",
+        "商业"
+      ]
+    },
+    {
+      "id": 9,
+      "figureId": "mao",
+      "dimensionId": "chuang-ye",
+      "category": "方法论",
+      "quote": "调查就像十月怀胎，解决问题就像一朝分娩。调查就是解决问题。",
+      "source": "《反对本本主义》1930",
+      "interpretation": "创业初期不要急于行动，先把市场、用户、竞争格局调查清楚。充分的调研产出清晰的方案。",
+      "tags": [
+        "创业",
+        "调研",
+        "方法"
+      ]
+    },
+    {
+      "id": 10,
+      "figureId": "mao",
+      "dimensionId": "chuang-ye",
+      "category": "方法论",
+      "quote": "集中优势兵力，各个歼灭敌人。",
+      "source": "《集中优势兵力，各个歼灭敌人》1946",
+      "interpretation": "创业者在资源有限时，不要分散出击。聚焦到最有可能突破的点上，打歼灭战而不是消耗战。",
+      "tags": [
+        "战略",
+        "聚焦",
+        "创业"
+      ]
+    },
+    {
+      "id": 11,
+      "figureId": "munger",
+      "dimensionId": "tou-zi",
+      "category": "投资哲学",
+      "quote": "以合理的价格买入优秀的公司，远胜于以便宜的价格买入平庸的公司。",
+      "source": "《穷查理宝典》",
+      "interpretation": "质量比价格更重要。好公司即使买得稍贵，长期回报也远超烂公司的便宜货。",
+      "tags": [
+        "价值投资",
+        "质量",
+        "长期"
+      ]
+    },
+    {
+      "id": 12,
+      "figureId": "munger",
+      "dimensionId": "tou-zi",
+      "category": "投资哲学",
+      "quote": "一生只需做少数几个重大的决策，然后持有。剩下的时间，你什么都不用做，坐在那里等着就好。",
+      "source": "Daily Journal 股东大会",
+      "interpretation": "投资不是越勤奋回报越高。关键在于少数几个关键决策的正确性。频繁交易是财富的敌人。",
+      "tags": [
+        "耐心",
+        "长期",
+        "少即是多"
+      ]
+    },
+    {
+      "id": 13,
+      "figureId": "munger",
+      "dimensionId": "tou-zi",
+      "category": "方法",
+      "quote": "如果我知道我会死在哪里，我就永远不会去那个地方。",
+      "source": "哈佛大学演讲",
+      "interpretation": "反过来想——与其研究如何成功，不如先研究如何避免失败。避开明显的错误，自然走向正确。",
+      "tags": [
+        "反向思维",
+        "风险",
+        "方法"
+      ]
+    },
+    {
+      "id": 14,
+      "figureId": "mao",
+      "dimensionId": "tou-zi",
+      "category": "方法论",
+      "quote": "不打无准备之仗，不打无把握之仗。每战都应力求有准备，力求有胜利的把握。",
+      "source": "《目前形势和我们的任务》1947",
+      "interpretation": "投资中的每笔交易都应该是有所准备的：充分研究、设定赔率、控制仓位、留有安全边际。",
+      "tags": [
+        "准备",
+        "风险",
+        "投资"
+      ]
+    },
+    {
+      "id": 15,
+      "figureId": "mao",
+      "dimensionId": "tou-zi",
+      "category": "方法论",
+      "quote": "战略上藐视敌人，战术上重视敌人。",
+      "source": "《关于目前党的政策中的几个重要问题》1948",
+      "interpretation": "长期投资中要相信复利的力量（战略藐视），但每一次具体的投资决策要极度审慎（战术重视）。",
+      "tags": [
+        "战略",
+        "战术",
+        "心态"
+      ]
+    },
+    {
+      "id": 16,
+      "figureId": "munger",
+      "dimensionId": "hun-yin",
+      "category": "人生智慧",
+      "quote": "找到一位好配偶的最佳办法是你先成为一位好配偶。",
+      "source": "《穷查理宝典》",
+      "interpretation": "在关系中，你唯一能控制的是你自己。想要什么样的伴侣，先成为什么样的人。",
+      "tags": [
+        "婚姻",
+        "修身",
+        "关系"
+      ]
+    },
+    {
+      "id": 17,
+      "figureId": "munger",
+      "dimensionId": "hun-yin",
+      "category": "人生智慧",
+      "quote": "和比你强的人结婚。和比你强的人一起生活，你会变得更好。这可能是你一生中最重要的决定。",
+      "source": "伯克希尔股东大会",
+      "interpretation": "选择伴侣是人生最重要的投资之一。找到一个能让你变得更好的人，比任何财富都重要。",
+      "tags": [
+        "婚姻",
+        "选择",
+        "成长"
+      ]
+    },
+    {
+      "id": 18,
+      "figureId": "mao",
+      "dimensionId": "hun-yin",
+      "category": "故事与反思",
+      "quote": "婚姻应以爱情为基础，而不是以金钱或地位为基础。提倡男女平等，反对男尊女卑。",
+      "source": "新中国成立后婚姻法改革思想",
+      "interpretation": "毛主席推动的婚姻法改革是中国历史上第一次从法律上确立婚姻自由、男女平等。",
+      "tags": [
+        "婚姻",
+        "平等",
+        "社会变革"
+      ]
+    },
+    {
+      "id": 19,
+      "figureId": "munger",
+      "dimensionId": "she-jiao",
+      "category": "人生智慧",
+      "quote": "信任是最重要的社交货币。你的声誉可能需要20年才能建立，但5分钟就能毁掉。",
+      "source": "《穷查理宝典》",
+      "interpretation": "不要做任何可能损害你声誉的事。信任一旦失去，几乎不可能重建。",
+      "tags": [
+        "信任",
+        "声誉",
+        "社交"
+      ]
+    },
+    {
+      "id": 20,
+      "figureId": "munger",
+      "dimensionId": "she-jiao",
+      "category": "方法",
+      "quote": "和优秀的人在一起，你也会变得优秀。反过来，和糟糕的人在一起，你会被拉下水。",
+      "source": "《穷查理宝典》",
+      "interpretation": "选择你的圈子。圈子是你认知和行为的平均。选对人，事就成了大半。",
+      "tags": [
+        "社交",
+        "选择",
+        "圈子"
+      ]
+    },
+    {
+      "id": 21,
+      "figureId": "mao",
+      "dimensionId": "she-jiao",
+      "category": "方法论",
+      "quote": "把朋友搞得多多的，把敌人搞得少少的。",
+      "source": "抗战时期统战思想",
+      "interpretation": "人际关系中的统一战线——尽可能扩大合作面，缩小对立面。这不是圆滑，而是战略智慧。",
+      "tags": [
+        "社交",
+        "统战",
+        "战略"
+      ]
+    },
+    {
+      "id": 22,
+      "figureId": "mao",
+      "dimensionId": "she-jiao",
+      "category": "方法论",
+      "quote": "团结一切可以团结的力量。",
+      "source": "《论联合政府》1945",
+      "interpretation": "不要因为小分歧就放弃大合作。在原则不动摇的前提下，尽可能扩大共识。",
+      "tags": [
+        "团结",
+        "合作",
+        "社交"
+      ]
+    },
+    {
+      "id": 23,
+      "figureId": "munger",
+      "dimensionId": "shen-ti",
+      "category": "人生智慧",
+      "quote": "长寿的秘诀：不嫉妒，不怨恨，不过度消费。保持乐观，和快乐的人在一起。",
+      "source": "《穷查理宝典》",
+      "interpretation": "芒格活到99岁，他的长寿哲学极其简单：心地坦然、情绪稳定、生活节制。",
+      "tags": [
+        "长寿",
+        "心态",
+        "健康"
+      ]
+    },
+    {
+      "id": 24,
+      "figureId": "mao",
+      "dimensionId": "shen-ti",
+      "category": "经典语录",
+      "quote": "身体是革命的本钱。",
+      "source": "毛泽东名言",
+      "interpretation": "没有健康的身体，一切理想都是空谈。毛主席一生热爱游泳和登山，73岁还畅游长江。",
+      "tags": [
+        "健康",
+        "本钱",
+        "革命"
+      ]
+    },
+    {
+      "id": 25,
+      "figureId": "mao",
+      "dimensionId": "shen-ti",
+      "category": "故事与反思",
+      "quote": "游泳最大的好处是能锻炼意志。水很冷的时候，你敢不敢下？敢下，就锻炼了。",
+      "source": "毛主席谈体育锻炼",
+      "interpretation": "身体健康不只是生理问题，更是意志问题。在舒适区之外锤炼自己，身心俱强。",
+      "tags": [
+        "锻炼",
+        "意志",
+        "健康"
+      ]
+    },
+    {
+      "id": 26,
+      "figureId": "munger",
+      "dimensionId": "gong-zuo",
+      "category": "方法",
+      "quote": "用检查清单工作。飞行员、医生都用清单，为什么投资者不用？",
+      "source": "《穷查理宝典》",
+      "interpretation": "在重要决策前使用检查清单，避免因遗漏或情绪干扰而出错。这是芒格最重要的实践工具。",
+      "tags": [
+        "清单",
+        "方法",
+        "决策"
+      ]
+    },
+    {
+      "id": 27,
+      "figureId": "munger",
+      "dimensionId": "gong-zuo",
+      "category": "方法",
+      "quote": "双轨分析——先理性分析所有因素，再分析哪些心理偏误可能影响判断。两条轨道并行，缺一不可。",
+      "source": "哈佛大学演讲",
+      "interpretation": "真正的理性不是排除情绪，而是把心理偏误也纳入分析框架。知道自己可能在哪个环节犯错，就更能避免犯错。",
+      "tags": [
+        "分析",
+        "心理",
+        "方法"
+      ]
+    },
+    {
+      "id": 28,
+      "figureId": "mao",
+      "dimensionId": "gong-zuo",
+      "category": "方法",
+      "quote": "解剖麻雀——深入一个点，把问题彻底搞透，就能举一反三。",
+      "source": "《工作方法六十条》1958",
+      "interpretation": "与其泛泛了解一百个问题，不如把一个点彻底搞透。深度产生洞察，洞察产生方法论。",
+      "tags": [
+        "方法",
+        "深入",
+        "分析"
+      ]
+    },
+    {
+      "id": 29,
+      "figureId": "mao",
+      "dimensionId": "gong-zuo",
+      "category": "方法",
+      "quote": "以点带面，典型引路。突破一点，带动全局。",
+      "source": "《工作方法六十条》1958",
+      "interpretation": "工作中先抓一个试点，成功了再推广。这是降低试错成本、提高执行效率的根本方法。",
+      "tags": [
+        "试点",
+        "推广",
+        "方法"
+      ]
+    },
+    {
+      "id": 30,
+      "figureId": "munger",
+      "dimensionId": "ling-dao",
+      "category": "方法",
+      "quote": "以身作则是最重要的领导力。如果你要求别人做什么，你先做到。",
+      "source": "伯克希尔股东大会",
+      "interpretation": "管理者的行为比任何规章制度都更有说服力。要求别人的事，自己先做到。",
+      "tags": [
+        "领导力",
+        "以身作则",
+        "管理"
+      ]
+    },
+    {
+      "id": 31,
+      "figureId": "munger",
+      "dimensionId": "ling-dao",
+      "category": "方法",
+      "quote": "选对人比培养人更重要。你可以教会一只火鸡爬树，但不如直接雇一只松鼠。",
+      "source": "《穷查理宝典》",
+      "interpretation": "招聘是最重要的管理决策。选到对的人，管理就成功了一半。",
+      "tags": [
+        "招聘",
+        "用人",
+        "管理"
+      ]
+    },
+    {
+      "id": 32,
+      "figureId": "mao",
+      "dimensionId": "ling-dao",
+      "category": "方法论",
+      "quote": "领导者的责任，归结起来，主要是出主意、用干部两件事。",
+      "source": "《中国共产党在民族战争中的地位》1938",
+      "interpretation": "管理者的核心工作就两件：定方向（战略决策）和用对人（组织能力）。",
+      "tags": [
+        "领导力",
+        "战略",
+        "用人"
+      ]
+    },
+    {
+      "id": 33,
+      "figureId": "mao",
+      "dimensionId": "ling-dao",
+      "category": "方法论",
+      "quote": "从群众中来，到群众中去。集中起来，坚持下去。",
+      "source": "《关于领导方法的若干问题》1943",
+      "interpretation": "好的决策来自一线，好的执行回到一线。管理不是高高在上发号施令，而是收集-决策-验证的循环。",
+      "tags": [
+        "群众路线",
+        "决策",
+        "执行"
+      ]
+    },
+    {
+      "id": 34,
+      "figureId": "munger",
+      "dimensionId": "qi-jia",
+      "category": "人生智慧",
+      "quote": "身教重于言传。你对孩子最重要的教育不是你说什么，而是你做什么。",
+      "source": "《穷查理宝典》",
+      "interpretation": "芒格自己就是终生阅读者的典范，他的孩子们都养成了阅读习惯。教育孩子的最好方式是自己先做个好榜样。",
+      "tags": [
+        "教育",
+        "榜样",
+        "家庭"
+      ]
+    },
+    {
+      "id": 35,
+      "figureId": "munger",
+      "dimensionId": "qi-jia",
+      "category": "人生智慧",
+      "quote": "给孩子最好的礼物是：良好的价值观、良好的教育、阅读的习惯。",
+      "source": "伯克希尔股东大会",
+      "interpretation": "物质财富会消散，但价值观、教育、习惯是一辈子的财富。芒格把这三点排在金钱前面。",
+      "tags": [
+        "教育",
+        "价值观",
+        "家庭"
+      ]
+    },
+    {
+      "id": 36,
+      "figureId": "mao",
+      "dimensionId": "qi-jia",
+      "category": "故事与反思",
+      "quote": "恋亲不为亲徇私，念旧不为旧谋利，济亲不为亲撑腰。",
+      "source": "毛主席家风原则",
+      "interpretation": "在家庭与公义之间划出清晰的边界。不因亲情而损害原则，是齐家的最高标准。",
+      "tags": [
+        "家风",
+        "原则",
+        "教育"
+      ]
+    },
+    {
+      "id": 37,
+      "figureId": "munger",
+      "dimensionId": "li-xiang",
+      "category": "人生智慧",
+      "quote": "理性是一种道德责任。你有责任保持理性，因为你的非理性会伤害别人——包括你爱的人。",
+      "source": "《穷查理宝典》",
+      "interpretation": "理性不只是智商问题，更是一种道德选择。在非理性泛滥的世界里坚持理性，需要强大的内心。",
+      "tags": [
+        "理性",
+        "道德",
+        "境界"
+      ]
+    },
+    {
+      "id": 38,
+      "figureId": "munger",
+      "dimensionId": "li-xiang",
+      "category": "人生智慧",
+      "quote": "真正的富有不是拥有很多钱，而是拥有一个丰富的内心世界。",
+      "source": "Daily Journal 股东大会",
+      "interpretation": "芒格一生节俭，99岁还在每天阅读。对他来说，精神富足比物质富足重要得多。",
+      "tags": [
+        "富有",
+        "内心",
+        "境界"
+      ]
+    },
+    {
+      "id": 39,
+      "figureId": "mao",
+      "dimensionId": "li-xiang",
+      "category": "经典语录",
+      "quote": "为人民服务。",
+      "source": "《为人民服务》1944",
+      "interpretation": "五个字道尽了人生的最高境界。把个人价值融入到更宏大的事业中，是中国人最深的精神追求。",
+      "tags": [
+        "奉献",
+        "境界",
+        "理想"
+      ]
+    },
+    {
+      "id": 40,
+      "figureId": "mao",
+      "dimensionId": "li-xiang",
+      "category": "经典语录",
+      "quote": "星星之火，可以燎原。",
+      "source": "《星星之火，可以燎原》1930",
+      "interpretation": "在最黑暗的时刻看到希望，在最微小的力量中看到改变世界的力量。这不只是革命信念，也是创业者的精神底色。",
+      "tags": [
+        "信念",
+        "希望",
+        "理想"
+      ]
+    },
+    {
+      "id": 41,
+      "figureId": "mao",
+      "dimensionId": "li-xiang",
+      "category": "诗词",
+      "quote": "雄关漫道真如铁，而今迈步从头越。",
+      "source": "《忆秦娥·娄山关》1935",
+      "interpretation": "困难再大，也不过是从头越。毛主席在最艰难的长征途中写下此句，没有什么过不去的坎。",
+      "tags": [
+        "诗词",
+        "勇气",
+        "信念"
+      ]
+    }
+  ]
+}

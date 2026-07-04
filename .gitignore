@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Database
+*.db-shm
+*.db-wal
+
+# Server logs
+*.log
+/tmp/
+
+# OS
+.DS_Store
+*.swp
+*~
+
+# Screenshots (generated during development)
+screenshot-*.png

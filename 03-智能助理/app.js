@@ -1,0 +1,2291 @@
+/* ===== 智慧宝库 v2.2 - 125 entries, 23 figures ===== */
+const EMBEDDED_DATA = {
+  "dimensions": [
+    {
+      "id": "xiu-shen",
+      "name": "修身与学习",
+      "icon": "books",
+      "description": "如何持续学习、提升认知、自我修养",
+      "sort_order": 1
+    },
+    {
+      "id": "chuang-ye",
+      "name": "创业与事业",
+      "icon": "rocket",
+      "description": "从零到一、建立事业的核心方法论",
+      "sort_order": 2
+    },
+    {
+      "id": "tou-zi",
+      "name": "投资与理财",
+      "icon": "money",
+      "description": "价值投资、资产配置、风险管理",
+      "sort_order": 3
+    },
+    {
+      "id": "hun-yin",
+      "name": "婚姻与亲密关系",
+      "icon": "heart",
+      "description": "选择伴侣、经营关系和家庭的核心智慧",
+      "sort_order": 4
+    },
+    {
+      "id": "she-jiao",
+      "name": "社交与人脉",
+      "icon": "handshake",
+      "description": "建立信任、发展人脉、团结力量",
+      "sort_order": 5
+    },
+    {
+      "id": "shen-ti",
+      "name": "身体健康与养生",
+      "icon": "strong",
+      "description": "身体是革命的本钱——中医养生与健康管理",
+      "sort_order": 6
+    },
+    {
+      "id": "gong-zuo",
+      "name": "工作方法",
+      "icon": "bolt",
+      "description": "高效工作、科学决策的方法与工具",
+      "sort_order": 7
+    },
+    {
+      "id": "ling-dao",
+      "name": "领导力与管理",
+      "icon": "target",
+      "description": "带团队、做决策、建组织的根本智慧",
+      "sort_order": 8
+    },
+    {
+      "id": "qi-jia",
+      "name": "齐家与教育",
+      "icon": "home",
+      "description": "经营家庭、教育子女的智慧与方法",
+      "sort_order": 9
+    },
+    {
+      "id": "li-xiang",
+      "name": "理想与境界",
+      "icon": "star",
+      "description": "人生的终极追求、价值观与精神境界",
+      "sort_order": 10
+    }
+  ],
+  "figures": [
+    {
+      "id": "neill",
+      "name": "亚历山大·尼尔",
+      "short_name": "尼尔",
+      "title": "夏山学校创始人",
+      "description": "英国教育家，夏山学校的创办者，倡导自由教育的先驱。",
+      "color": "#D35400"
+    },
+    {
+      "id": "vygotsky",
+      "name": "列夫·维果茨基",
+      "short_name": "维果茨基",
+      "title": "发展心理学家",
+      "description": "苏联著名心理学家，提出最近发展区理论，对社会文化发展理论有奠基性贡献。",
+      "color": "#A569BD"
+    },
+    {
+      "id": "dweck",
+      "name": "卡罗尔·德韦克",
+      "short_name": "德韦克",
+      "title": "成长型思维提出者",
+      "description": "斯坦福大学心理学家，提出固定型思维与成长型思维理论，对教育领域影响深远。",
+      "color": "#1ABC9C"
+    },
+    {
+      "id": "kongzi",
+      "name": "孔子",
+      "short_name": "孔子",
+      "title": "儒家学派创始人",
+      "description": "孔子（前551-前479）是儒家学派创始人，中国古代最伟大的思想家和教育家。其思想核心是仁、礼、中庸。",
+      "color": "#D35400"
+    },
+    {
+      "id": "sunsimiao",
+      "name": "孙思邈",
+      "short_name": "孙思邈",
+      "title": "药王",
+      "description": "唐代著名医药学家，著有《千金要方》《千金翼方》，提出了系统的养生理论和方法。",
+      "color": "#58D68D"
+    },
+    {
+      "id": "zhangzhongjing",
+      "name": "张仲景",
+      "short_name": "张仲景",
+      "title": "医圣",
+      "description": "东汉著名医学家，著有《伤寒杂病论》，确立了辩证论治的中医临床原则，被尊为医圣。",
+      "color": "#2ECC71"
+    },
+    {
+      "id": "zengguofan",
+      "name": "曾国藩",
+      "short_name": "曾国藩",
+      "title": "晚清名臣 · 理学家",
+      "description": "曾国藩（1811-1872）是晚清中兴名臣，湘军创始人。他一生坚持修身齐家治国平天下，家书和日记是传统修身哲学的集大成者。",
+      "color": "#8E44AD"
+    },
+    {
+      "id": "franklin",
+      "name": "本杰明·富兰克林",
+      "short_name": "富兰克林",
+      "title": "美国开国元勋 · 发明家 · 作家",
+      "description": "本杰明·富兰克林（1706-1790）是美国开国元勋之一，发明家、作家、外交家。他的《富兰克林自传》和十三条美德修身法影响深远。",
+      "color": "#2980B9"
+    },
+    {
+      "id": "zhuyi",
+      "name": "朱震亨",
+      "short_name": "朱震亨",
+      "title": "滋阴派创始人",
+      "description": "元代著名医学家，金元四大家之一，提出了阳常有余阴常不足的养生思想。",
+      "color": "#52BE80"
+    },
+    {
+      "id": "munger",
+      "name": "查理·芒格",
+      "short_name": "芒格",
+      "title": "投资家 · 思想家 · 伯克希尔副董事长",
+      "description": "查理·芒格（1924-2023）是沃伦·巴菲特的长期搭档，伯克希尔·哈撒韦的副董事长。以多元思维模型、误判心理学、能力圈等思想著称。",
+      "color": "#1B4F72"
+    },
+    {
+      "id": "mao",
+      "name": "毛泽东",
+      "short_name": "毛主席",
+      "title": "革命家 · 战略家 · 诗人",
+      "description": "毛泽东（1893-1976）是中国共产党、中国人民解放军和中华人民共和国的主要创立者。他的哲学思想、军事思想和诗词创作对世界影响深远。",
+      "color": "#922B21"
+    },
+    {
+      "id": "wangyangming",
+      "name": "王阳明",
+      "short_name": "王阳明",
+      "title": "心学集大成者",
+      "description": "王阳明（1472-1529），明代著名哲学家、军事家，心学集大成者。提出知行合一、致良知的思想。",
+      "color": "#C0392B"
+    },
+    {
+      "id": "montessori",
+      "name": "玛丽亚·蒙特梭利",
+      "short_name": "蒙特梭利",
+      "title": "儿童教育革命家",
+      "description": "意大利第一位女医生，蒙特梭利教育法的创始人，强调儿童自主发展和有准备的环境。",
+      "color": "#E67E22"
+    },
+    {
+      "id": "chapman",
+      "name": "盖瑞·查普曼",
+      "short_name": "查普曼",
+      "title": "婚姻辅导专家",
+      "description": "盖瑞·查普曼博士是《爱的五种语言》作者，全球知名的婚姻辅导专家。",
+      "color": "#AF7AC5"
+    },
+    {
+      "id": "nelsen",
+      "name": "简·尼尔森",
+      "short_name": "尼尔森",
+      "title": "正面管教创始人",
+      "description": "简·尼尔森是正面管教理论的创始人，倡导和善而坚定的教育理念。",
+      "color": "#F39C12"
+    },
+    {
+      "id": "gottman",
+      "name": "约翰·戈特曼",
+      "short_name": "戈特曼",
+      "title": "婚姻研究泰斗",
+      "description": "约翰·戈特曼是华盛顿大学心理学教授，通过对上千对夫妻的长期观察研究，提出了婚姻幸福的科学法则。",
+      "color": "#117A65"
+    },
+    {
+      "id": "bowlby",
+      "name": "约翰·鲍比",
+      "short_name": "鲍比",
+      "title": "依恋理论创始人",
+      "description": "约翰·鲍比是英国心理学家，依恋理论的奠基人，对儿童发展和亲密关系研究产生了革命性影响。",
+      "color": "#5DADE2"
+    },
+    {
+      "id": "sternberg",
+      "name": "罗伯特·斯滕伯格",
+      "short_name": "斯滕伯格",
+      "title": "爱情心理学专家",
+      "description": "罗伯特·斯滕伯格提出了爱情三角理论，是当代爱情心理学的重要理论家。",
+      "color": "#48C9B0"
+    },
+    {
+      "id": "miller",
+      "name": "罗兰·米勒",
+      "short_name": "米勒",
+      "title": "亲密关系研究权威",
+      "description": "罗兰·米勒是美国心理学家，以《亲密关系》一书闻名，系统整合了人际关系科学数十年的研究成果。",
+      "color": "#2E86C1"
+    },
+    {
+      "id": "laozi",
+      "name": "老子",
+      "short_name": "老子",
+      "title": "道家学派创始人",
+      "description": "老子，春秋时期思想家，道家学派创始人，著有《道德经》。其思想以道为核心，主张无为而治、顺应自然。",
+      "color": "#16A085"
+    },
+    {
+      "id": "chenheqin",
+      "name": "陈鹤琴",
+      "short_name": "陈鹤琴",
+      "title": "中国幼教之父",
+      "description": "陈鹤琴是中国现代幼儿教育的奠基人，提出活教育理论，是中国教育史上的重要人物。",
+      "color": "#2874A6"
+    },
+    {
+      "id": "aurelius",
+      "name": "马可·奥勒留",
+      "short_name": "奥勒留",
+      "title": "罗马皇帝 · 斯多葛哲学家",
+      "description": "马可·奥勒留（121-180）是罗马五贤帝之一，斯多葛哲学代表。他的《沉思录》探讨了理性、道德、内心平静等永恒主题。",
+      "color": "#7F8C8D"
+    },
+    {
+      "id": "huangdi",
+      "name": "黄帝内经",
+      "short_name": "黄帝内经",
+      "title": "中医经典之首",
+      "description": "中国最早的医学典籍，奠定了中医学的理论基础，被誉为医之始祖，涵盖养生、病理、诊断、治疗等。",
+      "color": "#27AE60"
+    }
+  ],
+  "entries": [
+    {
+      "id": 1,
+      "figure_id": "munger",
+      "dimension_id": "xiu-shen",
+      "category": "核心思想",
+      "quote": "每天起床的时候，争取变得比你从前更聪明一点。慢慢地，你会有所进步。每天慢慢往前挪一点。到最后——如果你足够长寿的话——大多数人得到了他们应得的东西。",
+      "source": "《穷查理宝典》",
+      "interpretation": "复利不仅适用于财富，也适用于知识。每天进步一点点，长期积累的效果惊人。",
+      "tags": "学习,复利,终身学习,积累",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "查理·芒格",
+      "dimension_name": "修身与学习"
+    },
+    {
+      "id": 2,
+      "figure_id": "munger",
+      "dimension_id": "xiu-shen",
+      "category": "方法",
+      "quote": "我见过的所有聪明人，没有一个不大量阅读的——没有，一个都没有。",
+      "source": "伯克希尔股东大会",
+      "interpretation": "阅读是构建多元思维模型的基础。芒格被称为长着两条腿的书架。",
+      "tags": "阅读,学习,方法",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "查理·芒格",
+      "dimension_name": "修身与学习"
+    },
+    {
+      "id": 3,
+      "figure_id": "munger",
+      "dimension_id": "xiu-shen",
+      "category": "核心思想",
+      "quote": "手里拿着锤子的人，看什么都像钉子。",
+      "source": "《穷查理宝典》",
+      "interpretation": "单一学科视角是认知的最大局限。必须建立多学科的思维模型格栅。",
+      "tags": "多元思维,认知,方法",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "查理·芒格",
+      "dimension_name": "修身与学习"
+    },
+    {
+      "id": 4,
+      "figure_id": "mao",
+      "dimension_id": "xiu-shen",
+      "category": "经典语录",
+      "quote": "好好学习，天天向上。",
+      "source": "1949年题词",
+      "interpretation": "最简单也最深刻的劝学箴言。学的方向、学的方法、学的态度，都在八个字里。",
+      "tags": "学习,成长",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "毛泽东",
+      "dimension_name": "修身与学习"
+    },
+    {
+      "id": 5,
+      "figure_id": "mao",
+      "dimension_id": "xiu-shen",
+      "category": "核心思想",
+      "quote": "读书是学习，使用也是学习，而且是更重要的学习。",
+      "source": "《中国革命战争的战略问题》1936",
+      "interpretation": "理论必须联系实际。从实践中学习、在干中学，才是真正有效的学习方式。",
+      "tags": "学习,实践,方法",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "毛泽东",
+      "dimension_name": "修身与学习"
+    },
+    {
+      "id": 6,
+      "figure_id": "mao",
+      "dimension_id": "xiu-shen",
+      "category": "方法论",
+      "quote": "没有调查就没有发言权。",
+      "source": "《反对本本主义》1930",
+      "interpretation": "不了解情况就不要轻易下结论。既是学习方法，也是决策原则。",
+      "tags": "调查,学习,决策",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "毛泽东",
+      "dimension_name": "修身与学习"
+    },
+    {
+      "id": 7,
+      "figure_id": "munger",
+      "dimension_id": "chuang-ye",
+      "category": "核心思想",
+      "quote": "找到一个你感兴趣并且有天赋的领域，然后全身心投入。",
+      "source": "南加州大学演讲",
+      "interpretation": "事业成功的起点是兴趣与能力的交叉点。不要为了钱去做自己不喜欢的事。",
+      "tags": "创业,事业,热情",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "查理·芒格",
+      "dimension_name": "创业与事业"
+    },
+    {
+      "id": 8,
+      "figure_id": "munger",
+      "dimension_id": "chuang-ye",
+      "category": "投资哲学",
+      "quote": "最好的生意是拥有护城河的生意。护城河可以是品牌、专利、规模优势、网络效应或者特许经营权。",
+      "source": "《穷查理宝典》",
+      "interpretation": "建立持续的竞争优势是事业长青的关键。",
+      "tags": "护城河,竞争,商业",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "查理·芒格",
+      "dimension_name": "创业与事业"
+    },
+    {
+      "id": 9,
+      "figure_id": "mao",
+      "dimension_id": "chuang-ye",
+      "category": "方法论",
+      "quote": "调查就像十月怀胎，解决问题就像一朝分娩。调查就是解决问题。",
+      "source": "《反对本本主义》",
+      "interpretation": "创业初期不要急于行动，先把市场、用户、竞争格局调查清楚。",
+      "tags": "创业,调研,方法",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "毛泽东",
+      "dimension_name": "创业与事业"
+    },
+    {
+      "id": 10,
+      "figure_id": "mao",
+      "dimension_id": "chuang-ye",
+      "category": "方法论",
+      "quote": "集中优势兵力，各个歼灭敌人。",
+      "source": "《集中优势兵力，各个歼灭敌人》1946",
+      "interpretation": "创业者在资源有限时聚焦到最有可能突破的点上，打歼灭战而不是消耗战。",
+      "tags": "战略,聚焦,创业",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "毛泽东",
+      "dimension_name": "创业与事业"
+    },
+    {
+      "id": 11,
+      "figure_id": "munger",
+      "dimension_id": "tou-zi",
+      "category": "投资哲学",
+      "quote": "以合理的价格买入优秀的公司，远胜于以便宜的价格买入平庸的公司。",
+      "source": "《穷查理宝典》",
+      "interpretation": "质量比价格更重要。好公司即使买得稍贵，长期回报也远超烂公司的便宜货。",
+      "tags": "价值投资,质量,长期",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "查理·芒格",
+      "dimension_name": "投资与理财"
+    },
+    {
+      "id": 12,
+      "figure_id": "munger",
+      "dimension_id": "tou-zi",
+      "category": "投资哲学",
+      "quote": "一生只需做少数几个重大的决策，然后持有。剩下的时间，你什么都不用做，坐在那里等着就好。",
+      "source": "Daily Journal 股东大会",
+      "interpretation": "投资不是越勤奋回报越高。关键在于少数几个关键决策的正确性。",
+      "tags": "耐心,长期,少即是多",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "查理·芒格",
+      "dimension_name": "投资与理财"
+    },
+    {
+      "id": 13,
+      "figure_id": "munger",
+      "dimension_id": "tou-zi",
+      "category": "方法论",
+      "quote": "如果我知道我会死在哪里，我就永远不会去那个地方。",
+      "source": "哈佛大学演讲",
+      "interpretation": "反过来想——与其研究如何成功，不如先研究如何避免失败。",
+      "tags": "反向思维,风险,方法",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "查理·芒格",
+      "dimension_name": "投资与理财"
+    },
+    {
+      "id": 14,
+      "figure_id": "mao",
+      "dimension_id": "tou-zi",
+      "category": "方法论",
+      "quote": "不打无准备之仗，不打无把握之仗。每战都应力求有准备。",
+      "source": "《目前形势和我们的任务》",
+      "interpretation": "投资中的每笔交易都应该是有所准备的：充分研究、设定赔率、控制仓位。",
+      "tags": "准备,风险,投资",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "毛泽东",
+      "dimension_name": "投资与理财"
+    },
+    {
+      "id": 15,
+      "figure_id": "mao",
+      "dimension_id": "tou-zi",
+      "category": "方法论",
+      "quote": "战略上藐视敌人，战术上重视敌人。",
+      "source": "《关于目前党的政策中的几个重要问题》",
+      "interpretation": "长期投资中要相信复利的力量，但每一次具体的投资决策要极度审慎。",
+      "tags": "战略,战术,心态",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "毛泽东",
+      "dimension_name": "投资与理财"
+    },
+    {
+      "id": 16,
+      "figure_id": "munger",
+      "dimension_id": "hun-yin",
+      "category": "人生智慧",
+      "quote": "找到一位好配偶的最佳办法是你先成为一位好配偶。",
+      "source": "《穷查理宝典》",
+      "interpretation": "在关系中你唯一能控制的是你自己。想要什么样的伴侣，先成为什么样的人。",
+      "tags": "婚姻,修身,关系",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "查理·芒格",
+      "dimension_name": "婚姻与亲密关系"
+    },
+    {
+      "id": 17,
+      "figure_id": "munger",
+      "dimension_id": "hun-yin",
+      "category": "人生智慧",
+      "quote": "和比你强的人结婚。和比你强的人一起生活，你会变得更好。这是你一生中最重要的决定。",
+      "source": "伯克希尔股东大会",
+      "interpretation": "选择伴侣是人生最重要的投资之一。找到一个能让你变得更好的人，比任何财富都重要。",
+      "tags": "婚姻,选择,成长",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "查理·芒格",
+      "dimension_name": "婚姻与亲密关系"
+    },
+    {
+      "id": 18,
+      "figure_id": "mao",
+      "dimension_id": "hun-yin",
+      "category": "思想",
+      "quote": "婚姻应以爱情为基础，提倡男女平等，反对男尊女卑。",
+      "source": "新中国成立后婚姻法改革",
+      "interpretation": "婚姻法改革第一次从法律上确立婚姻自由、男女平等。",
+      "tags": "婚姻,平等,社会变革",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "毛泽东",
+      "dimension_name": "婚姻与亲密关系"
+    },
+    {
+      "id": 19,
+      "figure_id": "munger",
+      "dimension_id": "she-jiao",
+      "category": "人生智慧",
+      "quote": "信任是最重要的社交货币。你的声誉可能需要20年才能建立，但5分钟就能毁掉。",
+      "source": "《穷查理宝典》",
+      "interpretation": "不要做任何可能损害你声誉的事。信任一旦失去，几乎不可能重建。",
+      "tags": "信任,声誉,社交",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "查理·芒格",
+      "dimension_name": "社交与人脉"
+    },
+    {
+      "id": 20,
+      "figure_id": "munger",
+      "dimension_id": "she-jiao",
+      "category": "方法论",
+      "quote": "和优秀的人在一起，你也会变得优秀。",
+      "source": "《穷查理宝典》",
+      "interpretation": "选择你的圈子。圈子是你认知和行为的平均。选对人，事就成了大半。",
+      "tags": "社交,选择,圈子",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "查理·芒格",
+      "dimension_name": "社交与人脉"
+    },
+    {
+      "id": 21,
+      "figure_id": "mao",
+      "dimension_id": "she-jiao",
+      "category": "方法论",
+      "quote": "把朋友搞得多多的，把敌人搞得少少的。",
+      "source": "抗战时期统战思想",
+      "interpretation": "人际关系中的统一战线——尽可能扩大合作面，缩小对立面。这是战略智慧。",
+      "tags": "社交,统战,战略",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "毛泽东",
+      "dimension_name": "社交与人脉"
+    },
+    {
+      "id": 22,
+      "figure_id": "mao",
+      "dimension_id": "she-jiao",
+      "category": "方法论",
+      "quote": "团结一切可以团结的力量。",
+      "source": "《论联合政府》",
+      "interpretation": "不要因为小分歧就放弃大合作。在原则不动摇的前提下尽可能扩大共识。",
+      "tags": "团结,合作,社交",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "毛泽东",
+      "dimension_name": "社交与人脉"
+    },
+    {
+      "id": 23,
+      "figure_id": "munger",
+      "dimension_id": "shen-ti",
+      "category": "人生智慧",
+      "quote": "长寿的秘诀：不嫉妒，不怨恨，不过度消费。保持乐观，和快乐的人在一起。",
+      "source": "《穷查理宝典》",
+      "interpretation": "芒格活到99岁，长寿哲学极其简单：心地坦然、情绪稳定、生活节制。",
+      "tags": "长寿,心态,健康",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "查理·芒格",
+      "dimension_name": "身体健康与养生"
+    },
+    {
+      "id": 24,
+      "figure_id": "mao",
+      "dimension_id": "shen-ti",
+      "category": "经典语录",
+      "quote": "身体是革命的本钱。",
+      "source": "毛泽东名言",
+      "interpretation": "没有健康的身体，一切理想都是空谈。毛主席一生热爱游泳和登山，73岁还畅游长江。",
+      "tags": "健康,本钱,革命",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "毛泽东",
+      "dimension_name": "身体健康与养生"
+    },
+    {
+      "id": 25,
+      "figure_id": "mao",
+      "dimension_id": "shen-ti",
+      "category": "故事",
+      "quote": "游泳最大的好处是能锻炼意志。水很冷的时候，你敢不敢下？敢下，就锻炼了。",
+      "source": "毛主席谈体育锻炼",
+      "interpretation": "身体健康不只是生理问题，更是意志问题。在舒适区之外锤炼自己。",
+      "tags": "锻炼,意志,健康",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "毛泽东",
+      "dimension_name": "身体健康与养生"
+    },
+    {
+      "id": 26,
+      "figure_id": "munger",
+      "dimension_id": "gong-zuo",
+      "category": "方法论",
+      "quote": "用检查清单工作。飞行员、医生都用清单，为什么投资者不用？",
+      "source": "《穷查理宝典》",
+      "interpretation": "在重要决策前使用检查清单，避免因遗漏或情绪干扰而出错。",
+      "tags": "清单,方法,决策",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "查理·芒格",
+      "dimension_name": "工作方法"
+    },
+    {
+      "id": 27,
+      "figure_id": "munger",
+      "dimension_id": "gong-zuo",
+      "category": "方法论",
+      "quote": "双轨分析——先理性分析所有因素，再分析哪些心理偏误可能影响判断。",
+      "source": "哈佛大学演讲",
+      "interpretation": "真正的理性是把心理偏误也纳入分析框架。",
+      "tags": "分析,心理,方法",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "查理·芒格",
+      "dimension_name": "工作方法"
+    },
+    {
+      "id": 28,
+      "figure_id": "mao",
+      "dimension_id": "gong-zuo",
+      "category": "方法论",
+      "quote": "解剖麻雀——深入一个点，把问题彻底搞透，就能举一反三。",
+      "source": "《工作方法六十条》",
+      "interpretation": "与其泛泛了解一百个问题，不如把一个点彻底搞透。",
+      "tags": "方法,深入,分析",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "毛泽东",
+      "dimension_name": "工作方法"
+    },
+    {
+      "id": 29,
+      "figure_id": "mao",
+      "dimension_id": "gong-zuo",
+      "category": "方法论",
+      "quote": "以点带面，典型引路。突破一点，带动全局。",
+      "source": "《工作方法六十条》",
+      "interpretation": "工作中先抓一个试点，成功了再推广。降低试错成本。",
+      "tags": "试点,推广,方法",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "毛泽东",
+      "dimension_name": "工作方法"
+    },
+    {
+      "id": 30,
+      "figure_id": "munger",
+      "dimension_id": "ling-dao",
+      "category": "方法论",
+      "quote": "以身作则是最重要的领导力。如果你要求别人做什么，你先做到。",
+      "source": "伯克希尔股东大会",
+      "interpretation": "管理者的行为比任何规章制度都更有说服力。",
+      "tags": "领导力,以身作则,管理",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "查理·芒格",
+      "dimension_name": "领导力与管理"
+    },
+    {
+      "id": 31,
+      "figure_id": "munger",
+      "dimension_id": "ling-dao",
+      "category": "方法论",
+      "quote": "选对人比培养人更重要。",
+      "source": "《穷查理宝典》",
+      "interpretation": "招聘是最重要的管理决策。选到对的人，管理就成功了一半。",
+      "tags": "招聘,用人,管理",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "查理·芒格",
+      "dimension_name": "领导力与管理"
+    },
+    {
+      "id": 32,
+      "figure_id": "mao",
+      "dimension_id": "ling-dao",
+      "category": "方法论",
+      "quote": "领导者的责任，归结起来，主要是出主意、用干部两件事。",
+      "source": "《中国共产党在民族战争中的地位》",
+      "interpretation": "管理者的核心工作就两件：定方向和用对人。",
+      "tags": "领导力,战略,用人",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "毛泽东",
+      "dimension_name": "领导力与管理"
+    },
+    {
+      "id": 33,
+      "figure_id": "mao",
+      "dimension_id": "ling-dao",
+      "category": "方法论",
+      "quote": "从群众中来，到群众中去。集中起来，坚持下去。",
+      "source": "《关于领导方法的若干问题》",
+      "interpretation": "好的决策来自一线，好的执行回到一线。",
+      "tags": "群众路线,决策,执行",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "毛泽东",
+      "dimension_name": "领导力与管理"
+    },
+    {
+      "id": 34,
+      "figure_id": "munger",
+      "dimension_id": "qi-jia",
+      "category": "人生智慧",
+      "quote": "身教重于言传。你对孩子最重要的教育不是你说什么，而是你做什么。",
+      "source": "《穷查理宝典》",
+      "interpretation": "芒格自己就是终生阅读者的典范，教育孩子的最好方式是自己先做好榜样。",
+      "tags": "教育,榜样,家庭",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "查理·芒格",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 35,
+      "figure_id": "munger",
+      "dimension_id": "qi-jia",
+      "category": "人生智慧",
+      "quote": "给孩子最好的礼物是：良好的价值观、良好的教育、阅读的习惯。",
+      "source": "伯克希尔股东大会",
+      "interpretation": "物质财富会消散，但价值观、教育、习惯是一辈子的财富。",
+      "tags": "教育,价值观,家庭",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "查理·芒格",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 36,
+      "figure_id": "mao",
+      "dimension_id": "qi-jia",
+      "category": "家风",
+      "quote": "恋亲不为亲徇私，念旧不为旧谋利，济亲不为亲撑腰。",
+      "source": "毛主席家风原则",
+      "interpretation": "在家庭与公义之间划出清晰边界。不因亲情而损害原则。",
+      "tags": "家风,原则,教育",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "毛泽东",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 37,
+      "figure_id": "munger",
+      "dimension_id": "li-xiang",
+      "category": "人生智慧",
+      "quote": "理性是一种道德责任。你有责任保持理性，因为你的非理性会伤害别人。",
+      "source": "《穷查理宝典》",
+      "interpretation": "理性不只是智商问题，更是一种道德选择。需要强大的内心。",
+      "tags": "理性,道德,境界",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "查理·芒格",
+      "dimension_name": "理想与境界"
+    },
+    {
+      "id": 38,
+      "figure_id": "munger",
+      "dimension_id": "li-xiang",
+      "category": "人生智慧",
+      "quote": "真正的富有不是拥有很多钱，而是拥有一个丰富的内心世界。",
+      "source": "Daily Journal 股东大会",
+      "interpretation": "芒格一生节俭，精神富足比物质富足重要得多。",
+      "tags": "富有,内心,境界",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "查理·芒格",
+      "dimension_name": "理想与境界"
+    },
+    {
+      "id": 39,
+      "figure_id": "mao",
+      "dimension_id": "li-xiang",
+      "category": "经典语录",
+      "quote": "为人民服务。",
+      "source": "《为人民服务》1944",
+      "interpretation": "五个字道尽人生最高境界。",
+      "tags": "奉献,境界,理想",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "毛泽东",
+      "dimension_name": "理想与境界"
+    },
+    {
+      "id": 40,
+      "figure_id": "mao",
+      "dimension_id": "li-xiang",
+      "category": "经典语录",
+      "quote": "星星之火，可以燎原。",
+      "source": "《星星之火，可以燎原》1930",
+      "interpretation": "在最微小的力量中看到改变世界的力量。",
+      "tags": "信念,希望,理想",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "毛泽东",
+      "dimension_name": "理想与境界"
+    },
+    {
+      "id": 41,
+      "figure_id": "mao",
+      "dimension_id": "li-xiang",
+      "category": "诗词",
+      "quote": "雄关漫道真如铁，而今迈步从头越。",
+      "source": "《忆秦娥·娄山关》1935",
+      "interpretation": "没有什么过不去的坎。",
+      "tags": "诗词,勇气,信念",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "毛泽东",
+      "dimension_name": "理想与境界"
+    },
+    {
+      "id": 42,
+      "figure_id": "miller",
+      "dimension_id": "hun-yin",
+      "category": "核心理论",
+      "quote": "人与人之间产生吸引力的基本假设是：他人的出现对我们有奖赏意义。影响吸引力的因素包括接近性、相似性和互惠性。",
+      "source": "《亲密关系》第3章",
+      "interpretation": "多接触、找共同点、表现好感——这是建立亲密关系最基础的三步。",
+      "tags": "吸引力,接近,相似,互惠",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "罗兰·米勒",
+      "dimension_name": "婚姻与亲密关系"
+    },
+    {
+      "id": 43,
+      "figure_id": "miller",
+      "dimension_id": "hun-yin",
+      "category": "核心理论",
+      "quote": "依恋类型分为安全型、焦虑型、回避型三种。安全型的人更容易建立健康稳定的亲密关系。",
+      "source": "《亲密关系》第6章",
+      "interpretation": "了解自己的依恋类型是改善亲密关系的第一步。安全型是最理想的状态，但后天可以调整。",
+      "tags": "依恋理论,安全型,关系",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "罗兰·米勒",
+      "dimension_name": "婚姻与亲密关系"
+    },
+    {
+      "id": 44,
+      "figure_id": "miller",
+      "dimension_id": "hun-yin",
+      "category": "核心理论",
+      "quote": "亲密关系的满意度取决于：奖赏减去成本。但真正维系长期关系的是承诺——希望关系继续的主观意愿。",
+      "source": "《亲密关系》第10章",
+      "interpretation": "不要只计算眼前的得失，承诺是关系穿越低谷的保障。",
+      "tags": "承诺,满意度,长期",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "罗兰·米勒",
+      "dimension_name": "婚姻与亲密关系"
+    },
+    {
+      "id": 45,
+      "figure_id": "miller",
+      "dimension_id": "hun-yin",
+      "category": "方法",
+      "quote": "高质量沟通的核心是：精确表述、积极倾听、保持礼貌和确认对方。沟通不良是关系破裂的首要原因。",
+      "source": "《亲密关系》第8章",
+      "interpretation": "吵架时试试：用第一人称表达感受（我感到...），而不是指责对方。",
+      "tags": "沟通,倾听,表达",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "罗兰·米勒",
+      "dimension_name": "婚姻与亲密关系"
+    },
+    {
+      "id": 46,
+      "figure_id": "gottman",
+      "dimension_id": "hun-yin",
+      "category": "核心理论",
+      "quote": "幸福的婚姻基于深厚的友谊——彼此熟悉对方的世界，这种了解被称为爱情地图。",
+      "source": "《幸福的婚姻》",
+      "interpretation": "爱情地图需要不断更新。定期了解伴侣最近在想什么、在忙什么、有什么新变化。",
+      "tags": "爱情地图,婚姻,友谊",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "约翰·戈特曼",
+      "dimension_name": "婚姻与亲密关系"
+    },
+    {
+      "id": 47,
+      "figure_id": "gottman",
+      "dimension_id": "hun-yin",
+      "category": "预警",
+      "quote": "婚姻有四大致命沟通方式：批评、鄙视、辩护、冷战。尤其鄙视是最危险的信号。",
+      "source": "《幸福的婚姻》",
+      "interpretation": "若发现自己在关系中频繁使用这四种沟通方式，说明关系已经亮起红灯。",
+      "tags": "批评,鄙视,冷战,预警",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "约翰·戈特曼",
+      "dimension_name": "婚姻与亲密关系"
+    },
+    {
+      "id": 48,
+      "figure_id": "gottman",
+      "dimension_id": "hun-yin",
+      "category": "核心理论",
+      "quote": "健康婚姻中积极互动与消极互动的比例至少为5:1。一个批评需要五个温暖时刻来弥补。",
+      "source": "《幸福的婚姻》",
+      "interpretation": "刻意增加日常的小温暖——问候、微笑、感谢——这些小事构筑了关系的免疫系统。",
+      "tags": "积极互动,婚姻,修复",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "约翰·戈特曼",
+      "dimension_name": "婚姻与亲密关系"
+    },
+    {
+      "id": 49,
+      "figure_id": "chapman",
+      "dimension_id": "hun-yin",
+      "category": "核心理论",
+      "quote": "每个人都有自己偏好的爱的语言：肯定的言辞、精心的时刻、接受礼物、服务的行动、身体的接触。",
+      "source": "《爱的五种语言》",
+      "interpretation": "用对方偏爱的语言表达爱，而不是用你以为好的方式。对一个人好的方式，可能不是对方需要的。",
+      "tags": "爱的语言,表达,理解",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "盖瑞·查普曼",
+      "dimension_name": "婚姻与亲密关系"
+    },
+    {
+      "id": 50,
+      "figure_id": "bowlby",
+      "dimension_id": "hun-yin",
+      "category": "核心理论",
+      "quote": "童年与照顾者形成的依恋关系会深刻影响成年后的亲密关系模式。安全的依恋是健康发展的基础。",
+      "source": "依恋理论",
+      "interpretation": "童年经历塑造了我们在关系中的行为模式。觉察自己的模式是改变的第一步。",
+      "tags": "依恋,童年,安全基地",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "约翰·鲍比",
+      "dimension_name": "婚姻与亲密关系"
+    },
+    {
+      "id": 51,
+      "figure_id": "sternberg",
+      "dimension_id": "hun-yin",
+      "category": "核心理论",
+      "quote": "完美的爱情由三个成分构成：亲密（情感连接）、激情（驱动力）、承诺（决定维持关系）。三者缺一不可。",
+      "source": "爱情三角理论",
+      "interpretation": "热恋之初激情澎湃，但长期关系需要三者均衡发展。婚姻的本质是承诺的持续巩固。",
+      "tags": "爱情三角,亲密,激情,承诺",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "罗伯特·斯滕伯格",
+      "dimension_name": "婚姻与亲密关系"
+    },
+    {
+      "id": 52,
+      "figure_id": "gottman",
+      "dimension_id": "hun-yin",
+      "category": "方法",
+      "quote": "婚姻中69%的问题是无解的，源于性格差异。幸福夫妻的秘诀不是解决所有问题，而是学会与问题共处。",
+      "source": "《幸福的婚姻》",
+      "interpretation": "别试图改造对方。接受彼此的差异，找到共处的方式，比强行解决问题更明智。",
+      "tags": "差异,接纳,共处",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "约翰·戈特曼",
+      "dimension_name": "婚姻与亲密关系"
+    },
+    {
+      "id": 53,
+      "figure_id": "miller",
+      "dimension_id": "hun-yin",
+      "category": "方法",
+      "quote": "自我表露是亲密关系发展的核心机制。适当逐步地分享个人信息能显著增强亲密感。",
+      "source": "《亲密关系》",
+      "interpretation": "关系需要逐步深入，不要一开始就全盘托出，也不要长期封闭自己。节奏比速度重要。",
+      "tags": "自我表露,亲密,信任建立",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "罗兰·米勒",
+      "dimension_name": "婚姻与亲密关系"
+    },
+    {
+      "id": 54,
+      "figure_id": "gottman",
+      "dimension_id": "hun-yin",
+      "category": "方法",
+      "quote": "柔和的开始对话是解决冲突的第一步。用抱怨代替指责，用请求代替要求。",
+      "source": "《幸福的婚姻》",
+      "interpretation": "想把事情谈好？第一句话的语气就决定了结局。别以攻击开始。",
+      "tags": "冲突解决,沟通技巧,柔和",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "约翰·戈特曼",
+      "dimension_name": "婚姻与亲密关系"
+    },
+    {
+      "id": 55,
+      "figure_id": "miller",
+      "dimension_id": "hun-yin",
+      "category": "核心理论",
+      "quote": "关系的消亡往往不是因为巨大的冲突，而是因为日常的忽视和疏离。珍惜日常的细微互动。",
+      "source": "《亲密关系》",
+      "interpretation": "大冲突可以修复，但日复一日的冷漠慢慢杀死关系。重视日常的联结。",
+      "tags": "日常,忽视,联结",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "罗兰·米勒",
+      "dimension_name": "婚姻与亲密关系"
+    },
+    {
+      "id": 56,
+      "figure_id": "bowlby",
+      "dimension_id": "hun-yin",
+      "category": "核心理论",
+      "quote": "人类天生具有与重要他人建立亲密联结的需求。被理解、被支持、被接纳是基本心理需求。",
+      "source": "依恋理论",
+      "interpretation": "承认自己对亲密关系的需求不是软弱，而是人类本能。",
+      "tags": "需求,联结,安全",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "约翰·鲍比",
+      "dimension_name": "婚姻与亲密关系"
+    },
+    {
+      "id": 57,
+      "figure_id": "montessori",
+      "dimension_id": "qi-jia",
+      "category": "核心理论",
+      "quote": "儿童具有吸收性心智（0-6岁），无需刻意教导，通过环境中的体验就能自然地学习和发展。",
+      "source": "蒙特梭利教育法",
+      "interpretation": "为孩子创造丰富的环境比直接教更重要。语言、文化、社交能力都在日常环境中自然吸收。",
+      "tags": "吸收性心智,蒙特梭利,环境",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "玛丽亚·蒙特梭利",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 58,
+      "figure_id": "montessori",
+      "dimension_id": "qi-jia",
+      "category": "核心理论",
+      "quote": "儿童发展有特定的敏感期：语言敏感期（0-6岁）、秩序敏感期（2-4岁）、感官精致化敏感期（2-6岁）等。",
+      "source": "蒙特梭利教育法",
+      "interpretation": "在敏感期内，儿童学习某种能力事半功倍。错过了虽然可以补，但难度大得多。",
+      "tags": "敏感期,蒙特梭利,发展",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "玛丽亚·蒙特梭利",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 59,
+      "figure_id": "montessori",
+      "dimension_id": "qi-jia",
+      "category": "核心理论",
+      "quote": "有准备的环境是教育的核心——环境应该适应儿童的发展需要，而非让儿童适应环境。",
+      "source": "蒙特梭利教育法",
+      "interpretation": "在家里设置低矮的家具、可触及的用品、适合孩子尺寸的工具，让孩子能自主行动。",
+      "tags": "环境,自主,蒙特梭利",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "玛丽亚·蒙特梭利",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 60,
+      "figure_id": "montessori",
+      "dimension_id": "qi-jia",
+      "category": "核心理论",
+      "quote": "跟随儿童。成人不应强迫儿童学习，而应观察儿童的兴趣和发展的需求，提供合适的引导。",
+      "source": "蒙特梭利教育法",
+      "interpretation": "尊重孩子的节奏和选择。你的任务是观察和准备，而不是推动和安排。",
+      "tags": "跟随儿童,观察,引导",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "玛丽亚·蒙特梭利",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 61,
+      "figure_id": "nelsen",
+      "dimension_id": "qi-jia",
+      "category": "核心理论",
+      "quote": "正面管教的核心理念是和善而坚定。和善表达尊重，坚定尊重自己和规则。",
+      "source": "《正面管教》",
+      "interpretation": "既不要溺爱（和善不坚定），也不要严厉（坚定不和善）。中间那条路最难也最有效。",
+      "tags": "正面管教,和善,坚定",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "简·尼尔森",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 62,
+      "figure_id": "nelsen",
+      "dimension_id": "qi-jia",
+      "category": "核心理论",
+      "quote": "错误是学习的好机会。孩子犯错时，重点不是惩罚，而是引导他从错误中学习和成长。",
+      "source": "《正面管教》",
+      "interpretation": "惩罚教会孩子的是如何逃避惩罚，而不是如何改正。让孩子从后果中学习。",
+      "tags": "错误,学习,成长",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "简·尼尔森",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 63,
+      "figure_id": "vygotsky",
+      "dimension_id": "qi-jia",
+      "category": "核心理论",
+      "quote": "最近发展区：孩子独立解决问题的能力与在成人帮助下能解决的问题之间的差距，是最佳教学区。",
+      "source": "最近发展区理论",
+      "interpretation": "教孩子要在他的最近发展区内：太难会挫败，太简单会无聊。帮他够一够能到的地方。",
+      "tags": "最近发展区,教学,脚手架",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "列夫·维果茨基",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 64,
+      "figure_id": "neill",
+      "dimension_id": "qi-jia",
+      "category": "核心理论",
+      "quote": "给孩子自由，让他们按自己的意愿发展，但同时让他们承担自己选择的后果。自由与责任是一体两面。",
+      "source": "《夏山学校》",
+      "interpretation": "过度管教会扼杀孩子的内在动力。真正的教育是信任孩子有自我发展的能力。",
+      "tags": "自由,责任,夏山学校",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "亚历山大·尼尔",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 65,
+      "figure_id": "chenheqin",
+      "dimension_id": "qi-jia",
+      "category": "核心理论",
+      "quote": "活教育理论：做中教、做中学、做中求进步。凡是儿童自己能做的，让他自己做。",
+      "source": "陈鹤琴教育思想",
+      "interpretation": "动手实践是儿童最好的学习方式。包办代替不仅累了自己，也剥夺了孩子成长的机会。",
+      "tags": "活教育,实践,自主",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "陈鹤琴",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 66,
+      "figure_id": "dweck",
+      "dimension_id": "qi-jia",
+      "category": "核心理论",
+      "quote": "成长型思维：相信能力可以通过努力提升。固定型思维：认为能力是固定的，无法改变。",
+      "source": "《终身成长》",
+      "interpretation": "表扬孩子的努力和策略，而不是天赋。被夸聪明的孩子倾向于回避挑战，被夸努力的孩子越挫越勇。",
+      "tags": "成长型思维,表扬,努力",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "卡罗尔·德韦克",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 67,
+      "figure_id": "dweck",
+      "dimension_id": "qi-jia",
+      "category": "核心理论",
+      "quote": "培养成长型思维的关键：接受挑战、从失败中学习、把困难视为成长的机会。",
+      "source": "《终身成长》",
+      "interpretation": "让孩子明白：现在不会不等于永远不会。挑战越大，成长越大。",
+      "tags": "挑战,失败,成长",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "卡罗尔·德韦克",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 68,
+      "figure_id": "montessori",
+      "dimension_id": "qi-jia",
+      "category": "核心理论",
+      "quote": "教育的目标不是填鸭知识，而是帮助儿童发展出独立的思考能力、自控力和对世界的好奇心。",
+      "source": "蒙特梭利教育法",
+      "interpretation": "教育不是为学校做准备，而是为生活做准备。",
+      "tags": "教育目标,独立,好奇",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "玛丽亚·蒙特梭利",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 69,
+      "figure_id": "nelsen",
+      "dimension_id": "qi-jia",
+      "category": "方法",
+      "quote": "正面管教的长期目标不是让孩子听话，而是培养孩子的自律、责任感、合作精神和解决问题的能力。",
+      "source": "《正面管教》",
+      "interpretation": "每次教育孩子时间问自己：我这个行为是在培养他的长期品格，还是只求眼前的安静？",
+      "tags": "长期目标,自律,责任",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "简·尼尔森",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 70,
+      "figure_id": "vygotsky",
+      "dimension_id": "qi-jia",
+      "category": "核心理论",
+      "quote": "学习发生在社会互动中，通过与他人的合作和对话，儿童内化了更高层次的思维能力。",
+      "source": "社会文化理论",
+      "interpretation": "让孩子与比自己能力稍强的同伴或成人一起学习，效果最好。",
+      "tags": "社会互动,合作,内化",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "列夫·维果茨基",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 71,
+      "figure_id": "huangdi",
+      "dimension_id": "shen-ti",
+      "category": "核心理论",
+      "quote": "上古之人，其知道者，法于阴阳，和于术数，食饮有节，起居有常，不妄作劳，故能形与神俱，而尽终其天年，度百岁乃去。",
+      "source": "《黄帝内经·素问·上古天真论》",
+      "interpretation": "养生最根本的原则：顺应自然规律、饮食有节制、作息有规律、不过度劳累。做到这四点，健康长寿不难。",
+      "tags": "养生,阴阳,饮食,作息",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "黄帝内经",
+      "dimension_name": "身体健康与养生"
+    },
+    {
+      "id": 72,
+      "figure_id": "huangdi",
+      "dimension_id": "shen-ti",
+      "category": "核心理论",
+      "quote": "春三月，此谓发陈，天地俱生，万物以荣，夜卧早起，广步于庭。夏三月，此谓蕃秀，天地气交，万物华实，夜卧早起，无厌于日。",
+      "source": "《黄帝内经·素问·四气调神大论》",
+      "interpretation": "春夏养阳——春天晚睡早起多活动，夏天晚睡早起不厌烦阳光。顺应四时调整作息是养生根本。",
+      "tags": "四季养生,作息,顺应自然",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "黄帝内经",
+      "dimension_name": "身体健康与养生"
+    },
+    {
+      "id": 73,
+      "figure_id": "huangdi",
+      "dimension_id": "shen-ti",
+      "category": "核心理论",
+      "quote": "秋三月，此谓容平，天气以急，地气以明，早卧早起，与鸡俱兴。冬三月，此谓闭藏，水冰地坼，无扰乎阳，早卧晚起，必待日光。",
+      "source": "《黄帝内经·素问·四气调神大论》",
+      "interpretation": "秋冬养阴——秋天早睡早起，冬天早睡晚起等太阳出来。跟着太阳走，身体自然好。",
+      "tags": "四季养生,秋冬,收藏",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "黄帝内经",
+      "dimension_name": "身体健康与养生"
+    },
+    {
+      "id": 74,
+      "figure_id": "huangdi",
+      "dimension_id": "shen-ti",
+      "category": "核心理念",
+      "quote": "正气存内，邪不可干。",
+      "source": "《黄帝内经·素问·刺法论》",
+      "interpretation": "身体的正气充足，外邪就难以入侵。养生的核心是提升自身的免疫力，而非盲目对抗病菌。",
+      "tags": "免疫力,正气,预防",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "黄帝内经",
+      "dimension_name": "身体健康与养生"
+    },
+    {
+      "id": 75,
+      "figure_id": "huangdi",
+      "dimension_id": "shen-ti",
+      "category": "核心理念",
+      "quote": "上工治未病，不治已病；中工治欲病，不治已病；下工治已病。",
+      "source": "《黄帝内经》",
+      "interpretation": "最好的医生是预防疾病，而不是等病了再治。养成好的生活习惯就是最好的治疗。",
+      "tags": "治未病,预防,养生",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "黄帝内经",
+      "dimension_name": "身体健康与养生"
+    },
+    {
+      "id": 76,
+      "figure_id": "huangdi",
+      "dimension_id": "shen-ti",
+      "category": "核心理论",
+      "quote": "怒伤肝、喜伤心、思伤脾、忧伤肺、恐伤肾。",
+      "source": "《黄帝内经·素问·阴阳应象大论》",
+      "interpretation": "情绪管理是养生的关键一环。过度的情绪波动直接伤害五脏。保持情绪平和对健康至关重要。",
+      "tags": "情志,五脏,情绪",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "黄帝内经",
+      "dimension_name": "身体健康与养生"
+    },
+    {
+      "id": 77,
+      "figure_id": "sunsimiao",
+      "dimension_id": "shen-ti",
+      "category": "方法",
+      "quote": "养生十三法：发常梳、目常运、齿常叩、耳常鼓、面常洗、头常摇、腰常摆、腹常揉、膝常扭、脚常搓、常散步、常提肛、常深呼吸。",
+      "source": "《千金要方》",
+      "interpretation": "孙思邈活了141岁，他的养生方法简单易行。每天花几分钟做一遍，长期坚持效果显著。",
+      "tags": "养生法,药王,日常保健",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "孙思邈",
+      "dimension_name": "身体健康与养生"
+    },
+    {
+      "id": 78,
+      "figure_id": "sunsimiao",
+      "dimension_id": "shen-ti",
+      "category": "核心理念",
+      "quote": "口中言少，心中事少，腹里食少，自然睡少，依此四少，神仙诀了。",
+      "source": "《千金要方》",
+      "interpretation": "少说话养气、少操心养神、少吃饭养身、少赖床养生。四少原则是养生的精髓。",
+      "tags": "养生口诀,少,孙思邈",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "孙思邈",
+      "dimension_name": "身体健康与养生"
+    },
+    {
+      "id": 79,
+      "figure_id": "huangdi",
+      "dimension_id": "shen-ti",
+      "category": "核心理论",
+      "quote": "夫百病之始生也，皆生于风雨寒暑，阴阳喜怒，饮食居处，大惊卒恐。",
+      "source": "《黄帝内经·灵枢》",
+      "interpretation": "疾病的根源不外乎：外感六淫（风、寒、暑、湿、燥、火）、内伤七情（喜、怒、忧、思、悲、恐、惊）、饮食不节、起居失常。",
+      "tags": "病因,六淫,七情",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "黄帝内经",
+      "dimension_name": "身体健康与养生"
+    },
+    {
+      "id": 80,
+      "figure_id": "zhuyi",
+      "dimension_id": "shen-ti",
+      "category": "核心理念",
+      "quote": "阳常有余，阴常不足。但阴虚而病者，十之八九。养生之道，以养阴为要。",
+      "source": "《格致余论》",
+      "interpretation": "现代人熬夜、用眼过度、压力大都在耗阴。养阴比补阳更重要。早点睡就是最好的养阴。",
+      "tags": "滋阴,养生,作息",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "朱震亨",
+      "dimension_name": "身体健康与养生"
+    },
+    {
+      "id": 81,
+      "figure_id": "huangdi",
+      "dimension_id": "shen-ti",
+      "category": "核心理论",
+      "quote": "饮食自倍，肠胃乃伤。",
+      "source": "《黄帝内经·素问·痹论》",
+      "interpretation": "暴饮暴食是肠胃最大的杀手。每餐七分饱，给肠胃留有余地。",
+      "tags": "饮食,肠胃,节制",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "黄帝内经",
+      "dimension_name": "身体健康与养生"
+    },
+    {
+      "id": 82,
+      "figure_id": "huangdi",
+      "dimension_id": "shen-ti",
+      "category": "核心理论",
+      "quote": "五脏所藏：心藏神、肺藏魄、肝藏魂、脾藏意、肾藏志。五脏调和则精神安定。",
+      "source": "《黄帝内经·素问·宣明五气篇》",
+      "interpretation": "心理和精神状态与五脏健康密切相关。养身必须同时养心。",
+      "tags": "五脏,精神,养心",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "黄帝内经",
+      "dimension_name": "身体健康与养生"
+    },
+    {
+      "id": 83,
+      "figure_id": "sunsimiao",
+      "dimension_id": "shen-ti",
+      "category": "方法",
+      "quote": "养生之道，常欲小劳，但莫大疲，及强所不能堪耳。百病从脚起，脚暖则全身暖。",
+      "source": "《千金要方》",
+      "interpretation": "适度运动、不过度劳累、注意足部保暖——简单但极其有效的养生原则。",
+      "tags": "运动,适度,保暖",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "孙思邈",
+      "dimension_name": "身体健康与养生"
+    },
+    {
+      "id": 84,
+      "figure_id": "zhangzhongjing",
+      "dimension_id": "shen-ti",
+      "category": "核心理念",
+      "quote": "上以疗君亲之疾，下以救贫贱之厄，中以保身长全。",
+      "source": "《伤寒杂病论·序》",
+      "interpretation": "张仲景写医书的初衷：上为治疗家人疾病，下为救济百姓苦难，中为保养自身健康。三个层次兼顾。",
+      "tags": "医圣,初心,健康",
+      "created_at": "2026-07-04 12:49:25",
+      "updated_at": "2026-07-04 12:49:25",
+      "figure_name": "张仲景",
+      "dimension_name": "身体健康与养生"
+    },
+    {
+      "id": 85,
+      "figure_id": "franklin",
+      "dimension_id": "xiu-shen",
+      "category": "方法论",
+      "quote": "节制、沉默、秩序、决心、节俭、勤奋、诚实、正义、中庸、整洁、平静、贞洁、谦逊——富兰克林十三条美德",
+      "source": "《富兰克林自传》",
+      "interpretation": "富兰克林的十三条美德是他从20岁开始践行的修身体系。每周专注一项，十三周一个循环，一年循环四次。精髓不在于完美达标，而在于持续自我观察和改进。",
+      "tags": "修身,美德,方法,系统",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "本杰明·富兰克林",
+      "dimension_name": "修身与学习"
+    },
+    {
+      "id": 86,
+      "figure_id": "franklin",
+      "dimension_id": "xiu-shen",
+      "category": "经典语录",
+      "quote": "早睡早起使人健康、富有、智慧。",
+      "source": "《穷查理年鉴》",
+      "interpretation": "这句箴言被芒格反复引用。作息规律是修身的基础，长期看对人的健康、财富和智慧都有复利效应。",
+      "tags": "作息,健康,复利",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "本杰明·富兰克林",
+      "dimension_name": "修身与学习"
+    },
+    {
+      "id": 87,
+      "figure_id": "franklin",
+      "dimension_id": "gong-zuo",
+      "category": "方法论",
+      "quote": "时间就是金钱。",
+      "source": "《给商人的忠告》",
+      "interpretation": "富兰克林对时间的管理极为严格，每天排定时间表。拖延是最大的成本，这个道理在任何时代都成立。",
+      "tags": "时间管理,效率,成本",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "本杰明·富兰克林",
+      "dimension_name": "工作方法"
+    },
+    {
+      "id": 88,
+      "figure_id": "franklin",
+      "dimension_id": "tou-zi",
+      "category": "经典语录",
+      "quote": "省一分钱就是赚一分钱。",
+      "source": "《穷查理年鉴》",
+      "interpretation": "节俭不是吝啬，是对资源的尊重。芒格也说过类似的话——不要过度消费。节俭积累的资本是投资的基础。",
+      "tags": "节俭,积累,投资",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "本杰明·富兰克林",
+      "dimension_name": "投资与理财"
+    },
+    {
+      "id": 89,
+      "figure_id": "franklin",
+      "dimension_id": "she-jiao",
+      "category": "人生智慧",
+      "quote": "财富不属于拥有它的人，而属于享受它的人。",
+      "source": "《穷查理年鉴》",
+      "interpretation": "真正的富有不是拥有多少钱，而是能否享受生活。这和芒格说的「真正的富有是拥有丰富的内心世界」异曲同工。",
+      "tags": "财富,享受,富有",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "本杰明·富兰克林",
+      "dimension_name": "社交与人脉"
+    },
+    {
+      "id": 90,
+      "figure_id": "franklin",
+      "dimension_id": "li-xiang",
+      "category": "经典语录",
+      "quote": "没有辛勤的劳动，就没有伟大的成就。",
+      "source": "《富兰克林自传》",
+      "interpretation": "成功的公式很简单：勤奋加方法加坚持。富兰克林从一个印刷工学徒成为科学家、外交家、开国元勋。",
+      "tags": "勤奋,成就,坚持",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "本杰明·富兰克林",
+      "dimension_name": "理想与境界"
+    },
+    {
+      "id": 91,
+      "figure_id": "zengguofan",
+      "dimension_id": "xiu-shen",
+      "category": "方法论",
+      "quote": "主敬、静坐、早起、读书不二、读史、谨言、养气、保身、日知所亡、月无忘所能、作字、夜不出门。",
+      "source": "曾国藩修身十二条款",
+      "interpretation": "十二条日课从静坐养气到读书读史，从谨言慎行到书法练字。关键是每日践行，不搞突击。",
+      "tags": "修身,日课,持续",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "曾国藩",
+      "dimension_name": "修身与学习"
+    },
+    {
+      "id": 92,
+      "figure_id": "zengguofan",
+      "dimension_id": "qi-jia",
+      "category": "经典语录",
+      "quote": "天下古今之庸人，皆以一惰字致败；天下古今之才人，皆以一傲字致败。",
+      "source": "《曾国藩家书》",
+      "interpretation": "普通人的失败在于懒惰，有才之人的失败在于骄傲。曾国藩在家书中反复强调戒惰戒傲，既是对自己的要求，也是教育子女的核心。",
+      "tags": "教育,修身,惰傲",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "曾国藩",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 93,
+      "figure_id": "zengguofan",
+      "dimension_id": "xiu-shen",
+      "category": "方法论",
+      "quote": "读书可以变换气质。",
+      "source": "《曾国藩家书》",
+      "interpretation": "曾国藩认为读书不只是获取知识，更能从根本上改变一个人的气质。他要求子女读书不求多，但求熟读深思。",
+      "tags": "读书,气质,学习",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "曾国藩",
+      "dimension_name": "修身与学习"
+    },
+    {
+      "id": 94,
+      "figure_id": "zengguofan",
+      "dimension_id": "ling-dao",
+      "category": "经典语录",
+      "quote": "轻财足以聚人，律己足以服人，量宽足以得人，身先足以率人。",
+      "source": "曾国藩名言",
+      "interpretation": "领导者做到这四点：不吝啬钱财所以能聚拢人才，严于律己所以能让人信服，心胸宽广所以能得人心，身先士卒所以能带领团队。",
+      "tags": "领导力,律己,宽厚",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "曾国藩",
+      "dimension_name": "领导力与管理"
+    },
+    {
+      "id": 95,
+      "figure_id": "zengguofan",
+      "dimension_id": "xiu-shen",
+      "category": "人生智慧",
+      "quote": "吾人只有进德、修业两事靠得住。",
+      "source": "《曾国藩家书》",
+      "interpretation": "人生在世只有两件事真正属于自己：品德提升和本事增长。其他如金钱、地位、名声，都是身外之物。",
+      "tags": "修德,修业,价值",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "曾国藩",
+      "dimension_name": "修身与学习"
+    },
+    {
+      "id": 96,
+      "figure_id": "zengguofan",
+      "dimension_id": "qi-jia",
+      "category": "人生智慧",
+      "quote": "家败离不得个奢字，人败离不得个逸字，讨人嫌离不得个骄字。",
+      "source": "《曾国藩家书》",
+      "interpretation": "一个家庭衰败开始于奢侈，一个人衰败开始于安逸，被人讨厌开始于骄傲。三字警训：奢、逸、骄。",
+      "tags": "家训,节俭,谦逊",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "曾国藩",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 97,
+      "figure_id": "aurelius",
+      "dimension_id": "xiu-shen",
+      "category": "核心思想",
+      "quote": "你无法控制外部事件，但你可以控制你对它们的反应。",
+      "source": "《沉思录》",
+      "interpretation": "斯多葛哲学的核心理念。生活中发生什么不重要，重要的是你怎么看待它。芒格的「双轨分析」也有类似的思想——理性分析之外还要觉察自己的情绪。",
+      "tags": "斯多葛,理性,情绪",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "马可·奥勒留",
+      "dimension_name": "修身与学习"
+    },
+    {
+      "id": 98,
+      "figure_id": "aurelius",
+      "dimension_id": "li-xiang",
+      "category": "核心思想",
+      "quote": "清晨醒来时告诉自己：今天我会遇到爱管闲事的人、忘恩负义的人、傲慢的人、欺骗的人。他们之所以如此是因为他们不知道善与恶的区别。",
+      "source": "《沉思录》",
+      "interpretation": "奥勒留这个早起仪式很实用——预判今天可能遇到的人和事，做好心理准备，就不会轻易被别人激怒。",
+      "tags": "心态,准备,包容",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "马可·奥勒留",
+      "dimension_name": "理想与境界"
+    },
+    {
+      "id": 99,
+      "figure_id": "aurelius",
+      "dimension_id": "shen-ti",
+      "category": "人生智慧",
+      "quote": "灵魂比身体更强大。培养你的灵魂，因为它会陪伴你一生。身体只是一个暂时的居所。",
+      "source": "《沉思录》",
+      "interpretation": "身体会衰老，但精神可以不断成长。这和中医「形与神俱」的思想一致——养身的同时必须养心。",
+      "tags": "灵魂,精神,养心",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "马可·奥勒留",
+      "dimension_name": "身体健康与养生"
+    },
+    {
+      "id": 100,
+      "figure_id": "aurelius",
+      "dimension_id": "xiu-shen",
+      "category": "核心思想",
+      "quote": "生活的艺术更像摔跤而非舞蹈——它要求我们站稳脚跟，随时准备应对突如其来的攻击。",
+      "source": "《沉思录》",
+      "interpretation": "人生不是精心编排的舞蹈，而是一场摔跤。你无法预知下一个回合对手怎么出招，但可以训练自己站稳脚跟。",
+      "tags": "人生智慧,应对,韧性",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "马可·奥勒留",
+      "dimension_name": "修身与学习"
+    },
+    {
+      "id": 101,
+      "figure_id": "laozi",
+      "dimension_id": "ling-dao",
+      "category": "核心思想",
+      "quote": "上善若水。水善利万物而不争，处众人之所恶，故几于道。",
+      "source": "《道德经》第八章",
+      "interpretation": "最高的善就像水一样滋养万物却不争功，甘居众人不愿处的低位。老子用水来比喻最高级的领导力——不争而胜。",
+      "tags": "领导力,水,不争",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "老子",
+      "dimension_name": "领导力与管理"
+    },
+    {
+      "id": 102,
+      "figure_id": "laozi",
+      "dimension_id": "xiu-shen",
+      "category": "核心思想",
+      "quote": "知人者智，自知者明。胜人者有力，自胜者强。",
+      "source": "《道德经》第三十三章",
+      "interpretation": "了解别人是聪明，了解自己才是智慧；战胜别人是有力量，战胜自己才是强大。芒格的能力圈理论也是这个道理。",
+      "tags": "自知,自胜,能力圈",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "老子",
+      "dimension_name": "修身与学习"
+    },
+    {
+      "id": 103,
+      "figure_id": "laozi",
+      "dimension_id": "xiu-shen",
+      "category": "经典语录",
+      "quote": "千里之行，始于足下。",
+      "source": "《道德经》第六十四章",
+      "interpretation": "无论多宏大的事业，都是从脚下第一步开始的。芒格的「每天变聪明一点点」也是这个意思——复利的力量在于持续前进。",
+      "tags": "行动,积累,复利",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "老子",
+      "dimension_name": "修身与学习"
+    },
+    {
+      "id": 104,
+      "figure_id": "laozi",
+      "dimension_id": "tou-zi",
+      "category": "核心思想",
+      "quote": "大方无隅，大器晚成，大音希声，大象无形。",
+      "source": "《道德经》第四十一章",
+      "interpretation": "最大的方正没有棱角，最大的器物最晚完成。真正的投资也是如此——不做短线套利，长期持有等待大器晚成。这和芒格的「一生只做几个大决策」异曲同工。",
+      "tags": "长期,耐心,大器晚成",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "老子",
+      "dimension_name": "投资与理财"
+    },
+    {
+      "id": 105,
+      "figure_id": "laozi",
+      "dimension_id": "ling-dao",
+      "category": "核心思想",
+      "quote": "治大国若烹小鲜。",
+      "source": "《道德经》第六十章",
+      "interpretation": "治理大国像烹小鱼——不要频繁翻动，否则鱼会碎。管理也是一样：制度定了就不要朝令夕改，给团队稳定的预期。",
+      "tags": "管理,稳定,预期",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "老子",
+      "dimension_name": "领导力与管理"
+    },
+    {
+      "id": 106,
+      "figure_id": "laozi",
+      "dimension_id": "li-xiang",
+      "category": "核心思想",
+      "quote": "人法地，地法天，天法道，道法自然。",
+      "source": "《道德经》第二十五章",
+      "interpretation": "人效法地，地效法天，天效法道，道效法自然。最终回归自然——顺应事物本来的规律，不要强求。",
+      "tags": "自然,道,规律",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "老子",
+      "dimension_name": "理想与境界"
+    },
+    {
+      "id": 107,
+      "figure_id": "kongzi",
+      "dimension_id": "xiu-shen",
+      "category": "经典语录",
+      "quote": "学而不思则罔，思而不学则殆。",
+      "source": "《论语·为政》",
+      "interpretation": "只学习不思考就会迷惘，只思考不学习就会危险。这和芒格的多元思维模型一样——光阅读不行，还要用模型去思考。",
+      "tags": "学习,思考,方法",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "孔子",
+      "dimension_name": "修身与学习"
+    },
+    {
+      "id": 108,
+      "figure_id": "kongzi",
+      "dimension_id": "she-jiao",
+      "category": "经典语录",
+      "quote": "己所不欲，勿施于人。",
+      "source": "《论语·颜渊》",
+      "interpretation": "自己不愿意的事情不要强加给别人。这是孔子「仁」的核心。戈特曼在婚姻研究中发现——用温和的方式沟通本质上就是己所不欲勿施于人。",
+      "tags": "仁,换位思考,关系",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "孔子",
+      "dimension_name": "社交与人脉"
+    },
+    {
+      "id": 109,
+      "figure_id": "kongzi",
+      "dimension_id": "xiu-shen",
+      "category": "经典语录",
+      "quote": "三人行，必有我师焉。择其善者而从之，其不善者而改之。",
+      "source": "《论语·述而》",
+      "interpretation": "一群人一起走，一定有值得我学习的人。好的就学，不好的就反省自己。从一切经验中学习。",
+      "tags": "学习,谦逊,反省",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "孔子",
+      "dimension_name": "修身与学习"
+    },
+    {
+      "id": 110,
+      "figure_id": "kongzi",
+      "dimension_id": "chuang-ye",
+      "category": "经典语录",
+      "quote": "欲速则不达，见小利则大事不成。",
+      "source": "《论语·子路》",
+      "interpretation": "贪图快反而达不到目的，贪图小利就成不了大事。对创业者和投资者来说，这个道理极其重要——耐心和格局是成事的基石。",
+      "tags": "耐心,格局,创业",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "孔子",
+      "dimension_name": "创业与事业"
+    },
+    {
+      "id": 111,
+      "figure_id": "kongzi",
+      "dimension_id": "xiu-shen",
+      "category": "核心思想",
+      "quote": "吾日三省吾身：为人谋而不忠乎？与朋友交而不信乎？传不习乎？",
+      "source": "《论语·学而》",
+      "interpretation": "最朴素的自我反省方法——每天问自己三个问题：替人办事尽力了吗？与朋友交往诚信吗？学到的练习了吗？",
+      "tags": "反省,诚信,实践",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "孔子",
+      "dimension_name": "修身与学习"
+    },
+    {
+      "id": 112,
+      "figure_id": "kongzi",
+      "dimension_id": "qi-jia",
+      "category": "经典语录",
+      "quote": "其身正，不令而行；其身不正，虽令不从。",
+      "source": "《论语·子路》",
+      "interpretation": "领导者自身端正，不下命令下属也会跟着做；自身不端正，命令也没人听从。教育孩子也是如此——身教重于言传。",
+      "tags": "榜样,领导力,身教",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "孔子",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 113,
+      "figure_id": "wangyangming",
+      "dimension_id": "xiu-shen",
+      "category": "核心思想",
+      "quote": "知是行之始，行是知之成。",
+      "source": "《传习录》",
+      "interpretation": "认知是行动的开始，行动是认知的完成。王阳明反对把知和行分开——光知道不行动等于不知道。这和毛主席的「读书是学习，使用也是学习」完全一致。",
+      "tags": "知行合一,实践,行动",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "王阳明",
+      "dimension_name": "修身与学习"
+    },
+    {
+      "id": 114,
+      "figure_id": "wangyangming",
+      "dimension_id": "xiu-shen",
+      "category": "核心思想",
+      "quote": "破山中贼易，破心中贼难。",
+      "source": "王阳明名言",
+      "interpretation": "打败山里的贼容易，打败自己内心的贪嗔痴慢疑才难。修身最难的不是外部敌人，而是自己的心。与芒格的误判心理学遥相呼应。",
+      "tags": "内心,修身,自省",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "王阳明",
+      "dimension_name": "修身与学习"
+    },
+    {
+      "id": 115,
+      "figure_id": "wangyangming",
+      "dimension_id": "xiu-shen",
+      "category": "核心思想",
+      "quote": "心即理。天下又有心外之事，心外之理乎？",
+      "source": "《传习录》",
+      "interpretation": "心就是道理所在。天下没有心外的事物，也没有心外的道理。求理不用外求，向内探索自己就够了。",
+      "tags": "心学,内求,致知",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "王阳明",
+      "dimension_name": "修身与学习"
+    },
+    {
+      "id": 116,
+      "figure_id": "wangyangming",
+      "dimension_id": "xiu-shen",
+      "category": "核心思想",
+      "quote": "致良知。",
+      "source": "王阳明心学核心",
+      "interpretation": "每个人内心都有良知，知道自己该怎么做。修身的要义就是真诚地听从良知的指引，把它付诸行动。",
+      "tags": "良知,修身,真诚",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "王阳明",
+      "dimension_name": "修身与学习"
+    },
+    {
+      "id": 117,
+      "figure_id": "miller",
+      "dimension_id": "hun-yin",
+      "category": "核心理论",
+      "quote": "亲密关系中的承诺有三种类型：个人承诺（我想留下）、强迫承诺（我不得不留下）、道德承诺（我应该留下）。最稳固的是三者兼备。",
+      "source": "《亲密关系》",
+      "interpretation": "不仅问自己「我还爱不爱TA」，也问「我是否愿意为这段关系负责」。承诺不只是感觉，更是一种选择。",
+      "tags": "承诺,关系,稳固",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "罗兰·米勒",
+      "dimension_name": "婚姻与亲密关系"
+    },
+    {
+      "id": 118,
+      "figure_id": "gottman",
+      "dimension_id": "hun-yin",
+      "category": "方法",
+      "quote": "婚姻修复的第一步不是解决问题，而是先做情感连接。配偶向你抱怨时，TA真正想要的是被理解和重视。",
+      "source": "《幸福的婚姻》",
+      "interpretation": "当伴侣抱怨时，先别急着解释或反驳。先回应情感——「我理解你的感受」「这件事对你很重要」，冲突往往就消解了一半。",
+      "tags": "情感连接,倾听,修复",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "约翰·戈特曼",
+      "dimension_name": "婚姻与亲密关系"
+    },
+    {
+      "id": 119,
+      "figure_id": "chapman",
+      "dimension_id": "hun-yin",
+      "category": "方法",
+      "quote": "如果你不知道对方的主要爱语是什么，可以观察TA最常向你提出什么要求，或TA最常抱怨你什么。",
+      "source": "《爱的五种语言》",
+      "interpretation": "抱怨往往是爱的语言的反面指标：「你从来不陪我」说明精心的时刻是TA的语言；「你从来不说爱我」说明肯定的言辞是TA的语言。",
+      "tags": "爱的语言,观察,理解",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "盖瑞·查普曼",
+      "dimension_name": "婚姻与亲密关系"
+    },
+    {
+      "id": 120,
+      "figure_id": "montessori",
+      "dimension_id": "qi-jia",
+      "category": "方法",
+      "quote": "儿童的工作和成人的工作不同：成人工作是为了结果，儿童工作是为了发展自身。因此不要用效率来评价孩子的活动。",
+      "source": "蒙特梭利教育法",
+      "interpretation": "孩子反复做一件事在成人看来是浪费时间，但这是他在建构自己的心智。允许孩子慢慢来，就是给他成长的空间。",
+      "tags": "儿童,工作,发展",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "玛丽亚·蒙特梭利",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 121,
+      "figure_id": "nelsen",
+      "dimension_id": "qi-jia",
+      "category": "方法",
+      "quote": "惩罚的四个后果：愤恨、报复、反叛、退缩。正面管教的核心是用长期有效的教育方式替代惩罚。",
+      "source": "《正面管教》",
+      "interpretation": "惩罚看起来立竿见影，但长期代价巨大。问问自己：我现在做的，是在培养孩子的自律，还是只是在追求表面的服从？",
+      "tags": "惩罚,正面管教,自律",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "简·尼尔森",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 122,
+      "figure_id": "vygotsky",
+      "dimension_id": "qi-jia",
+      "category": "核心理论",
+      "quote": "儿童在合作中能比独立完成更多。今天在成人帮助下能做的事，明天他就能独立完成。",
+      "source": "最近发展区理论",
+      "interpretation": "你不是替孩子做事，也不是让他自己硬扛。在他的能力边沿提供恰到好处的帮助——这就是教育的艺术。",
+      "tags": "最近发展区,合作,指导",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "列夫·维果茨基",
+      "dimension_name": "齐家与教育"
+    },
+    {
+      "id": 123,
+      "figure_id": "huangdi",
+      "dimension_id": "shen-ti",
+      "category": "核心理念",
+      "quote": "恬淡虚无，真气从之，精神内守，病安从来。",
+      "source": "《黄帝内经·素问·上古天真论》",
+      "interpretation": "内心保持恬静淡泊，正气自然旺盛。精神守住不外耗，疾病从哪里来呢？这是养生的最高境界——养心为要。",
+      "tags": "养心,精神,静养",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "黄帝内经",
+      "dimension_name": "身体健康与养生"
+    },
+    {
+      "id": 124,
+      "figure_id": "huangdi",
+      "dimension_id": "shen-ti",
+      "category": "核心理念",
+      "quote": "久视伤血，久卧伤气，久坐伤肉，久立伤骨，久行伤筋。是谓五劳所伤。",
+      "source": "《黄帝内经·素问·宣明五气篇》",
+      "interpretation": "任何事情过度都会伤身。现代人最常见的「久视」（看屏幕）和「久坐」正好对应伤血和伤肉。定时起身活动、减少屏幕时间是最简单的养生。",
+      "tags": "五劳,过度,现代病",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "黄帝内经",
+      "dimension_name": "身体健康与养生"
+    },
+    {
+      "id": 125,
+      "figure_id": "sunsimiao",
+      "dimension_id": "shen-ti",
+      "category": "方法",
+      "quote": "善养性者，则治未病之病，是其义也。",
+      "source": "《千金要方·养性序》",
+      "interpretation": "善于养生的人，在病还没发生的时候就预防了。孙思邈这套思想和黄帝内经「上工治未病」一脉相承——最好的治疗是预防。",
+      "tags": "治未病,预防,养生",
+      "created_at": "2026-07-04 13:17:48",
+      "updated_at": "2026-07-04 13:17:48",
+      "figure_name": "孙思邈",
+      "dimension_name": "身体健康与养生"
+    }
+  ]
+};
+
+const API = '';
+let STATE = { page: 'home', dimFilter: null, figFilter: null, adminView: 'list' };
+let DIMS = EMBEDDED_DATA.dimensions;
+let FIGS = EMBEDDED_DATA.figures;
+let ENTRIES = EMBEDDED_DATA.entries;
+let NEXT_ID = ENTRIES.length + 100;
+function init() {
+  bindNav(); render();
+}
+
+function bindNav() {
+  document.querySelectorAll('.nav-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const pg = btn.dataset.page;
+      STATE.page = pg; STATE.dimFilter = null; STATE.figFilter = null; STATE.adminView = 'list';
+      render();
+    });
+  });
+  document.getElementById('modal-overlay').addEventListener('click', closeModal);
+  updateHeaderStatus();
+}
+
+function updateHeaderStatus() {
+  const el = document.getElementById('header-status');
+  if (el) { el.textContent = `${ENTRIES.length} 条智慧 · ${DIMS.length} 维度 · ${FIGS.length} 来源`; el.style.display = 'block'; }
+}
+
+function navigate(pg, extra) {
+  if (extra) Object.assign(STATE, extra);
+  STATE.page = pg;
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b.dataset.page === pg));
+  render();
+}
+
+function render() {
+  const el = document.getElementById('app-content');
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b.dataset.page === STATE.page));
+  switch(STATE.page) {
+    case 'home': el.innerHTML = renderHome(); break;
+    case 'browse': el.innerHTML = renderBrowse(); break;
+    case 'search': el.innerHTML = renderSearch(); break;
+    case 'qa': el.innerHTML = renderQa(); break;
+    case 'admin': el.innerHTML = renderAdmin(); break;
+    default: el.innerHTML = renderHome();
+  }
+  el.scrollTop = 0;
+}
+
+function dimCount(dimId) { return ENTRIES.filter(e => e.dimension_id === dimId).length; }
+function figCount(figId) { return ENTRIES.filter(e => e.figure_id === figId).length; }
+function getDim(id) { return DIMS.find(d => d.id === id); }
+function getFig(id) { return FIGS.find(f => f.id === id); }
+function esc(s) { if(!s)return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function DIM_EMOJI(id) { const d=getDim(id); return {'xiu-shen':'📚','chuang-ye':'🚀','tou-zi':'💰','hun-yin':'❤️','she-jiao':'🤝','shen-ti':'💪','gong-zuo':'⚡','ling-dao':'🎯','qi-jia':'🏠','li-xiang':'🌟'}[id]||'📖'; }
+
+function renderWisdomCard(e, adminMode) {
+  const fig = getFig(e.figure_id);
+  const dim = getDim(e.dimension_id);
+  const c = fig ? fig.color : '#666';
+  const bg = e.figure_id === 'munger' ? '#eaf2f8' : e.figure_id === 'mao' ? '#fce9e7' : '#f0f0f0';
+  const figName = fig ? fig.short_name || fig.name : (e.figure_name || e.figure_id);
+  const dimName = dim ? dim.name : (e.dimension_name || '');
+  const tags = e.tags ? e.tags.split(',').slice(0,3) : [];
+  return `<div class="wisdom-card" onclick="${adminMode ? '' : `openWisdom(${e.id})`}">
+    <div class="wisdom-figure" style="background:${bg};color:${c}">${esc(figName)}</div>
+    <div class="wisdom-quote">${esc(e.quote)}</div>
+    <div class="wisdom-source">${esc(e.source)} · ${esc(dimName)}</div>
+    ${tags.map(t => `<span class="wisdom-tag">${esc(t)}</span>`).join('')}
+    ${adminMode ? `<div style="margin-top:8px;display:flex;gap:6px"><button class="admin-btn edit" onclick="event.stopPropagation();editEntry(${e.id})">编辑</button><button class="admin-btn del" onclick="event.stopPropagation();deleteEntry(${e.id})">删除</button></div>` : ''}
+  </div>`;
+}
+
+function renderHome() {
+  return `<div class="page">
+    <div class="hero"><h2>智慧宝库</h2><p>芒格·毛主席·亲密关系·家庭教育·养生健康</p></div>
+    <div class="stats">
+      <div class="stat-card"><span class="stat-num">${ENTRIES.length}</span><span class="stat-label">智慧条目</span></div>
+      <div class="stat-card"><span class="stat-num">${DIMS.length}</span><span class="stat-label">人生维度</span></div>
+      <div class="stat-card"><span class="stat-num">${FIGS.length}</span><span class="stat-label">思想来源</span></div>
+    </div>
+    <div class="section-title">人生维度</div>
+    <div class="dim-grid">${DIMS.map(d => `<div class="dim-card" onclick="navigate('browse',{dimFilter:'${d.id}'})"><span class="dim-icon">${DIM_EMOJI(d.id)}</span><div class="dim-name">${esc(d.name)}</div><div class="dim-count">${dimCount(d.id)} 条</div></div>`).join('')}</div>
+    <div class="section-title">思想来源</div>
+    <div class="figure-strip" style="flex-wrap:wrap">${FIGS.map(f => `<div class="figure-mini" style="flex:0 0 calc(33% - 8px)" onclick="navigate('browse',{figFilter:'${f.id}'})"><div class="fig-avatar" style="background:${f.color};margin:0 auto 8px;width:40px;height:40px;font-size:15px;line-height:40px">${(f.short_name||f.name)[0]}</div><div class="figure-mini-name" style="font-size:13px">${esc(f.short_name||f.name)}</div></div>`).join('')}</div>
+  </div>`;
+}
+
+function renderBrowse() {
+  const activeDim = STATE.dimFilter || 'all', activeFig = STATE.figFilter || 'all';
+  let items = ENTRIES;
+  if (activeDim !== 'all') items = items.filter(e => e.dimension_id === activeDim);
+  if (activeFig !== 'all') items = items.filter(e => e.figure_id === activeFig);
+  return `<div class="page">
+    <div class="section-title">浏览智慧</div>
+    <div class="dim-filter" style="margin-bottom:6px">
+      <div class="filter-chip ${activeDim==='all'?'active':''}" onclick="navigate('browse',{dimFilter:null,figFilter:STATE.figFilter})">全部维度</div>
+      ${DIMS.map(d => `<div class="filter-chip ${activeDim===d.id?'active':''}" onclick="navigate('browse',{dimFilter:'${d.id}',figFilter:STATE.figFilter})">${DIM_EMOJI(d.id)} ${d.name} (${dimCount(d.id)})</div>`).join('')}
+    </div>
+    <div class="dim-filter" style="margin-bottom:12px">
+      <div class="filter-chip ${activeFig==='all'?'active':''}" onclick="navigate('browse',{figFilter:null,dimFilter:STATE.dimFilter})">全部来源</div>
+      ${FIGS.map(f => `<div class="filter-chip ${activeFig===f.id?'active':''}" onclick="navigate('browse',{figFilter:'${f.id}',dimFilter:STATE.dimFilter})">${f.name}</div>`).join('')}
+    </div>
+    <div class="wisdom-list">${items.length ? items.map(e => renderWisdomCard(e)).join('') : '<div class="search-empty"><span class="search-empty-icon">📭</span>该分类暂无内容</div>'}</div>
+  </div>`;
+}
+
+function renderSearch(q) {
+  const query = (q || '').trim().toLowerCase();
+  let results = query ? ENTRIES.filter(e => { const fig=getFig(e.figure_id),dim=getDim(e.dimension_id); const txt=`${e.quote} ${e.interpretation} ${e.source} ${e.tags||''} ${fig?fig.name:''} ${fig?fig.short_name:''} ${dim?dim.name:''}`.toLowerCase(); return txt.includes(query); }) : [];
+  return `<div class="page"><div class="section-title">搜索智慧</div><div class="search-box"><input class="search-input" id="searchInput" type="text" placeholder="输入关键词..." value="${esc(q||'')}" oninput="onSearch(this.value)"></div>
+    ${query ? `<div class="search-results">${results.length ? results.map(e=>renderWisdomCard(e)).join('') : '<div class="search-empty"><span class="search-empty-icon">🔍</span>无结果</div>'}</div>` : '<div class="search-empty"><span class="search-empty-icon">🔍</span>输入关键词搜索所有智慧</div>'}</div>`;
+}
+function onSearch(val) { document.getElementById('app-content').innerHTML = renderSearch(val); const inp = document.getElementById('searchInput'); if(inp) inp.focus(); }
+
+function renderAdmin() {
+  const activeDim = STATE.dimFilter || 'all';
+  let items = activeDim === 'all' ? ENTRIES : ENTRIES.filter(e => e.dimension_id === activeDim);
+  return `<div class="page"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><div class="section-title" style="margin-bottom:0">知识管理 (${items.length})</div><button class="admin-btn add" onclick="showAddForm()">+ 新增</button></div>
+    <div class="dim-filter" style="margin-bottom:12px"><div class="filter-chip ${activeDim==='all'?'active':''}" onclick="navigate('admin',{dimFilter:null,adminView:'list'})">全部</div>${DIMS.map(d => `<div class="filter-chip ${activeDim===d.id?'active':''}" onclick="navigate('admin',{dimFilter:'${d.id}',adminView:'list'})">${DIM_EMOJI(d.id)} ${d.name} (${dimCount(d.id)})</div>`).join('')}</div>
+    <div class="wisdom-list">${items.length ? items.map(e=>renderWisdomCard(e,true)).join('') : '<div class="search-empty"><span class="search-empty-icon">📭</span>暂无内容</div>'}</div>
+  </div>`;
+}
+
+function showAddForm(eid) {
+  const entry = eid ? ENTRIES.find(e => e.id === eid) : null;
+  const title = entry ? '编辑智慧' : '新增智慧';
+  const dId = entry ? entry.dimension_id : (STATE.dimFilter || DIMS[0]?.id || '');
+  const fId = entry ? entry.figure_id : (FIGS[0]?.id || '');
+  const cats = ['核心思想','方法论','人生智慧','经典语录','核心理念','方法','思想','预言','警告'];
+  document.getElementById('modal-inner').innerHTML = `
+    <div class="modal-handle"></div>
+    <h3 style="margin-bottom:14px;font-size:17px;font-weight:700">${title}</h3>
+    <form id="entryForm" class="admin-form">
+      <label>维度</label>
+      <select name="dimension_id">${DIMS.map(d => `<option value="${d.id}" ${d.id===dId?'selected':''}>${DIM_EMOJI(d.id)} ${d.name}</option>`).join('')}</select>
+      <label>来源人物</label>
+      <select name="figure_id">${FIGS.map(f => `<option value="${f.id}" ${f.id===fId?'selected':''}>${f.name}</option>`).join('')}</select>
+      <label>分类</label>
+      <select name="category">${cats.map(c => `<option value="${c}" ${entry&&entry.category===c?'selected':''}>${c}</option>`).join('')}</select>
+      <label>引文</label>
+      <textarea name="quote" rows="3" required>${entry ? esc(entry.quote) : ''}</textarea>
+      <label>出处</label>
+      <input name="source" value="${entry ? esc(entry.source) : ''}">
+      <label>当代解读</label>
+      <textarea name="interpretation" rows="2">${entry ? esc(entry.interpretation) : ''}</textarea>
+      <label>标签（逗号分隔）</label>
+      <input name="tags" value="${entry ? esc(entry.tags) : ''}" placeholder="如: 婚姻,沟通,信任">
+      <div style="display:flex;gap:8px;margin-top:12px">
+        <button type="submit" class="admin-btn add" style="flex:1">${entry ? '保存修改' : '添加'}</button>
+        <button type="button" class="admin-btn" style="flex:1;background:#9ca3af;color:#fff" onclick="closeModal()">取消</button>
+      </div>
+    </form>`;
+  document.getElementById('modal').classList.remove('hidden');
+  document.getElementById('modal-overlay').classList.remove('hidden');
+  document.getElementById('entryForm').addEventListener('submit', ev => {
+    ev.preventDefault(); const fd=new FormData(ev.target); const data=Object.fromEntries(fd.entries());
+    if(entry) { Object.assign(entry,data); } else { data.id= ++NEXT_ID; ENTRIES.push(data); }
+    closeModal(); render();
+  });
+}
+
+function editEntry(id) { showAddForm(id); }
+function deleteEntry(id) { if(!confirm('确定删除?'))return; ENTRIES=ENTRIES.filter(e=>e.id!==id); render(); }
+
+function openWisdom(id) {
+  const e = ENTRIES.find(x => x.id === id); if(!e)return;
+  const fig=getFig(e.figure_id), dim=getDim(e.dimension_id);
+  const c=fig?fig.color:'#666'; const bg=e.figure_id==='munger'?'#eaf2f8':e.figure_id==='mao'?'#fce9e7':'#f0f0f0';
+  const tags=e.tags?e.tags.split(','):[];
+  document.getElementById('modal-inner').innerHTML = '<div class="modal-handle"></div>'+
+    `<div class="modal-figure" style="background:${bg};color:${c}">${fig?esc(fig.name):''}</div>`+
+    `<div class="modal-quote">${esc(e.quote)}</div>`+
+    `<div class="modal-source">📖 ${esc(e.source)} · ${dim?esc(dim.name):''} · ${e.category}</div>`+
+    (e.interpretation?`<div class="modal-interp"><div class="modal-interp-label">当代解读</div>${esc(e.interpretation)}</div>`:'')+
+    (tags.length?`<div style="margin-top:10px">${tags.map(t=>'<span class="wisdom-tag">'+esc(t)+'</span>').join('')}</div>`:'');
+  document.getElementById('modal').classList.remove('hidden');
+  document.getElementById('modal-overlay').classList.remove('hidden');
+}
+
+function closeModal() { document.getElementById('modal').classList.add('hidden'); document.getElementById('modal-overlay').classList.add('hidden'); }
+
+document.addEventListener('DOMContentLoaded', init);
+
+
+// ─── Q&A Page ───
+function renderQa(q) {
+  const query = (q || '').trim();
+  return `<div class="page qa-page">
+    <div class="section-title">智慧问答</div>
+    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:14px">输入你的问题，系统会从智慧库中搜索最相关的回答</p>
+    <div class="qa-messages" id="qaMessages">
+      <div class="qa-message qa-ai">
+        <div class="qa-avatar" style="background:var(--accent)">智</div>
+        <div class="qa-bubble">你好！我是智慧宝库助理。我在芒格、毛主席、亲密关系、家庭教育、养生健康等方面收录了 ${ENTRIES.length} 条智慧。你有什么问题想问？</div>
+      </div>
+    </div>
+    <div class="qa-input-bar">
+      <input class="qa-input" id="qaInput" type="text" placeholder="输入你的问题..." onkeydown="if(event.key==='Enter')onAsk()" value="${esc(query)}">
+      <button class="qa-send" onclick="onAsk()">发送</button>
+    </div>
+  </div>`;
+}
+
+function onAsk() {
+  const input = document.getElementById('qaInput');
+  if (!input || !input.value.trim()) return;
+  const q = input.value.trim();
+  input.value = '';
+  
+  // Add user message
+  const msgs = document.getElementById('qaMessages');
+  msgs.innerHTML += `<div class="qa-message qa-user"><div class="qa-avatar" style="background:#6b7280">你</div><div class="qa-bubble">${esc(q)}</div></div>`;
+  
+  // Search
+  const results = smartSearch(q);
+  
+  // Build response
+  let html = `<div class="qa-message qa-ai"><div class="qa-avatar" style="background:var(--accent)">智</div><div class="qa-bubble">`;
+  
+  if (results.length === 0) {
+    html += `<p>关于"${esc(q)}"，我在智慧库中没有找到直接相关的内容。建议换个关键词试试，或到"浏览"页查看所有分类。</p>`;
+  } else {
+    html += `<p>关于"${esc(q)}"，以下是智慧库中最相关的 ${results.length} 条智慧：</p>`;
+    results.forEach((r, i) => {
+      const fig = getFig(r.e.figure_id);
+      const dim = getDim(r.e.dimension_id);
+      const c = fig ? fig.color : '#666';
+      html += `<div style="margin:10px 0;padding:12px;background:#f9f9f9;border-radius:8px;border-left:3px solid ${c}">
+        <div style="font-size:12px;font-weight:600;color:${c};margin-bottom:4px">${fig ? esc(fig.name) : ''} · ${dim ? esc(dim.name) : ''}</div>
+        <div style="font-size:14px;line-height:1.5;margin-bottom:4px">${esc(r.e.quote)}</div>
+        <div style="font-size:12px;color:#6b7280">📖 ${esc(r.e.source)}</div>
+        ${r.e.interpretation ? `<div style="font-size:13px;color:#4b5563;margin-top:6px;padding:6px;background:#fff;border-radius:4px">💡 ${esc(r.e.interpretation)}</div>` : ''}
+      </div>`;
+    });
+  }
+  html += `</div></div>`;
+  msgs.innerHTML += html;
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function smartSearch(q) {
+  const keywords = q.toLowerCase().split(/[\s,，。！？、\s]+/).filter(k => k.length > 1);
+  if (keywords.length === 0) return [];
+  
+  const scored = ENTRIES.map(e => {
+    const fig = getFig(e.figure_id);
+    const dim = getDim(e.dimension_id);
+    const figName = fig ? (fig.name + ' ' + fig.short_name) : '';
+    const dimName = dim ? dim.name : '';
+    const searchText = `${e.quote} ${e.interpretation} ${e.source} ${e.tags||''} ${figName} ${dimName}`.toLowerCase();
+    
+    let score = 0;
+    let matchCount = 0;
+    keywords.forEach(kw => {
+      if (searchText.includes(kw)) {
+        matchCount++;
+        // Score based on where it matches
+        if ((e.quote||'').toLowerCase().includes(kw)) score += 3;
+        if ((e.interpretation||'').toLowerCase().includes(kw)) score += 2;
+        if ((e.tags||'').toLowerCase().includes(kw)) score += 2;
+        if ((e.source||'').toLowerCase().includes(kw)) score += 1;
+        if (figName.toLowerCase().includes(kw)) score += 1;
+        if ((dimName||'').toLowerCase().includes(kw)) score += 1;
+        
+        // Bonus for exact phrase match
+        if (keywords.length > 1 && (e.quote||'').toLowerCase().includes(keywords.join(''))) score += 5;
+      }
+    });
+    
+    // Bonus for matching multiple keywords
+    if (matchCount > 1) score += matchCount * 2;
+    
+    return { e, score, matchCount };
+  });
+  
+  return scored.filter(s => s.score > 0).sort((a, b) => b.score - a.score).slice(0, 5);
+}
