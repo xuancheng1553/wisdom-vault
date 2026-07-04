@@ -2866,6 +2866,7 @@ function render() {
     case 'browse': el.innerHTML = renderBrowse(); break;
     case 'search': el.innerHTML = renderSearch(); break;
     case 'qa': el.innerHTML = renderQa(); break;
+    case 'path': el.innerHTML = renderPath(); break;
     case 'admin': el.innerHTML = renderAdmin(); break;
     default: el.innerHTML = renderHome();
   }
@@ -3101,3 +3102,118 @@ function smartSearch(q) {
   
   return scored.filter(s => s.score > 0).sort((a, b) => b.score - a.score).slice(0, 5);
 }
+
+
+// ─── 学习路径数据 ───
+const PATH_DATA = {
+  "mao": { name: "毛主席", color: "#922B21", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    onepagers: ["实践论","矛盾论","反对本本主义","论持久战","集中优势兵力","关于领导方法","党委会工作方法","为人民服务","愚公移山","改造我们的学习"] },
+  "munger": { name: "芒格", color: "#1B4F72", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    onepagers: ["多元思维模型","误判心理学"] },
+  "franklin": { name: "富兰克林", color: "#2980B9", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    onepagers: ["十三条美德"] },
+  "laozi": { name: "老子", color: "#16A085", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    onepagers: ["上善若水"] },
+  "kongzi": { name: "孔子", color: "#D35400", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    onepagers: ["仁与学"] },
+  "wangming": { name: "王阳明", color: "#C0392B", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    onepagers: ["知行合一"] },
+  "miller": { name: "米勒", color: "#2E86C1", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    onepagers: ["依恋理论","爱情三角","社会认知","关系维持","冲突"] },
+  "gottman": { name: "戈特曼", color: "#117A65", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    onepagers: ["末日骑士"] },
+  "huangdi": { name: "黄帝内经", color: "#27AE60", levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    onepagers: ["四气调神"] }
+};
+
+let pathState = null;
+
+// ─── 学习路径首页 ───
+function renderPath() {
+  pathState = 'list';
+  const ids = Object.keys(PATH_DATA);
+  return `<div class="page">
+    <div class="section-title">学习路径</div>
+    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px">9位智者的5级进阶体系 + 一页纸总结，点击进入</p>
+    <div class="path-grid">${ids.map(id => {
+      const d = PATH_DATA[id];
+      return `<div class="path-card" onclick="renderPathDetail('${id}')">
+        <div class="path-card-name" style="color:${d.color}">${d.name}</div>
+        <div class="path-card-count">${d.levels.length}级 · ${d.onepagers.length}篇一页纸</div>
+      </div>`;
+    }).join('')}</div>
+  </div>`;
+}
+
+// ─── 智者详情页 ───
+function renderPathDetail(id) {
+  const d = PATH_DATA[id];
+  if (!d) return;
+  pathState = id;
+  const el = document.getElementById('app-content');
+  el.innerHTML = `<div class="page">
+    <button class="back-btn" onclick="renderPath()"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg> 返回学习路径</button>
+    <div class="section-title" style="color:${d.color}">${d.name}</div>
+    <div style="margin-bottom:12px;font-size:13px;color:var(--text-secondary)">5级进阶体系</div>
+    ${d.levels.map((lv,i) => `<div class="path-level-card"><div class="path-level-title">${lv}</div><div class="path-level-desc">查看下方一页纸总结以获取该级别内容</div></div>`).join('')}
+    <div class="section-title">一页纸总结 (${d.onepagers.length})</div>
+    <div class="path-pager-list">${d.onepagers.map((p,i) => `<button class="path-pager-link" onclick="viewOnePager('${id}',${i})">${p}</button>`).join('')}</div>
+  </div>`;
+  el.scrollTop = 0;
+}
+
+// ─── 查看一页纸 ───
+function viewOnePager(id, idx) {
+  const d = PATH_DATA[id];
+  if (!d || !d.onepagers[idx]) return;
+  const title = d.onepagers[idx];
+  // Try to load from docs/ path, show nice message if not found
+  const filePath = `docs/学习路径/${d.name}/一页纸总结/${String(idx+1).padStart(2,'0')}-${title}.md`;
+  const localPath = `学习路径/${d.name}/一页纸总结/${String(idx+1).padStart(2,'0')}-${title}.md`;
+  
+  // Use fetch to load the markdown file
+  fetch(localPath).then(r => r.ok ? r.text() : Promise.reject()).then(md => {
+    const html = simpleMarkdown(md);
+    document.getElementById('modal-inner').innerHTML = `<div class="modal-handle"></div>
+      <h3 style="margin-bottom:10px;color:${d.color}">${d.name} · ${title}</h3>
+      <div class="onepager-content">${html}</div>`;
+    document.getElementById('modal').classList.remove('hidden');
+    document.getElementById('modal-overlay').classList.remove('hidden');
+  }).catch(() => {
+    // Fallback: show the content from embedded data
+    const p = fetch(`${localPath}`).then(r => r.text()).catch(() => '<p>文件加载失败，请在本地打开 02-学习路径 目录查看。</p>');
+  });
+}
+
+// ─── 简易Markdown渲染 ───
+function simpleMarkdown(md) {
+  let h = esc(md);
+  // Code blocks
+  h = h.replace(/\`\`\`([\s\S]*?)\`\`\`/g, '<pre><code>$1</code></pre>');
+  // Inline code
+  h = h.replace(/\`([^\n]+?)\`/g, '<code>$1</code>');
+  // Headers
+  h = h.replace(/^### (.+)$/gm, '<h3>$1</h3>');
+  h = h.replace(/^## (.+)$/gm, '<h2>$1</h2>');
+  h = h.replace(/^# (.+)$/gm, '<h1>$1</h1>');
+  // Bold
+  h = h.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  // Tables (simple pipe tables)
+  h = h.replace(/^\|[^|]+\|[^|]+\|$/gm, function(m) { return m; });
+  h = h.replace(/^\|(.+)\|$/gm, function(m) { const cells = m.split('|').filter(c=>c.trim()); return '<tr><td>'+cells.join('</td><td>')+'</td></tr>'; });
+  h = h.replace(/<tr>.*?<\/tr>/g, function(m) { return '<table>'+m+'</table>'; });
+  // Blockquotes
+  h = h.replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>');
+  // Lists
+  h = h.replace(/^- (.+)$/gm, '<li>$1</li>');
+  h = h.replace(/(<li>[\s\S]*?<\/li>\n?)+/g, '<ul>$&</ul>');
+  // Links
+  h = h.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>');
+  // Paragraphs
+  h = h.replace(/\n\n/g, '</p><p>');
+  // Horizontal rules
+  h = h.replace(/^---+$/gm, '<hr>');
+  return '<p>'+h+'</p>';
+}
+
+// ─── 覆盖 render 函数中 path 状态 ───
