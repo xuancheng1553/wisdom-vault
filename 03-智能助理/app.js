@@ -3260,22 +3260,28 @@ function renderPathDetail(id) {
 function showLevelContent(id, li, title, desc) {
   const d = PATH_DATA[id];
   if (!d) return;
-  document.getElementById('modal-inner').innerHTML =
-    '<div class="modal-handle"></div>' +
-    '<h3 style="margin-bottom:6px;color:'+d.color+'">'+d.name+' · '+title+'</h3>' +
-    '<div style="font-size:14px;line-height:1.7;padding:4px 0">'+esc(desc)+'</div>';
-  // Add one-pager buttons if available
-  const pages = (d.levelPages && d.levelPages[li]) || [];
-  if (pages.length > 0) {
-    document.getElementById('modal-inner').innerHTML +=
-      '<div style="margin-top:12px;padding-top:10px;border-top:1px solid #eee"><div style="font-size:13px;font-weight:600;color:var(--text-secondary);margin-bottom:6px">相关一页纸：</div>'+
-      '<div class="path-pager-list">'+pages.map(pi => '<button class="path-pager-link" onclick="closeModal();viewOnePager(\''+id+'\','+pi+')">'+(d.onepagers[pi]||'')+'</button>').join('')+'</div></div>';
+  const lc = (d.levelContent && d.levelContent[li]) || [];
+  const labels = ['目标','核心内容','要读的文章','练习建议','常见错误','进阶标准'];
+  const icons = ['🎯','📖','📚','✏️','⚠️','📈'];
+  let html = '<div class="modal-handle"></div><h3 style="margin-bottom:8px;color:'+d.color+'">'+d.name+' · '+title+'</h3>';
+  if (lc.length > 0) {
+    lc.forEach(function(item, i) {
+      var text = item[1] || '';
+      if (text) {
+        html += '<div style="margin-bottom:10px"><div style="font-size:12px;font-weight:600;color:var(--text-secondary);margin-bottom:2px">'+icons[i]+' '+labels[i]+'</div><div style="font-size:14px;line-height:1.6">'+esc(text)+'</div></div>';
+      }
+    });
+  } else {
+    html += '<div style="font-size:14px;line-height:1.7;padding:4px 0">'+esc(desc)+'</div>';
   }
+  var pages = (d.levelPages && d.levelPages[li]) || [];
+  if (pages.length > 0) {
+    html += '<div style="margin-top:8px;padding-top:8px;border-top:1px solid #eee"><div style="font-size:13px;font-weight:600;color:var(--text-secondary);margin-bottom:4px">相关一页纸：</div><div class="path-pager-list">'+pages.map(function(pi) { return '<button class="path-pager-link" onclick="closeModal();viewOnePager(\''+id+'\','+pi+')">'+(d.onepagers[pi]||'')+'</button>'; }).join('')+'</div></div>';
+  }
+  document.getElementById('modal-inner').innerHTML = html;
   document.getElementById('modal').classList.remove('hidden');
   document.getElementById('modal-overlay').classList.remove('hidden');
 }
-
-
 function viewOnePager(id, idx) {
   const d = PATH_DATA[id];
   if (!d || !d.onepagers[idx]) return;
