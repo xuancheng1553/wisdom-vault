@@ -3046,7 +3046,7 @@ function viewOnePager(id, idx) {
   var d=PATH_DATA[id]; if(!d||!d.onepagers[idx])return;
   var title=d.onepagers[idx];
   var localPath='学习路径/'+d.name+'/一页纸总结/'+(idx+1<10?'0':'')+(idx+1)+'-'+title+'.md';
-  fetch(localPath).then(function(r){if(!r.ok)throw new Error();return r.text()}).then(function(md){document.getElementById('modal-inner').innerHTML='<div class="modal-handle"></div><h3 style="margin-bottom:8px;color:'+d.color+'">'+d.name+' · '+title+'</h3><div style="font-size:14px;line-height:1.7;white-space:pre-wrap">'+esc(md.substring(0,3000))+'</div>';document.getElementById('modal').classList.remove('hidden');document.getElementById('modal-overlay').classList.remove('hidden')}).catch(function(){closeModal()});
+  fetch(encodeURI(localPath)).then(function(r){if(!r.ok)throw new Error();return r.text()}).then(function(md){document.getElementById('modal-inner').innerHTML='<div class="modal-handle"></div><h3 style="margin-bottom:8px;color:'+d.color+'">'+d.name+' · '+title+'</h3><div style="font-size:14px;line-height:1.7;white-space:pre-wrap">'+esc(md.substring(0,3000))+'</div>';document.getElementById('modal').classList.remove('hidden');document.getElementById('modal-overlay').classList.remove('hidden')}).catch(function(){document.getElementById('modal-inner').innerHTML='<div class="modal-handle"></div><h3 style="margin-bottom:8px;color:#c44545">加载失败</h3><p style="font-size:14px;color:var(--text-secondary)">一页纸文件未找到，请在本地打开 02-学习路径 目录查看。</p><button class="admin-btn" style="margin-top:10px;background:#9ca3af;color:#fff" onclick="closeModal()">关闭</button>';document.getElementById('modal').classList.remove('hidden');document.getElementById('modal-overlay').classList.remove('hidden')});
 }
 
 document.addEventListener('DOMContentLoaded', init);
