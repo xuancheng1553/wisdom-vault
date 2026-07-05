@@ -3229,6 +3229,8 @@ function renderPath() {
     const d = PATH_DATA[id];
     return '<div class="path-card" onclick="renderPathDetail(\''+id+'\')"><div class="path-card-color" style="background:'+d.color+'"></div><div class="path-card-info"><div class="path-card-name">'+d.name+'</div><div class="path-card-count">'+d.levels.length+'级学习 · '+d.onepagers.length+'篇一页纸</div></div></div>';
   }).join('') + '</div></div>';
+  document.getElementById('app-content').innerHTML = html;
+  return html;
 }
 
 
