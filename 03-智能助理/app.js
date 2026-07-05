@@ -2893,7 +2893,12 @@ function figCount(figId) { var n=0; ENTRIES.forEach(function(e){if(e.figure_id==
 function dimIcon(id) { return DIM_EMOJI[id]||'📖'; }
 
 function init() {
-  bindNav(); render();
+  try {
+    bindNav(); render();
+  } catch(e) {
+    document.getElementById('app-content').innerHTML = '<div style="padding:20px;color:#c44545"><h3>JavaScript Error</h3><p style="font-family:monospace;font-size:13px;white-space:pre-wrap">' + esc(e.message) + '</p></div>';
+    console.error('Init error:', e);
+  }
 }
 function bindNav() {
   document.querySelectorAll('.nav-btn').forEach(function(btn) {
