@@ -3223,8 +3223,9 @@ let pathState = null;
 // ─── 学习路径首页 ───
 function renderPath() {
   pathState = 'list';
+  STATE.page = 'path';
   const ids = Object.keys(PATH_DATA);
-  return '<div class="page"><div class="section-title">学习路径</div><p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px">点击智者进入5级进阶体系</p><div class="path-grid-vertical">' + ids.map(id => {
+  document.getElementById('app-content').innerHTML = '<div class="page"><div class="section-title">学习路径</div><p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px">点击智者进入5级进阶体系</p><div class="path-grid-vertical">' + ids.map(id => {
     const d = PATH_DATA[id];
     return '<div class="path-card" onclick="renderPathDetail(\''+id+'\')"><div class="path-card-color" style="background:'+d.color+'"></div><div class="path-card-info"><div class="path-card-name">'+d.name+'</div><div class="path-card-count">'+d.levels.length+'级学习 · '+d.onepagers.length+'篇一页纸</div></div></div>';
   }).join('') + '</div></div>';
