@@ -1,4 +1,4 @@
-/* ===== 智慧宝库 v2.5 - 183 entries (27 Miller) ===== */
+/* ===== 智慧宝库 v2.5 - 183 entries, 23 figures ===== */
 const EMBEDDED_DATA = {
   "dimensions": [
     {
@@ -2830,37 +2830,84 @@ let DIMS = EMBEDDED_DATA.dimensions;
 let FIGS = EMBEDDED_DATA.figures;
 let ENTRIES = EMBEDDED_DATA.entries;
 let NEXT_ID = ENTRIES.length + 100;
+let PATH_DATA = {
+  "mao": { name: "毛主席", color: "#922B21",
+    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    onepagers: ["实践论","矛盾论","反对本本主义","论持久战","集中优势兵力","关于领导方法","党委会工作方法","为人民服务","愚公移山","改造我们的学习"],
+    levelPages: [[2],[0,1],[3,4],[5,6],[7,8,9]],
+    articles: ["反对本本主义","实践论","矛盾论","论持久战","反对自由主义","改造我们的学习","整顿党的作风","关于领导方法","集中优势兵力","党委会的工作方法","为人民服务","愚公移山","纪念白求恩","星星之火，可以燎原","中国革命战争的战略问题"],
+    plan: [["导论：毛选为什么值得当代人读","《反对本本主义》《改造我们的学习》"],["实践论（上）：认识的三个阶段","《实践论》"],["实践论（下）：在实践中检验真理","《实践论》后半部分"],["矛盾论（上）：主要矛盾分析法","《矛盾论》前半部分"],["矛盾论（下）：矛盾转化","《矛盾论》后半部分"],["实事求是：调查研究的方法","《反对本本主义》《湖南农运报告》"],["战略思维：论持久战","《论持久战》《集中优势兵力》"],["领导方法：群众路线","《关于领导方法》《党委会工作方法》"],["工作方法：解剖麻雀","《工作方法六十条》《反对自由主义》"],["精神境界：为人民服务","《为人民服务》《愚公移山》《纪念白求恩》"]],
+    levelFilter: [["学习","调查","实践","认识"],["方法","矛盾","自省","实事求是"],["战略","创业","投资","准备","持久战"],["领导力","群众路线","执行","决策"],["信念","奉献","坚持","人格","勇气"]] },
+  "munger": { name: "芒格", color: "#1B4F72",
+    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    onepagers: ["多元思维模型","误判心理学"],
+    levelPages: [[0],[1],[],[],[]],
+    articles: ["多元思维模型","误判心理学","能力圈","反过来想"],
+    plan: [["芒格其人其道","穷查理宝典"],["多元思维模型","格栅理论章节"],["误判心理学","25个偏误"],["能力圈","能力圈论述"],["投资哲学","芒格投资原则"]],
+    levelFilter: [["多元思维","误判","能力圈"],["模型","心理","偏误"],["投资","护城河","清单"],["格栅","跨学科"],["芒格","人生"]] },
+  "miller": { name: "米勒", color: "#2E86C1",
+    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    onepagers: ["依恋理论","爱情三角","社会认知","关系维持","冲突","吸引力","沟通","相互依赖","压力与紧张","关系解体","性亲密","权力与暴力"],
+    levelPages: [[0,5,6],[1,2,7],[3,4,8],[9,10],[11]],
+    articles: ["吸引力","依恋理论","社会认知","爱情三角","沟通","冲突","关系维持"],
+    plan: [["导论：亲密关系科学","第1章"],["吸引力","第3章"],["依恋与社会认知","第4、6章"],["沟通的艺术","第5章"],["爱情与冲突","第8、11章"]],
+    levelFilter: [["吸引","依恋","亲密"],["爱情","认知","沟通"],["冲突","维持","修复"],["解体","分离"],["亲密关系","米勒"]] },
+  "franklin": { name: "富兰克林", color: "#2980B9",
+    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    onepagers: ["十三条美德"],
+    levelPages: [[0],[],[],[],[]] },
+  "laozi": { name: "老子", color: "#16A085",
+    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    onepagers: ["上善若水"],
+    levelPages: [[0],[],[],[],[]] },
+  "kongzi": { name: "孔子", color: "#D35400",
+    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    onepagers: ["仁与学"],
+    levelPages: [[0],[],[],[],[]] },
+  "wangming": { name: "王阳明", color: "#C0392B",
+    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    onepagers: ["知行合一"],
+    levelPages: [[0],[],[],[],[]] },
+  "gottman": { name: "戈特曼", color: "#117A65",
+    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    onepagers: ["末日骑士"],
+    levelPages: [[0],[],[],[],[]] },
+  "huangdi": { name: "黄帝内经", color: "#27AE60",
+    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
+    onepagers: ["四气调神"],
+    levelPages: [[0],[],[],[],[]] }
+};
+let pathState = null;
+const DIM_EMOJI = {'xiu-shen':'📚','chuang-ye':'🚀','tou-zi':'💰','hun-yin':'❤️','she-jiao':'🤝','shen-ti':'💪','gong-zuo':'⚡','ling-dao':'🎯','qi-jia':'🏠','li-xiang':'🌟'};
+const LABELS = ['目标','核心内容','要读的文章','练习建议','常见错误','进阶标准'];
+const ICONS = ['🎯','📖','📚','✏️','⚠️','📈'];
+const LEVEL_COLORS = ['#3498db','#2ecc71','#f39c12','#e74c3c','#9b59b6'];
+
+function esc(s) { if(!s)return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function getDim(id) { return DIMS.find(function(d){return d.id===id}); }
+function getFig(id) { return FIGS.find(function(f){return f.id===id}); }
+function dimCount(dimId) { var n=0; ENTRIES.forEach(function(e){if(e.dimension_id===dimId)n++}); return n; }
+function figCount(figId) { var n=0; ENTRIES.forEach(function(e){if(e.figure_id===figId)n++}); return n; }
+function dimIcon(id) { return DIM_EMOJI[id]||'📖'; }
+
 function init() {
   bindNav(); render();
 }
-
 function bindNav() {
-  document.querySelectorAll('.nav-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const pg = btn.dataset.page;
-      STATE.page = pg; STATE.dimFilter = null; STATE.figFilter = null; STATE.adminView = 'list';
+  document.querySelectorAll('.nav-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      STATE.page = btn.dataset.page;
+      STATE.dimFilter = null; STATE.figFilter = null; STATE.adminView = 'list';
       render();
     });
   });
-  document.getElementById('modal-overlay').addEventListener('click', closeModal);
-  updateHeaderStatus();
+  var mo = document.getElementById('modal-overlay');
+  if (mo) mo.addEventListener('click', closeModal);
 }
-
-function updateHeaderStatus() {
-  const el = document.getElementById('header-status');
-  if (el) { el.textContent = `${ENTRIES.length} 条智慧 · ${DIMS.length} 维度 · ${FIGS.length} 来源`; el.style.display = 'block'; }
-}
-
-function navigate(pg, extra) {
-  if (extra) Object.assign(STATE, extra);
-  STATE.page = pg;
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b.dataset.page === pg));
-  render();
-}
-
 function render() {
-  const el = document.getElementById('app-content');
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b.dataset.page === STATE.page));
+  var el = document.getElementById('app-content');
+  if (!el) return;
+  document.querySelectorAll('.nav-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.page === STATE.page); });
   switch(STATE.page) {
     case 'home': el.innerHTML = renderHome(); break;
     case 'browse': el.innerHTML = renderBrowse(); break;
@@ -2873,550 +2920,133 @@ function render() {
   el.scrollTop = 0;
 }
 
-function dimCount(dimId) { return ENTRIES.filter(e => e.dimension_id === dimId).length; }
-function figCount(figId) { return ENTRIES.filter(e => e.figure_id === figId).length; }
-function getDim(id) { return DIMS.find(d => d.id === id); }
-function getFig(id) { return FIGS.find(f => f.id === id); }
-function esc(s) { if(!s)return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-function DIM_EMOJI(id) { const d=getDim(id); return {'xiu-shen':'📚','chuang-ye':'🚀','tou-zi':'💰','hun-yin':'❤️','she-jiao':'🤝','shen-ti':'💪','gong-zuo':'⚡','ling-dao':'🎯','qi-jia':'🏠','li-xiang':'🌟'}[id]||'📖'; }
-
-function renderWisdomCard(e, adminMode) {
-  const fig = getFig(e.figure_id);
-  const dim = getDim(e.dimension_id);
-  const c = fig ? fig.color : '#666';
-  const bg = e.figure_id === 'munger' ? '#eaf2f8' : e.figure_id === 'mao' ? '#fce9e7' : '#f0f0f0';
-  const figName = fig ? fig.short_name || fig.name : (e.figure_name || e.figure_id);
-  const dimName = dim ? dim.name : (e.dimension_name || '');
-  const tags = e.tags ? e.tags.split(',').slice(0,3) : [];
-  return `<div class="wisdom-card" onclick="${adminMode ? '' : `openWisdom(${e.id})`}">
-    <div class="wisdom-figure" style="background:${bg};color:${c}">${esc(figName)}</div>
-    <div class="wisdom-quote">${esc(e.quote)}</div>
-    <div class="wisdom-source">${esc(e.source)} · ${esc(dimName)}</div>
-    ${tags.map(t => `<span class="wisdom-tag">${esc(t)}</span>`).join('')}
-    ${adminMode ? `<div style="margin-top:8px;display:flex;gap:6px"><button class="admin-btn edit" onclick="event.stopPropagation();editEntry(${e.id})">编辑</button><button class="admin-btn del" onclick="event.stopPropagation();deleteEntry(${e.id})">删除</button></div>` : ''}
-  </div>`;
+// ─── Home ───
+function renderHome() {
+  return '<div class="page"><div class="hero"><h2>智慧宝库</h2><p>芒格·毛主席·亲密关系·家庭教育·养生健康</p></div><div class="stats"><div class="stat-card"><span class="stat-num">'+ENTRIES.length+'</span><span class="stat-label">智慧条目</span></div><div class="stat-card"><span class="stat-num">'+DIMS.length+'</span><span class="stat-label">人生维度</span></div><div class="stat-card"><span class="stat-num">'+FIGS.length+'</span><span class="stat-label">思想来源</span></div></div><div class="section-title">人生维度</div><div class="dim-grid">'+DIMS.map(function(d){return '<div class="dim-card" onclick="navigate(\'browse\',{dimFilter:\''+d.id+'\'})"><span class="dim-icon">'+dimIcon(d.id)+'</span><div class="dim-name">'+esc(d.name)+'</div><div class="dim-count">'+dimCount(d.id)+' 条</div></div>'}).join('')+'</div><div class="section-title">思想来源</div><div class="figure-strip" style="flex-wrap:wrap">'+FIGS.map(function(f){return '<div class="figure-mini" style="flex:0 0 calc(33% - 8px)" onclick="navigate(\'browse\',{figFilter:\''+f.id+'\'})"><div class="fig-avatar" style="background:'+f.color+';margin:0 auto 8px;width:40px;height:40px;font-size:15px;line-height:40px">'+esc((f.short_name||f.name)[0])+'</div><div class="figure-mini-name" style="font-size:13px">'+esc(f.short_name||f.name)+'</div></div>'}).join('')+'</div></div>';
 }
 
-function renderHome() {
-  return `<div class="page">
-    <div class="hero"><h2>智慧宝库</h2><p>芒格·毛主席·亲密关系·家庭教育·养生健康</p></div>
-    <div class="stats">
-      <div class="stat-card"><span class="stat-num">${ENTRIES.length}</span><span class="stat-label">智慧条目</span></div>
-      <div class="stat-card"><span class="stat-num">${DIMS.length}</span><span class="stat-label">人生维度</span></div>
-      <div class="stat-card"><span class="stat-num">${FIGS.length}</span><span class="stat-label">思想来源</span></div>
-    </div>
-    <div class="section-title">人生维度</div>
-    <div class="dim-grid">${DIMS.map(d => `<div class="dim-card" onclick="navigate('browse',{dimFilter:'${d.id}'})"><span class="dim-icon">${DIM_EMOJI(d.id)}</span><div class="dim-name">${esc(d.name)}</div><div class="dim-count">${dimCount(d.id)} 条</div></div>`).join('')}</div>
-    <div class="section-title">思想来源</div>
-    <div class="figure-strip" style="flex-wrap:wrap">${FIGS.map(f => `<div class="figure-mini" style="flex:0 0 calc(33% - 8px)" onclick="navigate('browse',{figFilter:'${f.id}'})"><div class="fig-avatar" style="background:${f.color};margin:0 auto 8px;width:40px;height:40px;font-size:15px;line-height:40px">${(f.short_name||f.name)[0]}</div><div class="figure-mini-name" style="font-size:13px">${esc(f.short_name||f.name)}</div></div>`).join('')}</div>
-  </div>`;
+function navigate(pg, extra) { if(extra)Object.assign(STATE,extra); STATE.page=pg; document.querySelectorAll('.nav-btn').forEach(function(b){b.classList.toggle('active',b.dataset.page===pg)}); render(); }
+
+function renderWisdomCard(e, adminMode) {
+  var fig=getFig(e.figure_id), dim=getDim(e.dimension_id), c=fig?fig.color:'#666', bg=e.figure_id==='munger'?'#eaf2f8':'#f0f0f0', figName=fig?(fig.short_name||fig.name):(e.figure_name||e.figure_id), dimName=dim?dim.name:'', tags=e.tags?e.tags.split(',').slice(0,3):[];
+  return '<div class="wisdom-card" onclick="'+(adminMode?'':'openWisdom('+e.id+')')+'"><div class="wisdom-figure" style="background:'+bg+';color:'+c+'">'+esc(figName)+'</div><div class="wisdom-quote">'+esc(e.quote)+'</div><div class="wisdom-source">'+esc(e.source)+' · '+esc(dimName)+'</div>'+tags.map(function(t){return '<span class="wisdom-tag">'+esc(t)+'</span>'}).join('')+(adminMode?'<div style="margin-top:8px;display:flex;gap:6px"><button class="admin-btn edit" onclick="event.stopPropagation();editEntry('+e.id+')">编辑</button><button class="admin-btn del" onclick="event.stopPropagation();deleteEntry('+e.id+')">删除</button></div>':'')+'</div>';
 }
 
 function renderBrowse() {
-  const activeDim = STATE.dimFilter || 'all', activeFig = STATE.figFilter || 'all';
-  let items = ENTRIES;
-  if (activeDim !== 'all') items = items.filter(e => e.dimension_id === activeDim);
-  if (activeFig !== 'all') items = items.filter(e => e.figure_id === activeFig);
-  return `<div class="page">
-    <div class="section-title">浏览智慧</div>
-    <div class="dim-filter" style="margin-bottom:6px">
-      <div class="filter-chip ${activeDim==='all'?'active':''}" onclick="navigate('browse',{dimFilter:null,figFilter:STATE.figFilter})">全部维度</div>
-      ${DIMS.map(d => `<div class="filter-chip ${activeDim===d.id?'active':''}" onclick="navigate('browse',{dimFilter:'${d.id}',figFilter:STATE.figFilter})">${DIM_EMOJI(d.id)} ${d.name} (${dimCount(d.id)})</div>`).join('')}
-    </div>
-    <div class="dim-filter" style="margin-bottom:12px">
-      <div class="filter-chip ${activeFig==='all'?'active':''}" onclick="navigate('browse',{figFilter:null,dimFilter:STATE.dimFilter})">全部来源</div>
-      ${FIGS.map(f => `<div class="filter-chip ${activeFig===f.id?'active':''}" onclick="navigate('browse',{figFilter:'${f.id}',dimFilter:STATE.dimFilter})">${f.name}</div>`).join('')}
-    </div>
-    <div class="wisdom-list">${items.length ? items.map(e => renderWisdomCard(e)).join('') : '<div class="search-empty"><span class="search-empty-icon">📭</span>该分类暂无内容</div>'}</div>
-  </div>`;
+  var ad=STATE.dimFilter||'all', af=STATE.figFilter||'all', items=ENTRIES;
+  if(ad!=='all') items=items.filter(function(e){return e.dimension_id===ad});
+  if(af!=='all') items=items.filter(function(e){return e.figure_id===af});
+  return '<div class="page"><div class="section-title">浏览智慧</div><div class="dim-filter" style="margin-bottom:6px"><div class="filter-chip '+(ad==='all'?'active':'')+'" onclick="navigate(\'browse\',{dimFilter:null,figFilter:STATE.figFilter})">全部维度</div>'+DIMS.map(function(d){return '<div class="filter-chip '+(ad===d.id?'active':'')+'" onclick="navigate(\'browse\',{dimFilter:\''+d.id+'\',figFilter:STATE.figFilter})">'+dimIcon(d.id)+' '+d.name+' ('+dimCount(d.id)+')</div>'}).join('')+'</div><div class="dim-filter" style="margin-bottom:12px"><div class="filter-chip '+(af==='all'?'active':'')+'" onclick="navigate(\'browse\',{figFilter:null,dimFilter:STATE.dimFilter})">全部来源</div>'+FIGS.map(function(f){return '<div class="filter-chip '+(af===f.id?'active':'')+'" onclick="navigate(\'browse\',{figFilter:\''+f.id+'\',dimFilter:STATE.dimFilter})">'+f.name+'</div>'}).join('')+'</div><div class="wisdom-list">'+(items.length?items.map(function(e){return renderWisdomCard(e)}).join(''):'<div class="search-empty"><span class="search-empty-icon">📭</span>暂无内容</div>')+'</div></div>';
 }
 
-function renderSearch(q) {
-  const query = (q || '').trim().toLowerCase();
-  let results = query ? ENTRIES.filter(e => { const fig=getFig(e.figure_id),dim=getDim(e.dimension_id); const txt=`${e.quote} ${e.interpretation} ${e.source} ${e.tags||''} ${fig?fig.name:''} ${fig?fig.short_name:''} ${dim?dim.name:''}`.toLowerCase(); return txt.includes(query); }) : [];
-  return `<div class="page"><div class="section-title">搜索智慧</div><div class="search-box"><input class="search-input" id="searchInput" type="text" placeholder="输入关键词..." value="${esc(q||'')}" oninput="onSearch(this.value)"></div>
-    ${query ? `<div class="search-results">${results.length ? results.map(e=>renderWisdomCard(e)).join('') : '<div class="search-empty"><span class="search-empty-icon">🔍</span>无结果</div>'}</div>` : '<div class="search-empty"><span class="search-empty-icon">🔍</span>输入关键词搜索所有智慧</div>'}</div>`;
+function renderSearch() {
+  var q=(STATE.searchQ||'').trim().toLowerCase();
+  var results=q?ENTRIES.filter(function(e){var fig=getFig(e.figure_id),dim=getDim(e.dimension_id); return ((e.quote+' '+e.interpretation+' '+e.source+' '+e.tags+' '+(fig?fig.name:'')+' '+(fig?fig.short_name:'')+' '+(dim?dim.name:'')).toLowerCase().indexOf(q)>=0)}):[];
+  return '<div class="page"><div class="section-title">搜索智慧</div><div class="search-box"><input class="search-input" id="searchInput" type="text" placeholder="输入关键词..." value="'+esc(q)+'" oninput="onSearch(this.value)"></div>'+(q?'<div class="search-results">'+(results.length?results.map(function(e){return renderWisdomCard(e)}).join(''):'<div class="search-empty"><span class="search-empty-icon">🔍</span>无结果</div>')+'</div>':'<div class="search-empty"><span class="search-empty-icon">🔍</span>输入关键词</div>')+'</div>';
 }
-function onSearch(val) { document.getElementById('app-content').innerHTML = renderSearch(val); const inp = document.getElementById('searchInput'); if(inp) inp.focus(); }
+function onSearch(val) {STATE.searchQ=val; document.getElementById('app-content').innerHTML=renderSearch(); var inp=document.getElementById('searchInput'); if(inp)inp.focus(); }
 
-function renderAdmin() {
-  const activeDim = STATE.dimFilter || 'all';
-  let items = activeDim === 'all' ? ENTRIES : ENTRIES.filter(e => e.dimension_id === activeDim);
-  return `<div class="page"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><div class="section-title" style="margin-bottom:0">知识管理 (${items.length})</div><button class="admin-btn add" onclick="showAddForm()">+ 新增</button></div>
-    <div class="dim-filter" style="margin-bottom:12px"><div class="filter-chip ${activeDim==='all'?'active':''}" onclick="navigate('admin',{dimFilter:null,adminView:'list'})">全部</div>${DIMS.map(d => `<div class="filter-chip ${activeDim===d.id?'active':''}" onclick="navigate('admin',{dimFilter:'${d.id}',adminView:'list'})">${DIM_EMOJI(d.id)} ${d.name} (${dimCount(d.id)})</div>`).join('')}</div>
-    <div class="wisdom-list">${items.length ? items.map(e=>renderWisdomCard(e,true)).join('') : '<div class="search-empty"><span class="search-empty-icon">📭</span>暂无内容</div>'}</div>
-  </div>`;
+// ─── Q&A ───
+function renderQa(q) {
+  var query=(q||'').trim();
+  return '<div class="page qa-page"><div class="section-title">智慧问答</div><p style="font-size:13px;color:var(--text-secondary);margin-bottom:14px">输入问题，搜索智慧库中相关回答</p><div class="qa-messages" id="qaMessages"><div class="qa-message qa-ai"><div class="qa-avatar" style="background:var(--accent)">智</div><div class="qa-bubble">你好！我是智慧宝库助理，收录了'+ENTRIES.length+'条智慧，你有什么问题？</div></div></div><div class="qa-input-bar"><input class="qa-input" id="qaInput" type="text" placeholder="输入问题..." onkeydown="if(event.key===\'Enter\')onAsk()" value="'+esc(query)+'"><button class="qa-send" onclick="onAsk()">发送</button></div></div>';
 }
-
-function showAddForm(eid) {
-  const entry = eid ? ENTRIES.find(e => e.id === eid) : null;
-  const title = entry ? '编辑智慧' : '新增智慧';
-  const dId = entry ? entry.dimension_id : (STATE.dimFilter || DIMS[0]?.id || '');
-  const fId = entry ? entry.figure_id : (FIGS[0]?.id || '');
-  const cats = ['核心思想','方法论','人生智慧','经典语录','核心理念','方法','思想','预言','警告'];
-  document.getElementById('modal-inner').innerHTML = `
-    <div class="modal-handle"></div>
-    <h3 style="margin-bottom:14px;font-size:17px;font-weight:700">${title}</h3>
-    <form id="entryForm" class="admin-form">
-      <label>维度</label>
-      <select name="dimension_id">${DIMS.map(d => `<option value="${d.id}" ${d.id===dId?'selected':''}>${DIM_EMOJI(d.id)} ${d.name}</option>`).join('')}</select>
-      <label>来源人物</label>
-      <select name="figure_id">${FIGS.map(f => `<option value="${f.id}" ${f.id===fId?'selected':''}>${f.name}</option>`).join('')}</select>
-      <label>分类</label>
-      <select name="category">${cats.map(c => `<option value="${c}" ${entry&&entry.category===c?'selected':''}>${c}</option>`).join('')}</select>
-      <label>引文</label>
-      <textarea name="quote" rows="3" required>${entry ? esc(entry.quote) : ''}</textarea>
-      <label>出处</label>
-      <input name="source" value="${entry ? esc(entry.source) : ''}">
-      <label>当代解读</label>
-      <textarea name="interpretation" rows="2">${entry ? esc(entry.interpretation) : ''}</textarea>
-      <label>标签（逗号分隔）</label>
-      <input name="tags" value="${entry ? esc(entry.tags) : ''}" placeholder="如: 婚姻,沟通,信任">
-      <div style="display:flex;gap:8px;margin-top:12px">
-        <button type="submit" class="admin-btn add" style="flex:1">${entry ? '保存修改' : '添加'}</button>
-        <button type="button" class="admin-btn" style="flex:1;background:#9ca3af;color:#fff" onclick="closeModal()">取消</button>
-      </div>
-    </form>`;
-  document.getElementById('modal').classList.remove('hidden');
-  document.getElementById('modal-overlay').classList.remove('hidden');
-  document.getElementById('entryForm').addEventListener('submit', ev => {
-    ev.preventDefault(); const fd=new FormData(ev.target); const data=Object.fromEntries(fd.entries());
-    if(entry) { Object.assign(entry,data); } else { data.id= ++NEXT_ID; ENTRIES.push(data); }
-    closeModal(); render();
-  });
+function onAsk() {
+  var inp=document.getElementById('qaInput'); if(!inp||!inp.value.trim())return;
+  var q=inp.value.trim(); inp.value='';
+  var msgs=document.getElementById('qaMessages');
+  msgs.innerHTML+='<div class="qa-message qa-user"><div class="qa-avatar" style="background:#6b7280">你</div><div class="qa-bubble">'+esc(q)+'</div></div>';
+  var kws=q.toLowerCase().split(/[\s,，。！？、]+/).filter(function(k){return k.length>1});
+  if(kws.length===0)return;
+  var scored=ENTRIES.map(function(e){var fig=getFig(e.figure_id),dim=getDim(e.dimension_id); var txt=(e.quote+' '+e.interpretation+' '+e.source+' '+e.tags+' '+(fig?fig.name:'')+' '+(fig?fig.short_name:'')+' '+(dim?dim.name:'')).toLowerCase(); var score=0; kws.forEach(function(kw){if(txt.indexOf(kw)>=0)score+=3;if((e.interpretation||'').toLowerCase().indexOf(kw)>=0)score+=2;if((e.tags||'').toLowerCase().indexOf(kw)>=0)score+=2}); return{e:e,score:score}});
+  scored=scored.filter(function(s){return s.score>0}).sort(function(a,b){return b.score-a.score}).slice(0,5);
+  var html='<div class="qa-message qa-ai"><div class="qa-avatar" style="background:var(--accent)">智</div><div class="qa-bubble">';
+  if(scored.length===0) html+='<p>关于"'+esc(q)+'"，智慧库中没有找到相关内容。</p>';
+  else {
+    html+='<p>关于"'+esc(q)+'"，找到以下相关内容：</p>';
+    scored.forEach(function(r){var fig=getFig(r.e.figure_id),dim=getDim(r.e.dimension_id),c=fig?fig.color:'#666'; html+='<div style="margin:8px 0;padding:10px;background:#f9f9f9;border-radius:8px;border-left:3px solid '+c+'"><div style="font-size:12px;font-weight:600;color:'+c+'">'+(fig?esc(fig.name):'')+' · '+(dim?esc(dim.name):'')+'</div><div style="font-size:14px;line-height:1.5;margin:4px 0">'+esc(r.e.quote)+'</div><div style="font-size:12px;color:#6b7280">📖 '+esc(r.e.source)+'</div>'+(r.e.interpretation?'<div style="font-size:13px;color:#4b5563;margin-top:4px;padding:6px;background:#fff;border-radius:4px">💡 '+esc(r.e.interpretation)+'</div>':'')+'</div>'});
+  }
+  html+='</div></div>'; msgs.innerHTML+=html; msgs.scrollTop=msgs.scrollHeight;
 }
-
-function editEntry(id) { showAddForm(id); }
-function deleteEntry(id) { if(!confirm('确定删除?'))return; ENTRIES=ENTRIES.filter(e=>e.id!==id); render(); }
 
 function openWisdom(id) {
-  const e = ENTRIES.find(x => x.id === id); if(!e)return;
-  const fig=getFig(e.figure_id), dim=getDim(e.dimension_id);
-  const c=fig?fig.color:'#666'; const bg=e.figure_id==='munger'?'#eaf2f8':e.figure_id==='mao'?'#fce9e7':'#f0f0f0';
-  const tags=e.tags?e.tags.split(','):[];
-  document.getElementById('modal-inner').innerHTML = '<div class="modal-handle"></div>'+
-    `<div class="modal-figure" style="background:${bg};color:${c}">${fig?esc(fig.name):''}</div>`+
-    `<div class="modal-quote">${esc(e.quote)}</div>`+
-    `<div class="modal-source">📖 ${esc(e.source)} · ${dim?esc(dim.name):''} · ${e.category}</div>`+
-    (e.interpretation?`<div class="modal-interp"><div class="modal-interp-label">当代解读</div>${esc(e.interpretation)}</div>`:'')+
-    (tags.length?`<div style="margin-top:10px">${tags.map(t=>'<span class="wisdom-tag">'+esc(t)+'</span>').join('')}</div>`:'');
-  document.getElementById('modal').classList.remove('hidden');
-  document.getElementById('modal-overlay').classList.remove('hidden');
+  var e=ENTRIES.find(function(x){return x.id===id}); if(!e)return;
+  var fig=getFig(e.figure_id),dim=getDim(e.dimension_id),c=fig?fig.color:'#666',bg=e.figure_id==='munger'?'#eaf2f8':'#f0f0f0';
+  document.getElementById('modal-inner').innerHTML='<div class="modal-handle"></div><div class="modal-figure" style="background:'+bg+';color:'+c+'">'+(fig?esc(fig.name):'')+'</div><div class="modal-quote">'+esc(e.quote)+'</div><div class="modal-source">📖 '+esc(e.source)+' · '+(dim?esc(dim.name):'')+' · '+e.category+'</div>'+(e.interpretation?'<div class="modal-interp"><div class="modal-interp-label">当代解读</div>'+esc(e.interpretation)+'</div>':'');
+  document.getElementById('modal').classList.remove('hidden'); document.getElementById('modal-overlay').classList.remove('hidden');
 }
-
 function closeModal() { document.getElementById('modal').classList.add('hidden'); document.getElementById('modal-overlay').classList.add('hidden'); }
 
-document.addEventListener('DOMContentLoaded', init);
-
-
-// ─── Q&A Page ───
-function renderQa(q) {
-  const query = (q || '').trim();
-  return `<div class="page qa-page">
-    <div class="section-title">智慧问答</div>
-    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:14px">输入你的问题，系统会从智慧库中搜索最相关的回答</p>
-    <div class="qa-messages" id="qaMessages">
-      <div class="qa-message qa-ai">
-        <div class="qa-avatar" style="background:var(--accent)">智</div>
-        <div class="qa-bubble">你好！我是智慧宝库助理。我在芒格、毛主席、亲密关系、家庭教育、养生健康等方面收录了 ${ENTRIES.length} 条智慧。你有什么问题想问？</div>
-      </div>
-    </div>
-    <div class="qa-input-bar">
-      <input class="qa-input" id="qaInput" type="text" placeholder="输入你的问题..." onkeydown="if(event.key==='Enter')onAsk()" value="${esc(query)}">
-      <button class="qa-send" onclick="onAsk()">发送</button>
-    </div>
-  </div>`;
+// ─── Admin ───
+function renderAdmin() {
+  var ad=STATE.dimFilter||'all', items=ad==='all'?ENTRIES:ENTRIES.filter(function(e){return e.dimension_id===ad});
+  return '<div class="page"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><div class="section-title" style="margin-bottom:0">管理 ('+items.length+')</div><button class="admin-btn add" onclick="showAddForm()">+ 新增</button></div><div class="dim-filter" style="margin-bottom:12px"><div class="filter-chip '+(ad==='all'?'active':'')+'" onclick="navigate(\'admin\',{dimFilter:null,adminView:\'list\'})">全部</div>'+DIMS.map(function(d){return '<div class="filter-chip '+(ad===d.id?'active':'')+'" onclick="navigate(\'admin\',{dimFilter:\''+d.id+'\',adminView:\'list\'})">'+dimIcon(d.id)+' '+d.name+' ('+dimCount(d.id)+')</div>'}).join('')+'</div><div class="wisdom-list">'+(items.length?items.map(function(e){return renderWisdomCard(e,true)}).join(''):'<div class="search-empty">暂无内容</div>')+'</div></div>';
 }
-
-function onAsk() {
-  const input = document.getElementById('qaInput');
-  if (!input || !input.value.trim()) return;
-  const q = input.value.trim();
-  input.value = '';
-  
-  // Add user message
-  const msgs = document.getElementById('qaMessages');
-  msgs.innerHTML += `<div class="qa-message qa-user"><div class="qa-avatar" style="background:#6b7280">你</div><div class="qa-bubble">${esc(q)}</div></div>`;
-  
-  // Search
-  const results = smartSearch(q);
-  
-  // Build response
-  let html = `<div class="qa-message qa-ai"><div class="qa-avatar" style="background:var(--accent)">智</div><div class="qa-bubble">`;
-  
-  if (results.length === 0) {
-    html += `<p>关于"${esc(q)}"，我在智慧库中没有找到直接相关的内容。建议换个关键词试试，或到"浏览"页查看所有分类。</p>`;
-  } else {
-    html += `<p>关于"${esc(q)}"，以下是智慧库中最相关的 ${results.length} 条智慧：</p>`;
-    results.forEach((r, i) => {
-      const fig = getFig(r.e.figure_id);
-      const dim = getDim(r.e.dimension_id);
-      const c = fig ? fig.color : '#666';
-      html += `<div style="margin:10px 0;padding:12px;background:#f9f9f9;border-radius:8px;border-left:3px solid ${c}">
-        <div style="font-size:12px;font-weight:600;color:${c};margin-bottom:4px">${fig ? esc(fig.name) : ''} · ${dim ? esc(dim.name) : ''}</div>
-        <div style="font-size:14px;line-height:1.5;margin-bottom:4px">${esc(r.e.quote)}</div>
-        <div style="font-size:12px;color:#6b7280">📖 ${esc(r.e.source)}</div>
-        ${r.e.interpretation ? `<div style="font-size:13px;color:#4b5563;margin-top:6px;padding:6px;background:#fff;border-radius:4px">💡 ${esc(r.e.interpretation)}</div>` : ''}
-      </div>`;
-    });
-  }
-  html += `</div></div>`;
-  msgs.innerHTML += html;
-  msgs.scrollTop = msgs.scrollHeight;
+function showAddForm(eid) {
+  var entry=eid?ENTRIES.find(function(e){return e.id===eid}):null, title=entry?'编辑':'新增';
+  var dId=entry?entry.dimension_id:(STATE.dimFilter||DIMS[0]?.id||''), fId=entry?entry.figure_id:(FIGS[0]?.id||'');
+  var cats=['核心思想','方法论','人生智慧','经典语录','核心理念','方法'];
+  document.getElementById('modal-inner').innerHTML='<div class="modal-handle"></div><h3 style="margin-bottom:14px;font-size:17px;font-weight:700">'+title+'</h3><form id="entryForm" class="admin-form"><label>维度</label><select name="dimension_id">'+DIMS.map(function(d){return '<option value="'+d.id+'"'+(d.id===dId?' selected':'')+'>'+d.name+'</option>'}).join('')+'</select><label>来源</label><select name="figure_id">'+FIGS.map(function(f){return '<option value="'+f.id+'"'+(f.id===fId?' selected':'')+'>'+f.name+'</option>'}).join('')+'</select><label>分类</label><select name="category">'+cats.map(function(c){return '<option value="'+c+'"'+(entry&&entry.category===c?' selected':'')+'>'+c+'</option>'}).join('')+'</select><label>引文</label><textarea name="quote" rows="3" required>'+(entry?esc(entry.quote):'')+'</textarea><label>出处</label><input name="source" value="'+(entry?esc(entry.source):'')+'"><label>解读</label><textarea name="interpretation" rows="2">'+(entry?esc(entry.interpretation):'')+'</textarea><label>标签</label><input name="tags" value="'+(entry?esc(entry.tags):'')+'"><div style="display:flex;gap:8px;margin-top:12px"><button type="submit" class="admin-btn add" style="flex:1">'+(entry?'保存':'添加')+'</button><button type="button" class="admin-btn" style="flex:1;background:#9ca3af;color:#fff" onclick="closeModal()">取消</button></div></form>';
+  document.getElementById('modal').classList.remove('hidden'); document.getElementById('modal-overlay').classList.remove('hidden');
+  document.getElementById('entryForm').addEventListener('submit',function(ev){ev.preventDefault();var fd=new FormData(ev.target);var data=Object.fromEntries(fd.entries());if(entry)Object.assign(entry,data);else{data.id=++NEXT_ID;ENTRIES.push(data)}closeModal();render()});
 }
+function editEntry(id){showAddForm(id)}
+function deleteEntry(id){if(!confirm('确定删除?'))return;ENTRIES=ENTRIES.filter(function(e){return e.id!==id});render()}
 
-function smartSearch(q) {
-  const keywords = q.toLowerCase().split(/[\s,，。！？、\s]+/).filter(k => k.length > 1);
-  if (keywords.length === 0) return [];
-  
-  const scored = ENTRIES.map(e => {
-    const fig = getFig(e.figure_id);
-    const dim = getDim(e.dimension_id);
-    const figName = fig ? (fig.name + ' ' + fig.short_name) : '';
-    const dimName = dim ? dim.name : '';
-    const searchText = `${e.quote} ${e.interpretation} ${e.source} ${e.tags||''} ${figName} ${dimName}`.toLowerCase();
-    
-    let score = 0;
-    let matchCount = 0;
-    keywords.forEach(kw => {
-      if (searchText.includes(kw)) {
-        matchCount++;
-        // Score based on where it matches
-        if ((e.quote||'').toLowerCase().includes(kw)) score += 3;
-        if ((e.interpretation||'').toLowerCase().includes(kw)) score += 2;
-        if ((e.tags||'').toLowerCase().includes(kw)) score += 2;
-        if ((e.source||'').toLowerCase().includes(kw)) score += 1;
-        if (figName.toLowerCase().includes(kw)) score += 1;
-        if ((dimName||'').toLowerCase().includes(kw)) score += 1;
-        
-        // Bonus for exact phrase match
-        if (keywords.length > 1 && (e.quote||'').toLowerCase().includes(keywords.join(''))) score += 5;
-      }
-    });
-    
-    // Bonus for matching multiple keywords
-    if (matchCount > 1) score += matchCount * 2;
-    
-    return { e, score, matchCount };
-  });
-  
-  return scored.filter(s => s.score > 0).sort((a, b) => b.score - a.score).slice(0, 5);
-}
-
-
-// ─── 学习路径数据 ───
-const PATH_DATA = {
-  "mao": { name: "毛主席", color: "#922B21",
-    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
-    levelDesc: [
-      "了解毛选四卷的核心思想地图，明确为什么要学、学什么。认识实践论、矛盾论、实事求是、群众路线五大核心。",
-      "掌握实践论的认识三阶段、矛盾论的主要矛盾分析法、实事求是的调查研究方法。做到能用这些方法分析实际问题。",
-      "把毛选方法论应用到创业调研、投资决策、团队管理、日常工作等具体场景。形成自己的应用案例库。",
-      "打通各篇之间的联系，建立实践-认识-再实践的循环思维。理解矛盾转化、量变到质变、战略藐视战术重视。",
-      "将毛选智慧与芒格、孔子、王阳明等其他思想体系交叉印证，形成自己的智慧体系。"
-    ],
-    levelContent: [[["目标", "建立毛选的宏观认知"], ["核心内容", "实践论/矛盾论/实事求是/群众路线/独立自主"], ["要读的文章", "反对本本主义 改造我们的学习"], ["练习建议", "用一句话说清毛选对自己的价值"], ["常见错误", "当历史书读 只读不思考"], ["进阶标准", "能说出5个核心思想"]], [["目标", "掌握核心方法论"], ["核心内容", "实践论三阶段 矛盾论分析法 实事求是"], ["要读的文章", "实践论 矛盾论 反对本本主义"], ["练习建议", "用矛盾分析一个实际问题"], ["常见错误", "概念熟但用不出来"], ["进阶标准", "能用实践论和矛盾论分析问题"]], [["目标", "应用到创业投资管理"], ["核心内容", "创业调研 聚焦突破 快速迭代 战略藐视"], ["要读的文章", "论持久战 集中优势兵力 关于领导方法"], ["练习建议", "用毛选分析自己的项目"], ["常见错误", "照搬不转化"], ["进阶标准", "有3个以上应用案例"]], [["目标", "建立系统思维"], ["核心内容", "实践-矛盾-实事求是逻辑链 辩证思维"], ["要读的文章", "党委会工作方法 中国革命战争"], ["练习建议", "画出毛选方法论关联图"], ["常见错误", "碎片化学习"], ["进阶标准", "能在复杂决策中综合运用"]], [["目标", "与其他智慧体系交叉"], ["核心内容", "毛选x芒格 实践论x多元思维 毛选x孔子"], ["要读的文章", "回顾所有文章+对比思想家原著"], ["练习建议", "写一篇芒格与毛主席对比"], ["常见错误", "概念混淆"], ["进阶标准", "形成自己的智慧体系"]]],
-    onepagers: ["实践论","矛盾论","反对本本主义","论持久战","集中优势兵力","关于领导方法","党委会工作方法","为人民服务","愚公移山","改造我们的学习"],
-    levelPages: [[2],[0,1],[3,4],[5,6],[7,8,9]] },
-  "munger": { name: "芒格", color: "#1B4F72",
-    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
-    levelDesc: [
-      "了解芒格是谁、为什么他不仅是投资者更是思想家。认识多元思维模型、误判心理学、能力圈三大核心概念。",
-      "掌握多元思维模型的搭建方法、25个误判心理学的识别和规避、能力圈的划定和拓展。",
-      "把芒格方法用到投资检查清单、护城河分析、创业决策、激励机制设计等场景。",
-      "建立格栅理论的跨学科思维体系，学会用多个模型交叉分析同一个问题。",
-      "将芒格智慧与毛主席、富兰克林、老子的方法论对比印证。"
-    ],
-    articles: ["反对本本主义","实践论","矛盾论","论持久战","反对自由主义","改造我们的学习","整顿党的作风","关于领导方法","集中优势兵力","党委会的工作方法","为人民服务","愚公移山","纪念白求恩","星星之火，可以燎原","中国革命战争的战略问题"],
-  plan: [["导论：毛选为什么值得当代人读","《反对本本主义》《改造我们的学习》"],["实践论（上）：认识的三个阶段","《实践论》"],["实践论（下）：在实践中检验真理","《实践论》后半部分"],["矛盾论（上）：主要矛盾分析法","《矛盾论》前半部分"],["矛盾论（下）：矛盾转化","《矛盾论》后半部分"],["实事求是：调查研究的方法","《反对本本主义》《湖南农运报告》"],["战略思维：论持久战","《论持久战》《集中优势兵力》"],["领导方法：群众路线","《关于领导方法》《党委会工作方法》"],["工作方法：解剖麻雀","《工作方法六十条》《反对自由主义》"],["精神境界：为人民服务","《为人民服务》《愚公移山》《纪念白求恩》"]],,
-    levelContent: [[["目标", "了解芒格是谁"], ["核心内容", "多元思维模型 误判心理学 能力圈"], ["要读的文章", "穷查理宝典导读"], ["练习建议", "写下当前最大决策难题"], ["常见错误", "只学投资不学思维"], ["进阶标准", "能说出三大核心思想"]], [["目标", "掌握方法论框架"], ["核心内容", "格栅理论 25个误判 能力圈 反过来想"], ["要读的文章", "穷查理宝典格栅理论章节"], ["练习建议", "用3个模型分析同一问题"], ["常见错误", "模型太少"], ["进阶标准", "能主动调用3个以上模型"]], [["目标", "应用到投资创业管理"], ["核心内容", "检查清单 能力圈 护城河分析"], ["要读的文章", "芒格历年演讲"], ["练习建议", "分析一家公司的护城河"], ["常见错误", "学了不用"], ["进阶标准", "持续使用芒格方法"]], [["目标", "建立跨学科思维"], ["核心内容", "模型交叉验证 Lollapalooza效应"], ["要读的文章", "穷查理宝典全书回顾"], ["练习建议", "建立思维模型清单"], ["常见错误", "模型套用"], ["进阶标准", "建立格栅理论体系"]], [["目标", "与其他智者对比"], ["核心内容", "芒格x毛主席 芒格x富兰克林"], ["练习建议", "写一篇对比分析"], ["常见错误", "牵强附会"], ["进阶标准", "形成自己的智慧体系"]]],
-    onepagers: ["多元思维模型","误判心理学"],
-    levelPages: [[0],[1],[],[],[]] },
-  "franklin": { name: "富兰克林", color: "#2980B9",
-    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
-    levelDesc: [
-      "了解富兰克林从一个印刷工学徒到开国元勋的人生轨迹。认识十三条美德体系和他的实用主义哲学。",
-      "掌握十三条美德的系统化修炼方法——每周聚焦一项、十三周循环、每日自省记录。",
-      "把富兰克林的方法用到时间管理、节俭理财、社交信誉、个人品牌建设等日常场景。",
-      "理解美德体系的内在逻辑——从节制到谦逊的递进关系，修身与成事的关系。",
-      "将富兰克林十三条美德与曾国藩日课十二条、芒格误判心理学交叉对比。"
-    ],
-    levelContent: [[["目标", "建立毛选的宏观认知"], ["核心内容", "实践论/矛盾论/实事求是/群众路线/独立自主"], ["要读的文章", "反对本本主义 改造我们的学习"], ["练习建议", "用一句话说清毛选对自己的价值"], ["常见错误", "当历史书读 只读不思考"], ["进阶标准", "能说出5个核心思想"]], [["目标", "掌握核心方法论"], ["核心内容", "实践论三阶段 矛盾论分析法 实事求是"], ["要读的文章", "实践论 矛盾论 反对本本主义"], ["练习建议", "用矛盾分析一个实际问题"], ["常见错误", "概念熟但用不出来"], ["进阶标准", "能用实践论和矛盾论分析问题"]], [["目标", "应用到创业投资管理"], ["核心内容", "创业调研 聚焦突破 快速迭代 战略藐视"], ["要读的文章", "论持久战 集中优势兵力 关于领导方法"], ["练习建议", "用毛选分析自己的项目"], ["常见错误", "照搬不转化"], ["进阶标准", "有3个以上应用案例"]], [["目标", "建立系统思维"], ["核心内容", "实践-矛盾-实事求是逻辑链 辩证思维"], ["要读的文章", "党委会工作方法 中国革命战争"], ["练习建议", "画出毛选方法论关联图"], ["常见错误", "碎片化学习"], ["进阶标准", "能在复杂决策中综合运用"]], [["目标", "与其他智慧体系交叉"], ["核心内容", "毛选x芒格 实践论x多元思维 毛选x孔子"], ["要读的文章", "回顾所有文章+对比思想家原著"], ["练习建议", "写一篇芒格与毛主席对比"], ["常见错误", "概念混淆"], ["进阶标准", "形成自己的智慧体系"]]],
-    onepagers: ["十三条美德"],
-    levelPages: [[0],[],[],[],[]] },
-  "laozi": { name: "老子", color: "#16A085",
-    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
-    levelDesc: [
-      "了解老子和《道德经》的核心思想：道法自然、无为而治。认识这本书仅5000余字却影响了世界两千多年。",
-      "掌握道的概念、无为的含义、上善若水的哲学、有无相生的辩证思维。",
-      "把老子思想用到领导力（上善若水）、投资（大器晚成）、决策（无为而无不为）等场景。",
-      "理解道德经81章的内在逻辑链，建立阴阳辩证的思维体系。",
-      "将老子与芒格（反过来想×反向思维）、毛主席（矛盾论×阴阳辩证）交叉对比。"
-    ],
-    levelContent: [[["目标", "建立毛选的宏观认知"], ["核心内容", "实践论/矛盾论/实事求是/群众路线/独立自主"], ["要读的文章", "反对本本主义 改造我们的学习"], ["练习建议", "用一句话说清毛选对自己的价值"], ["常见错误", "当历史书读 只读不思考"], ["进阶标准", "能说出5个核心思想"]], [["目标", "掌握核心方法论"], ["核心内容", "实践论三阶段 矛盾论分析法 实事求是"], ["要读的文章", "实践论 矛盾论 反对本本主义"], ["练习建议", "用矛盾分析一个实际问题"], ["常见错误", "概念熟但用不出来"], ["进阶标准", "能用实践论和矛盾论分析问题"]], [["目标", "应用到创业投资管理"], ["核心内容", "创业调研 聚焦突破 快速迭代 战略藐视"], ["要读的文章", "论持久战 集中优势兵力 关于领导方法"], ["练习建议", "用毛选分析自己的项目"], ["常见错误", "照搬不转化"], ["进阶标准", "有3个以上应用案例"]], [["目标", "建立系统思维"], ["核心内容", "实践-矛盾-实事求是逻辑链 辩证思维"], ["要读的文章", "党委会工作方法 中国革命战争"], ["练习建议", "画出毛选方法论关联图"], ["常见错误", "碎片化学习"], ["进阶标准", "能在复杂决策中综合运用"]], [["目标", "与其他智慧体系交叉"], ["核心内容", "毛选x芒格 实践论x多元思维 毛选x孔子"], ["要读的文章", "回顾所有文章+对比思想家原著"], ["练习建议", "写一篇芒格与毛主席对比"], ["常见错误", "概念混淆"], ["进阶标准", "形成自己的智慧体系"]]],
-    onepagers: ["上善若水"],
-    levelPages: [[0],[],[],[],[]] },
-  "kongzi": { name: "孔子", color: "#D35400",
-    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
-    levelDesc: [
-      "了解孔子和儒家思想的核心：仁与礼。认识《论语》中最重要的实践智慧。",
-      "掌握仁（己所不欲勿施于人）、学思并重、三省吾身、中庸之道、正名等核心方法论。",
-      "把孔子的方法用到学习（学而时习之）、管理（其身正不令而行）、社交（三人行必有我师）等场景。",
-      "理解仁义礼智信的内在体系，以及修身齐家治国平天下的层次逻辑。",
-      "将孔子与芒格（学思并重×多元思维）、毛主席（实事求是×知之为知之）交叉对比。"
-    ],
-    levelContent: [[["目标", "建立毛选的宏观认知"], ["核心内容", "实践论/矛盾论/实事求是/群众路线/独立自主"], ["要读的文章", "反对本本主义 改造我们的学习"], ["练习建议", "用一句话说清毛选对自己的价值"], ["常见错误", "当历史书读 只读不思考"], ["进阶标准", "能说出5个核心思想"]], [["目标", "掌握核心方法论"], ["核心内容", "实践论三阶段 矛盾论分析法 实事求是"], ["要读的文章", "实践论 矛盾论 反对本本主义"], ["练习建议", "用矛盾分析一个实际问题"], ["常见错误", "概念熟但用不出来"], ["进阶标准", "能用实践论和矛盾论分析问题"]], [["目标", "应用到创业投资管理"], ["核心内容", "创业调研 聚焦突破 快速迭代 战略藐视"], ["要读的文章", "论持久战 集中优势兵力 关于领导方法"], ["练习建议", "用毛选分析自己的项目"], ["常见错误", "照搬不转化"], ["进阶标准", "有3个以上应用案例"]], [["目标", "建立系统思维"], ["核心内容", "实践-矛盾-实事求是逻辑链 辩证思维"], ["要读的文章", "党委会工作方法 中国革命战争"], ["练习建议", "画出毛选方法论关联图"], ["常见错误", "碎片化学习"], ["进阶标准", "能在复杂决策中综合运用"]], [["目标", "与其他智慧体系交叉"], ["核心内容", "毛选x芒格 实践论x多元思维 毛选x孔子"], ["要读的文章", "回顾所有文章+对比思想家原著"], ["练习建议", "写一篇芒格与毛主席对比"], ["常见错误", "概念混淆"], ["进阶标准", "形成自己的智慧体系"]]],
-    onepagers: ["仁与学"],
-    levelPages: [[0],[],[],[],[]] },
-  "wangming": { name: "王阳明", color: "#C0392B",
-    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
-    levelDesc: [
-      "了解王阳明「立功立德立言」三不朽的人生。心学的核心三词：心即理、知行合一、致良知。",
-      "掌握心即理（求理不必外求）、知行合一（知道不做等于不知道）、致良知（听从内心）三大核心。",
-      "把心学用到修身（事上练）、管理（破心中贼难）、学习（知行合一——学以致用）等场景。",
-      "理解心学与程朱理学的对比，以及知行关系的思想史演变。",
-      "将王阳明与毛主席（知行合一×实践论）、芒格（致良知×理性道德）交叉对比。"
-    ],
-    levelContent: [[["目标", "建立毛选的宏观认知"], ["核心内容", "实践论/矛盾论/实事求是/群众路线/独立自主"], ["要读的文章", "反对本本主义 改造我们的学习"], ["练习建议", "用一句话说清毛选对自己的价值"], ["常见错误", "当历史书读 只读不思考"], ["进阶标准", "能说出5个核心思想"]], [["目标", "掌握核心方法论"], ["核心内容", "实践论三阶段 矛盾论分析法 实事求是"], ["要读的文章", "实践论 矛盾论 反对本本主义"], ["练习建议", "用矛盾分析一个实际问题"], ["常见错误", "概念熟但用不出来"], ["进阶标准", "能用实践论和矛盾论分析问题"]], [["目标", "应用到创业投资管理"], ["核心内容", "创业调研 聚焦突破 快速迭代 战略藐视"], ["要读的文章", "论持久战 集中优势兵力 关于领导方法"], ["练习建议", "用毛选分析自己的项目"], ["常见错误", "照搬不转化"], ["进阶标准", "有3个以上应用案例"]], [["目标", "建立系统思维"], ["核心内容", "实践-矛盾-实事求是逻辑链 辩证思维"], ["要读的文章", "党委会工作方法 中国革命战争"], ["练习建议", "画出毛选方法论关联图"], ["常见错误", "碎片化学习"], ["进阶标准", "能在复杂决策中综合运用"]], [["目标", "与其他智慧体系交叉"], ["核心内容", "毛选x芒格 实践论x多元思维 毛选x孔子"], ["要读的文章", "回顾所有文章+对比思想家原著"], ["练习建议", "写一篇芒格与毛主席对比"], ["常见错误", "概念混淆"], ["进阶标准", "形成自己的智慧体系"]]],
-    onepagers: ["知行合一"],
-    levelPages: [[0],[],[],[],[]] },
-  "miller": { name: "米勒", color: "#2E86C1",
-    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
-    levelDesc: [
-      "了解《亲密关系》的科学框架——亲密关系不是直觉的，而是可以科学研究的。认识14章的内容地图。",
-      "掌握吸引力法则、依恋理论、社会认知、相互依赖、爱情三角等核心理论。",
-      "把理论用到择偶（识别安全型依恋）、沟通（第一人称表达）、冲突（四步法）等日常场景。",
-      "理解各章之间的内在逻辑链——从吸引力到解体的完整生命周期。",
-      "将米勒与戈特曼（学术研究×临床实证）、孔子（己所不欲×沟通艺术）交叉对比。"
-    ],
-    levelContent: [[["目标", "建立毛选的宏观认知"], ["核心内容", "实践论/矛盾论/实事求是/群众路线/独立自主"], ["要读的文章", "反对本本主义 改造我们的学习"], ["练习建议", "用一句话说清毛选对自己的价值"], ["常见错误", "当历史书读 只读不思考"], ["进阶标准", "能说出5个核心思想"]], [["目标", "掌握核心方法论"], ["核心内容", "实践论三阶段 矛盾论分析法 实事求是"], ["要读的文章", "实践论 矛盾论 反对本本主义"], ["练习建议", "用矛盾分析一个实际问题"], ["常见错误", "概念熟但用不出来"], ["进阶标准", "能用实践论和矛盾论分析问题"]], [["目标", "应用到创业投资管理"], ["核心内容", "创业调研 聚焦突破 快速迭代 战略藐视"], ["要读的文章", "论持久战 集中优势兵力 关于领导方法"], ["练习建议", "用毛选分析自己的项目"], ["常见错误", "照搬不转化"], ["进阶标准", "有3个以上应用案例"]], [["目标", "建立系统思维"], ["核心内容", "实践-矛盾-实事求是逻辑链 辩证思维"], ["要读的文章", "党委会工作方法 中国革命战争"], ["练习建议", "画出毛选方法论关联图"], ["常见错误", "碎片化学习"], ["进阶标准", "能在复杂决策中综合运用"]], [["目标", "与其他智慧体系交叉"], ["核心内容", "毛选x芒格 实践论x多元思维 毛选x孔子"], ["要读的文章", "回顾所有文章+对比思想家原著"], ["练习建议", "写一篇芒格与毛主席对比"], ["常见错误", "概念混淆"], ["进阶标准", "形成自己的智慧体系"]]],
-    onepagers: ["依恋理论","爱情三角","社会认知","关系维持","冲突","吸引力","沟通","相互依赖","压力与紧张","关系解体","性亲密","权力与暴力"],
-    levelPages: [[0,5,6],[1,2,7],[3,4,8],[9,10],[11]],
-    levelDesc: [
-      "了解戈特曼通过观察上千对夫妻得出的婚姻科学。认识爱情地图、末日骑士、5:1比率等核心发现。",
-      "掌握末日骑士（批评、鄙视、辩护、冷战）的识别和应对、5:1积极比率、温和开局等沟通技巧。",
-      "把戈特曼方法用到日常情感连接、冲突时的温和沟通、长期共同意义创造等场景。",
-      "理解从观察到诊断到干预的完整婚姻评估体系。",
-      "将戈特曼与米勒（临床实证×学术研究）、孔子（己所不欲×温和沟通）交叉对比。"
-    ],
-    levelContent: [[["目标", "建立毛选的宏观认知"], ["核心内容", "实践论/矛盾论/实事求是/群众路线/独立自主"], ["要读的文章", "反对本本主义 改造我们的学习"], ["练习建议", "用一句话说清毛选对自己的价值"], ["常见错误", "当历史书读 只读不思考"], ["进阶标准", "能说出5个核心思想"]], [["目标", "掌握核心方法论"], ["核心内容", "实践论三阶段 矛盾论分析法 实事求是"], ["要读的文章", "实践论 矛盾论 反对本本主义"], ["练习建议", "用矛盾分析一个实际问题"], ["常见错误", "概念熟但用不出来"], ["进阶标准", "能用实践论和矛盾论分析问题"]], [["目标", "应用到创业投资管理"], ["核心内容", "创业调研 聚焦突破 快速迭代 战略藐视"], ["要读的文章", "论持久战 集中优势兵力 关于领导方法"], ["练习建议", "用毛选分析自己的项目"], ["常见错误", "照搬不转化"], ["进阶标准", "有3个以上应用案例"]], [["目标", "建立系统思维"], ["核心内容", "实践-矛盾-实事求是逻辑链 辩证思维"], ["要读的文章", "党委会工作方法 中国革命战争"], ["练习建议", "画出毛选方法论关联图"], ["常见错误", "碎片化学习"], ["进阶标准", "能在复杂决策中综合运用"]], [["目标", "与其他智慧体系交叉"], ["核心内容", "毛选x芒格 实践论x多元思维 毛选x孔子"], ["要读的文章", "回顾所有文章+对比思想家原著"], ["练习建议", "写一篇芒格与毛主席对比"], ["常见错误", "概念混淆"], ["进阶标准", "形成自己的智慧体系"]]],
-    onepagers: ["末日骑士"],
-    levelPages: [[0],[],[],[],[]] },
-  "huangdi": { name: "黄帝内经", color: "#27AE60",
-    levels: ["L1 认知入门","L2 方法掌握","L3 实践应用","L4 系统思维","L5 融会贯通"],
-    levelDesc: [
-      "了解《黄帝内经》不是一本医书，而是一套关于「人如何与自然和谐相处」的生命哲学体系。",
-      "掌握阴阳五行、四气调神、正气存内邪不可干、上工治未病等核心理论。",
-      "把中医智慧用到饮食（食饮有节）、作息（跟着太阳走）、运动（常欲小劳）、情志（情绪管理）等日常。",
-      "理解藏象学说、经络学说、辨证论治的系统医学体系。",
-      "将黄帝内经与老子（道法自然×顺应四时）、芒格（系统思维×多元模型）交叉对比。"
-    ],
-    levelContent: [[["目标", "建立毛选的宏观认知"], ["核心内容", "实践论/矛盾论/实事求是/群众路线/独立自主"], ["要读的文章", "反对本本主义 改造我们的学习"], ["练习建议", "用一句话说清毛选对自己的价值"], ["常见错误", "当历史书读 只读不思考"], ["进阶标准", "能说出5个核心思想"]], [["目标", "掌握核心方法论"], ["核心内容", "实践论三阶段 矛盾论分析法 实事求是"], ["要读的文章", "实践论 矛盾论 反对本本主义"], ["练习建议", "用矛盾分析一个实际问题"], ["常见错误", "概念熟但用不出来"], ["进阶标准", "能用实践论和矛盾论分析问题"]], [["目标", "应用到创业投资管理"], ["核心内容", "创业调研 聚焦突破 快速迭代 战略藐视"], ["要读的文章", "论持久战 集中优势兵力 关于领导方法"], ["练习建议", "用毛选分析自己的项目"], ["常见错误", "照搬不转化"], ["进阶标准", "有3个以上应用案例"]], [["目标", "建立系统思维"], ["核心内容", "实践-矛盾-实事求是逻辑链 辩证思维"], ["要读的文章", "党委会工作方法 中国革命战争"], ["练习建议", "画出毛选方法论关联图"], ["常见错误", "碎片化学习"], ["进阶标准", "能在复杂决策中综合运用"]], [["目标", "与其他智慧体系交叉"], ["核心内容", "毛选x芒格 实践论x多元思维 毛选x孔子"], ["要读的文章", "回顾所有文章+对比思想家原著"], ["练习建议", "写一篇芒格与毛主席对比"], ["常见错误", "概念混淆"], ["进阶标准", "形成自己的智慧体系"]]],
-    onepagers: ["四气调神"],
-    levelPages: [[0],[],[],[],[]] }
-};
-
-
-
-let pathState = null;
-
-// ─── 学习路径首页 ───
+// ─── Path ───
 function renderPath() {
-  pathState = 'list';
-  STATE.page = 'path';
-  const ids = Object.keys(PATH_DATA);
-  document.getElementById('app-content').innerHTML = '<div class="page"><div class="section-title">学习路径</div><p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px">点击智者进入5级进阶体系</p><div class="path-grid-vertical">' + ids.map(id => {
-    const d = PATH_DATA[id];
-    return '<div class="path-card" onclick="renderPathDetail(\''+id+'\')"><div class="path-card-color" style="background:'+d.color+'"></div><div class="path-card-info"><div class="path-card-name">'+d.name+'</div><div class="path-card-count">'+d.levels.length+'级学习 · '+d.onepagers.length+'篇一页纸</div></div></div>';
-  }).join('') + '</div></div>';
-  document.getElementById('app-content').innerHTML = html;
-  return html;
+  pathState='list'; STATE.page='path';
+  var ids=Object.keys(PATH_DATA);
+  var html='<div class="page"><div class="section-title">学习路径</div><p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px">点击智者进入学习体系</p><div class="path-grid-vertical">';
+  ids.forEach(function(id){var d=PATH_DATA[id]; html+='<div class="path-card" onclick="renderPathDetail(\''+id+'\')"><div class="path-card-color" style="background:'+d.color+'"></div><div class="path-card-info"><div class="path-card-name">'+d.name+'</div><div class="path-card-count">'+d.levels.length+'级 · '+(d.onepagers?d.onepagers.length:0)+'篇一页纸</div></div></div>'});
+  html+='</div></div>'; document.getElementById('app-content').innerHTML=html; return html;
 }
-
 
 function renderPathDetail(id) {
-  const d = PATH_DATA[id];
-  if (!d) return;
-  pathState = id;
-  const colors = ['#3498db','#2ecc71','#f39c12','#e74c3c','#9b59b6'];
-  var fig = null;
-  for (var i = 0; i < FIGS.length; i++) { if (FIGS[i].id === id) { fig = FIGS[i]; break; } }
-  
-  var html = '<div class="page">' +
-    '<button class="back-btn" onclick="renderPath()"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg> 返回</button>' +
-    '<div class="section-title" style="color:'+d.color+'">'+d.name+'</div>';
-  
-  // Section 1: 核心文章
-  var arts = d.articles || [];
-  if (arts.length > 0) {
-    html += '<div style="margin-bottom:14px"><div style="font-size:15px;font-weight:600;margin-bottom:6px">📖 核心文章 ('+arts.length+')</div><div class="path-pager-list">'+
-      arts.map(function(a) { return '<button class="path-pager-link" onclick="showArticleContent(\''+id+'\',\''+esc(a)+'\')">'+esc(a)+'</button>'; }).join('') +
-      '</div></div>';
-  }
-  
-  // Section 2: 5级进阶体系
-  html += '<div style="margin-bottom:10px"><div style="font-size:15px;font-weight:600;margin-bottom:6px">📈 5级进阶体系</div>' +
-    d.levels.map(function(lv, li) {
-      return '<div class="path-l2" onclick="showLevelContent(\''+id+'\','+li+',\''+lv+'\',\'\')"><div class="path-l2-header"><div class="path-l2-num" style="background:'+colors[li]+'">'+(li+1)+'</div><div style="font-weight:600;font-size:14px;flex:1">'+lv+'</div></div></div>';
-    }).join('') + '</div>';
-  
-  // Section 3: 10次学习计划
-  var plan = d.plan || [];
-  if (plan.length > 0) {
-    html += '<div style="margin-bottom:10px"><div style="font-size:15px;font-weight:600;margin-bottom:6px">📋 10次学习计划</div><div style="background:var(--surface);border-radius:var(--radius);padding:10px 14px;box-shadow:var(--shadow)">'+
-      plan.map(function(s, i) { 
-        return '<div style="padding:4px 0;display:flex;gap:6px;align-items:baseline"><span style="font-size:12px;font-weight:700;color:'+d.color+';flex-shrink:0">'+(i+1)+'.</span><div><div style="font-size:13px;font-weight:600">'+esc(s[0])+'</div><div style="font-size:12px;color:var(--text-secondary)">📖 '+esc(s[1])+'</div></div></div>';
-      }).join('') +
-      '</div></div>';
-  }
-  
-  // Section 4: 一页纸总结
-  if (d.onepagers && d.onepagers.length > 0) {
-    html += '<div style="margin-bottom:8px"><div style="font-size:15px;font-weight:600;margin-bottom:6px">📄 一页纸总结 ('+d.onepagers.length+')</div><div class="path-pager-list">'+
-      d.onepagers.map(function(p, i) { return '<button class="path-pager-link" onclick="viewOnePager(\''+id+'\','+i+')">'+esc(p)+'</button>'; }).join('') +
-      '</div></div>';
-  }
-  
-  html += '</div>';
-  document.getElementById('app-content').innerHTML = html;
-  document.getElementById('app-content').scrollTop = 0;
+  var d=PATH_DATA[id]; if(!d)return; pathState=id;
+  var fig=FIGS.find(function(f){return f.id===id});
+  var html='<div class="page"><button class="back-btn" onclick="renderPath()"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg> 返回</button><div class="section-title" style="color:'+d.color+'">'+d.name+'</div>';
+  // 核心文章
+  var arts=d.articles||[];
+  if(arts.length>0) html+='<div style="margin-bottom:12px"><div style="font-size:15px;font-weight:600;margin-bottom:6px">📖 核心文章 ('+arts.length+')</div><div class="path-pager-list">'+arts.map(function(a){return '<button class="path-pager-link" onclick="showArticleContent(\''+id+'\',\''+esc(a)+'\')">'+esc(a)+'</button>'}).join('')+'</div></div>';
+  // 5级进阶体系
+  html+='<div style="margin-bottom:10px"><div style="font-size:15px;font-weight:600;margin-bottom:6px">📈 5级进阶体系</div>'+d.levels.map(function(lv,li){return '<div class="path-l2" onclick="showLevelContent(\''+id+'\','+li+')"><div class="path-l2-header"><div class="path-l2-num" style="background:'+LEVEL_COLORS[li]+'">'+(li+1)+'</div><div style="font-weight:600;font-size:14px;flex:1">'+lv+'</div></div></div>'}).join('')+'</div>';
+  // 学习计划
+  var plan=d.plan||[];
+  if(plan.length>0) html+='<div style="margin-bottom:10px"><div style="font-size:15px;font-weight:600;margin-bottom:6px">📋 10次学习计划</div><div style="background:var(--surface);border-radius:var(--radius);padding:10px 14px;box-shadow:var(--shadow)">'+plan.map(function(s,i){return '<div style="padding:3px 0;display:flex;gap:6px"><span style="font-size:12px;font-weight:700;color:'+d.color+';flex-shrink:0;min-width:20px">'+(i+1)+'.</span><div><div style="font-size:13px;font-weight:600">'+esc(s[0])+'</div><div style="font-size:12px;color:var(--text-secondary)">📖 '+esc(s[1])+'</div></div></div>'}).join('')+'</div></div>';
+  // 一页纸
+  if(d.onepagers&&d.onepagers.length>0) html+='<div style="margin-bottom:8px"><div style="font-size:15px;font-weight:600;margin-bottom:6px">📄 一页纸总结 ('+d.onepagers.length+')</div><div class="path-pager-list">'+d.onepagers.map(function(p,i){return '<button class="path-pager-link" onclick="viewOnePager(\''+id+'\','+i+')">'+esc(p)+'</button>'}).join('')+'</div></div>';
+  html+='</div>'; document.getElementById('app-content').innerHTML=html; document.getElementById('app-content').scrollTop=0;
 }
 
-// Show article content by searching entries
-function showArticleContent(id, keyword) {
-  const d = PATH_DATA[id];
-  if (!d) return;
-  var matched = [];
-  ENTRIES.forEach(function(e) {
-    if (e.figure_id !== id) return;
-    var txt = (e.quote + ' ' + (e.interpretation||'') + ' ' + (e.source||'') + ' ' + (e.tags||'')).toLowerCase();
-    if (txt.indexOf(keyword.toLowerCase()) >= 0) matched.push(e);
-  });
-  if (matched.length === 0) {
-    closeModal();
-    return;
-  }
-  var fig = getFig(id);
-  var c = fig ? fig.color : '#666';
-  var bg = id === 'munger' ? '#eaf2f8' : id === 'mao' ? '#fce9e7' : '#f0f0f0';
-  var figName = fig ? (fig.short_name || fig.name) : id;
-  var html = '<div class="modal-handle"></div><h3 style="margin-bottom:8px;color:'+c+'">'+d.name+' · '+esc(keyword)+'</h3><div>';
-  matched.forEach(function(e) {
-    html += '<div style="margin:6px 0;padding:10px 12px;border-radius:8px;border-left:3px solid '+c+';background:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.06)">';
-    html += '<div style="font-size:11px;font-weight:600;color:'+c+'">'+esc(figName)+' · '+esc(e.source)+'</div>';
-    html += '<div style="font-size:14px;line-height:1.6;margin-top:4px;margin-bottom:4px">'+esc(e.quote)+'</div>';
-    if (e.interpretation) {
-      html += '<div style="font-size:13px;color:#4b5563;padding:6px;background:#f9fafb;border-radius:4px;margin-top:4px">💡 '+esc(e.interpretation)+'</div>';
-    }
-    html += '</div>';
-  });
-  html += '</div>';
-  document.getElementById('modal-inner').innerHTML = html;
-  document.getElementById('modal').classList.remove('hidden');
-  document.getElementById('modal-overlay').classList.remove('hidden');
+function showArticleContent(id, kw) {
+  var d=PATH_DATA[id]; if(!d)return; var matched=[];
+  ENTRIES.forEach(function(e){if(e.figure_id!==id)return; var txt=(e.quote+' '+e.interpretation+' '+e.source+' '+e.tags).toLowerCase(); if(txt.indexOf(kw.toLowerCase())>=0)matched.push(e)});
+  if(matched.length===0){closeModal();return}
+  var fig=getFig(id),c=fig?fig.color:'#666',figName=fig?(fig.short_name||fig.name):id;
+  var html='<div class="modal-handle"></div><h3 style="margin-bottom:8px;color:'+c+'">'+d.name+' · '+esc(kw)+'</h3><div>';
+  matched.forEach(function(e){html+='<div style="margin:6px 0;padding:10px 12px;border-radius:8px;border-left:3px solid '+c+';background:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.06)"><div style="font-size:11px;font-weight:600;color:'+c+'">'+esc(figName)+' · '+esc(e.source)+'</div><div style="font-size:14px;line-height:1.6;margin:4px 0">'+esc(e.quote)+'</div>'+(e.interpretation?'<div style="font-size:13px;color:#4b5563;padding:6px;background:#f9fafb;border-radius:4px;margin-top:4px">💡 '+esc(e.interpretation)+'</div>':'')+'</div>'});
+  html+='</div>'; document.getElementById('modal-inner').innerHTML=html; document.getElementById('modal').classList.remove('hidden'); document.getElementById('modal-overlay').classList.remove('hidden');
 }
-function showLevelContent(id, li, title, desc) {
-  const d = PATH_DATA[id];
-  if (!d) return;
-  const filter = (d.levelContent && d.levelContent[li]) || [];
-  
-  // Search entries for this figure that match the filter keywords
-  let matched = [];
-  if (filter.length > 0) {
-    ENTRIES.forEach(function(e) {
-      if (e.figure_id !== id) return;
-      var txt = (e.quote + ' ' + (e.interpretation||'') + ' ' + (e.source||'') + ' ' + (e.tags||'')).toLowerCase();
-      var match = filter.some(function(kw) { return txt.indexOf(kw.toLowerCase()) >= 0; });
-      if (match) matched.push(e);
-    });
-  } else {
-    // No filter: show all entries for this figure
-    ENTRIES.forEach(function(e) { if (e.figure_id === id) matched.push(e); });
-  }
-  
-  var html = '<div class="modal-handle"></div><h3 style="margin-bottom:8px;color:'+d.color+'">'+d.name+' · '+title+'</h3><div>';
-  if (matched.length === 0) {
-    html += '<p style="color:var(--text-secondary);font-size:14px">暂无相关内容</p>';
-  } else {
-    matched.forEach(function(e) {
-      var fig = getFig(e.figure_id);
-      var dim = getDim(e.dimension_id);
-      var c = fig ? fig.color : '#666';
-      var bg = e.figure_id === 'munger' ? '#eaf2f8' : e.figure_id === 'mao' ? '#fce9e7' : '#f0f0f0';
-      var figName = fig ? (fig.short_name || fig.name) : (e.figure_name || e.figure_id);
-      html += '<div style="margin:8px 0;padding:12px;border-radius:8px;border-left:3px solid '+c+';background:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.06)">';
-      html += '<div style="font-size:11px;font-weight:600;color:'+c+';background:'+bg+';display:inline-block;padding:1px 6px;border-radius:3px;margin-bottom:4px">'+esc(figName)+'</div>';
-      html += '<div style="font-size:14px;line-height:1.6;margin-bottom:4px">'+esc(e.quote)+'</div>';
-      html += '<div style="font-size:12px;color:var(--text-secondary)">📖 '+esc(e.source)+'</div>';
-      if (e.interpretation) {
-        html += '<div style="font-size:13px;color:#4b5563;margin-top:4px;padding:6px;background:#f9fafb;border-radius:4px">💡 '+esc(e.interpretation)+'</div>';
-      }
-      html += '</div>';
-    });
-  }
-  html += '</div>';
-  
-  // Related one-pagers
-  var pages = (d.levelPages && d.levelPages[li]) || [];
-  if (pages.length > 0) {
-    html += '<div style="margin-top:8px;padding-top:8px;border-top:1px solid #eee"><div style="font-size:13px;font-weight:600;color:var(--text-secondary);margin-bottom:4px">一页纸总结：</div><div class="path-pager-list">'+pages.map(function(pi) { return '<button class="path-pager-link" onclick="closeModal();viewOnePager(\''+id+'\','+pi+')">'+(d.onepagers[pi]||'')+'</button>'; }).join('')+'</div></div>';
-  }
-  
-  document.getElementById('modal-inner').innerHTML = html;
-  document.getElementById('modal').classList.remove('hidden');
-  document.getElementById('modal-overlay').classList.remove('hidden');
+
+function showLevelContent(id, li) {
+  var d=PATH_DATA[id]; if(!d)return;
+  var filter=(d.levelFilter&&d.levelFilter[li])||[];
+  var matched=[];
+  if(filter.length>0) ENTRIES.forEach(function(e){if(e.figure_id!==id)return; var txt=(e.quote+' '+e.interpretation+' '+e.source+' '+e.tags).toLowerCase(); var m=filter.some(function(kw){return txt.indexOf(kw.toLowerCase())>=0}); if(m)matched.push(e)});
+  else ENTRIES.forEach(function(e){if(e.figure_id===id)matched.push(e)});
+  var fig=getFig(id),c=fig?fig.color:'#666',bg=id==='munger'?'#eaf2f8':id==='mao'?'#fce9e7':'#f0f0f0';
+  var html='<div class="modal-handle"></div><h3 style="margin-bottom:8px;color:'+c+'">'+d.name+' · '+d.levels[li]+'</h3><div>';
+  if(matched.length===0) html+='<p style="color:var(--text-secondary)">暂无相关内容</p>';
+  else matched.forEach(function(e){html+='<div style="margin:6px 0;padding:10px 12px;border-radius:8px;border-left:3px solid '+c+';background:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.06)"><div style="font-size:11px;font-weight:600;color:'+c+'">'+esc(fig?fig.short_name||fig.name:'')+'</div><div style="font-size:14px;line-height:1.6;margin:4px 0">'+esc(e.quote)+'</div><div style="font-size:12px;color:var(--text-secondary)">📖 '+esc(e.source)+'</div>'+(e.interpretation?'<div style="font-size:13px;color:#4b5563;margin-top:4px;padding:6px;background:#f9fafb;border-radius:4px">💡 '+esc(e.interpretation)+'</div>':'')+'</div>'});
+  html+='</div>'; document.getElementById('modal-inner').innerHTML=html; document.getElementById('modal').classList.remove('hidden'); document.getElementById('modal-overlay').classList.remove('hidden');
 }
+
 function viewOnePager(id, idx) {
-  const d = PATH_DATA[id];
-  if (!d || !d.onepagers[idx]) return;
-  const title = d.onepagers[idx];
-  // Try to load from docs/ path, show nice message if not found
-  const filePath = `docs/学习路径/${d.name}/一页纸总结/${String(idx+1).padStart(2,'0')}-${title}.md`;
-  const localPath = `学习路径/${d.name}/一页纸总结/${String(idx+1).padStart(2,'0')}-${title}.md`;
-  
-  // Use fetch to load the markdown file
-  fetch(localPath).then(r => r.ok ? r.text() : Promise.reject()).then(md => {
-    const html = simpleMarkdown(md);
-    document.getElementById('modal-inner').innerHTML = `<div class="modal-handle"></div>
-      <h3 style="margin-bottom:10px;color:${d.color}">${d.name} · ${title}</h3>
-      <div class="onepager-content">${html}</div>`;
-    document.getElementById('modal').classList.remove('hidden');
-    document.getElementById('modal-overlay').classList.remove('hidden');
-  }).catch(() => {
-    // Fallback: show the content from embedded data
-    const p = fetch(`${localPath}`).then(r => r.text()).catch(() => '<p>文件加载失败，请在本地打开 02-学习路径 目录查看。</p>');
-  });
+  var d=PATH_DATA[id]; if(!d||!d.onepagers[idx])return;
+  var title=d.onepagers[idx];
+  var localPath='学习路径/'+d.name+'/一页纸总结/'+(idx+1<10?'0':'')+(idx+1)+'-'+title+'.md';
+  fetch(localPath).then(function(r){if(!r.ok)throw new Error();return r.text()}).then(function(md){document.getElementById('modal-inner').innerHTML='<div class="modal-handle"></div><h3 style="margin-bottom:8px;color:'+d.color+'">'+d.name+' · '+title+'</h3><div style="font-size:14px;line-height:1.7;white-space:pre-wrap">'+esc(md.substring(0,3000))+'</div>';document.getElementById('modal').classList.remove('hidden');document.getElementById('modal-overlay').classList.remove('hidden')}).catch(function(){closeModal()});
 }
 
-// ─── 简易Markdown渲染 ───
-function simpleMarkdown(md) {
-  let h = esc(md);
-  // Code blocks
-  h = h.replace(/\`\`\`([\s\S]*?)\`\`\`/g, '<pre><code>$1</code></pre>');
-  // Inline code
-  h = h.replace(/\`([^\n]+?)\`/g, '<code>$1</code>');
-  // Headers
-  h = h.replace(/^### (.+)$/gm, '<h3>$1</h3>');
-  h = h.replace(/^## (.+)$/gm, '<h2>$1</h2>');
-  h = h.replace(/^# (.+)$/gm, '<h1>$1</h1>');
-  // Bold
-  h = h.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-  // Tables (simple pipe tables)
-  h = h.replace(/^\|[^|]+\|[^|]+\|$/gm, function(m) { return m; });
-  h = h.replace(/^\|(.+)\|$/gm, function(m) { const cells = m.split('|').filter(c=>c.trim()); return '<tr><td>'+cells.join('</td><td>')+'</td></tr>'; });
-  h = h.replace(/<tr>.*?<\/tr>/g, function(m) { return '<table>'+m+'</table>'; });
-  // Blockquotes
-  h = h.replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>');
-  // Lists
-  h = h.replace(/^- (.+)$/gm, '<li>$1</li>');
-  h = h.replace(/(<li>[\s\S]*?<\/li>\n?)+/g, '<ul>$&</ul>');
-  // Links
-  h = h.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>');
-  // Paragraphs
-  h = h.replace(/\n\n/g, '</p><p>');
-  // Horizontal rules
-  h = h.replace(/^---+$/gm, '<hr>');
-  return '<p>'+h+'</p>';
-}
-
-// ─── 覆盖 render 函数中 path 状态 ───
+document.addEventListener('DOMContentLoaded', init);
